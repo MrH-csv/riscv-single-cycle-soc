@@ -1,0 +1,26 @@
+// ============================================================================
+// Module:      multiplier_rv32m
+// Description: Hardware multiplier for the RV32M MUL instruction.
+//              Returns the lower WIDTH bits of the full product (a * b).
+//              Purely combinational — Quartus Prime infers DSP blocks directly
+//              from the (*) operator when operand widths match DSP input sizes.
+// Target:      Intel/Altera FPGAs (Cyclone IV/V, MAX 10, etc.)
+// ============================================================================
+
+module mul_module #(
+    parameter WIDTH = 32
+)(
+    input  wire [WIDTH-1:0] i_a,      // Multiplicand (rs1)
+    input  wire [WIDTH-1:0] i_b,      // Multiplier   (rs2)
+    output wire [WIDTH-1:0] o_result  // Lower WIDTH bits of (i_a * i_b)
+);
+
+    // Full product — the synthesis tool sees a WIDTH x WIDTH multiply and
+    // maps it onto DSP block(s).  Only the lower half is routed out,
+    // which is correct for MUL (sign is irrelevant for the lower bits).
+    wire [2*WIDTH-1:0] product;
+
+    assign product  = i_a * i_b;
+    assign o_result = product[WIDTH-1:0];
+
+endmodule

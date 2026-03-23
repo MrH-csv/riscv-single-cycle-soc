@@ -1,0 +1,19 @@
+/**
+ * mux2_1 - Multiplexor de 2 entradas, 1 salida
+ * Módulo combinacional genérico para librería RISC-V
+ */
+module mux_2i_1o
+#(
+	parameter WIDTH = 32
+)
+(
+	input  [WIDTH-1:0] i_d0,  // Dato de entrada 0
+	input  [WIDTH-1:0] i_d1,  // Dato de entrada 1
+	input              i_sel, // Selector: 0 -> i_d0, 1 -> i_d1
+	output [WIDTH-1:0] o_out  // Dato de salida
+);
+
+	// Lógica combinacional: selección por operador ternario
+	assign o_out = (i_sel) ? i_d1 : i_d0;
+
+endmodule
