@@ -1,5 +1,5 @@
 Fitter report for rom_combinational_sc
-Sun Mar 22 04:12:34 2026
+Sun Mar 29 00:14:41 2026
 Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Standard Edition
 
 
@@ -58,14 +58,14 @@ on the Quartus Prime software download page.
 +---------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                        ;
 +---------------------------------+-----------------------------------------------------+
-; Fitter Status                   ; Successful - Sun Mar 22 04:12:34 2026               ;
+; Fitter Status                   ; Successful - Sun Mar 29 00:14:41 2026               ;
 ; Quartus Prime Version           ; 25.1std.0 Build 1129 10/21/2025 SC Standard Edition ;
 ; Revision Name                   ; rom_combinational_sc                                ;
 ; Top-level Entity Name           ; rom_combinational_sc                                ;
 ; Family                          ; Cyclone V                                           ;
 ; Device                          ; 5CSXFC6D6F31C6                                      ;
 ; Timing Models                   ; Final                                               ;
-; Logic utilization (in ALMs)     ; 5 / 41,910 ( < 1 % )                                ;
+; Logic utilization (in ALMs)     ; 21 / 41,910 ( < 1 % )                               ;
 ; Total registers                 ; 0                                                   ;
 ; Total pins                      ; 64 / 499 ( 13 % )                                   ;
 ; Total virtual pins              ; 0                                                   ;
@@ -148,14 +148,15 @@ on the Quartus Prime software download page.
 ; Number detected on machine ; 16          ;
 ; Maximum allowed            ; 16          ;
 ;                            ;             ;
-; Average used               ; 1.01        ;
+; Average used               ; 1.02        ;
 ; Maximum used               ; 16          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.1%      ;
-;     Processor 3            ;   0.1%      ;
-;     Processors 4-16        ;   0.1%      ;
+;     Processor 2            ;   0.2%      ;
+;     Processor 3            ;   0.2%      ;
+;     Processor 4            ;   0.1%      ;
+;     Processors 5-16        ;   0.1%      ;
 +----------------------------+-------------+
 
 
@@ -165,8 +166,8 @@ on the Quartus Prime software download page.
 ; Type                ; Total [A + B]      ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+--------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                    ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 135 ) ; 0.00 % ( 0 / 135 )         ; 0.00 % ( 0 / 135 )       ;
-;     -- Achieved     ; 0.00 % ( 0 / 135 ) ; 0.00 % ( 0 / 135 )         ; 0.00 % ( 0 / 135 )       ;
+;     -- Requested    ; 0.00 % ( 0 / 150 ) ; 0.00 % ( 0 / 150 )         ; 0.00 % ( 0 / 150 )       ;
+;     -- Achieved     ; 0.00 % ( 0 / 150 ) ; 0.00 % ( 0 / 150 )         ; 0.00 % ( 0 / 150 )       ;
 ;                     ;                    ;                            ;                          ;
 ; Routing (by net)    ;                    ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )   ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -189,7 +190,7 @@ on the Quartus Prime software download page.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 135 )    ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 150 )    ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 0 )      ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -197,7 +198,7 @@ on the Quartus Prime software download page.
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in /home/habid/Quartus_ITESO/rom_combinational_sc/quartus_project/output_files/rom_combinational_sc.pin.
+The pin-out file can be found in /home/habid/Quartus_ITESO/ip_modules/rom_combinational_sc/quartus_project/output_files/rom_combinational_sc.pin.
 
 
 +------------------------------------------------------------------------------------------+
@@ -205,14 +206,14 @@ The pin-out file can be found in /home/habid/Quartus_ITESO/rom_combinational_sc/
 +-------------------------------------------------------------+--------------------+-------+
 ; Resource                                                    ; Usage              ; %     ;
 +-------------------------------------------------------------+--------------------+-------+
-; Logic utilization (ALMs needed / total ALMs on device)      ; 5 / 41,910         ; < 1 % ;
-; ALMs needed [=A-B+C]                                        ; 5                  ;       ;
-;     [A] ALMs used in final placement [=a+b+c+d]             ; 7 / 41,910         ; < 1 % ;
+; Logic utilization (ALMs needed / total ALMs on device)      ; 21 / 41,910        ; < 1 % ;
+; ALMs needed [=A-B+C]                                        ; 21                 ;       ;
+;     [A] ALMs used in final placement [=a+b+c+d]             ; 21 / 41,910        ; < 1 % ;
 ;         [a] ALMs used for LUT logic and registers           ; 0                  ;       ;
-;         [b] ALMs used for LUT logic                         ; 7                  ;       ;
+;         [b] ALMs used for LUT logic                         ; 21                 ;       ;
 ;         [c] ALMs used for registers                         ; 0                  ;       ;
 ;         [d] ALMs used for memory (up to half of total ALMs) ; 0                  ;       ;
-;     [B] Estimate of ALMs recoverable by dense packing       ; 2 / 41,910         ; < 1 % ;
+;     [B] Estimate of ALMs recoverable by dense packing       ; 0 / 41,910         ; 0 %   ;
 ;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 0 / 41,910         ; 0 %   ;
 ;         [a] Due to location constrained logic               ; 0                  ;       ;
 ;         [b] Due to LAB-wide signal conflicts                ; 0                  ;       ;
@@ -221,16 +222,16 @@ The pin-out file can be found in /home/habid/Quartus_ITESO/rom_combinational_sc/
 ;                                                             ;                    ;       ;
 ; Difficulty packing design                                   ; Low                ;       ;
 ;                                                             ;                    ;       ;
-; Total LABs:  partially or completely used                   ; 2 / 4,191          ; < 1 % ;
-;     -- Logic LABs                                           ; 2                  ;       ;
+; Total LABs:  partially or completely used                   ; 3 / 4,191          ; < 1 % ;
+;     -- Logic LABs                                           ; 3                  ;       ;
 ;     -- Memory LABs (up to half of total LABs)               ; 0                  ;       ;
 ;                                                             ;                    ;       ;
-; Combinational ALUT usage for logic                          ; 7                  ;       ;
+; Combinational ALUT usage for logic                          ; 22                 ;       ;
 ;     -- 7 input functions                                    ; 0                  ;       ;
-;     -- 6 input functions                                    ; 4                  ;       ;
+;     -- 6 input functions                                    ; 18                 ;       ;
 ;     -- 5 input functions                                    ; 2                  ;       ;
 ;     -- 4 input functions                                    ; 0                  ;       ;
-;     -- <=3 input functions                                  ; 1                  ;       ;
+;     -- <=3 input functions                                  ; 2                  ;       ;
 ; Combinational ALUT usage for route-throughs                 ; 0                  ;       ;
 ;                                                             ;                    ;       ;
 ; Dedicated logic registers                                   ; 0                  ;       ;
@@ -243,7 +244,7 @@ The pin-out file can be found in /home/habid/Quartus_ITESO/rom_combinational_sc/
 ;                                                             ;                    ;       ;
 ; Virtual pins                                                ; 0                  ;       ;
 ; I/O pins                                                    ; 64 / 499           ; 13 %  ;
-;     -- Clock pins                                           ; 0 / 11             ; 0 %   ;
+;     -- Clock pins                                           ; 2 / 11             ; 18 %  ;
 ;     -- Dedicated input pins                                 ; 0 / 39             ; 0 %   ;
 ;                                                             ;                    ;       ;
 ; Hard processor system peripheral utilization                ;                    ;       ;
@@ -301,98 +302,98 @@ The pin-out file can be found in /home/habid/Quartus_ITESO/rom_combinational_sc/
 ; Impedance control blocks                                    ; 0 / 4              ; 0 %   ;
 ; Hard Memory Controllers                                     ; 0 / 2              ; 0 %   ;
 ; Average interconnect usage (total/H/V)                      ; 0.0% / 0.0% / 0.0% ;       ;
-; Peak interconnect usage (total/H/V)                         ; 0.1% / 0.1% / 0.2% ;       ;
-; Maximum fan-out                                             ; 6                  ;       ;
-; Highest non-global fan-out                                  ; 6                  ;       ;
-; Total fan-out                                               ; 108                ;       ;
-; Average fan-out                                             ; 0.80               ;       ;
+; Peak interconnect usage (total/H/V)                         ; 0.3% / 0.2% / 0.8% ;       ;
+; Maximum fan-out                                             ; 21                 ;       ;
+; Highest non-global fan-out                                  ; 21                 ;       ;
+; Total fan-out                                               ; 211                ;       ;
+; Average fan-out                                             ; 1.41               ;       ;
 +-------------------------------------------------------------+--------------------+-------+
 
 
-+--------------------------------------------------------------------------------------------------------------------+
-; Fitter Partition Statistics                                                                                        ;
-+-------------------------------------------------------------+---------------------+--------------------------------+
-; Statistic                                                   ; Top                 ; hard_block:auto_generated_inst ;
-+-------------------------------------------------------------+---------------------+--------------------------------+
-; Logic utilization (ALMs needed / total ALMs on device)      ; 5 / 41910 ( < 1 % ) ; 0 / 41910 ( 0 % )              ;
-; ALMs needed [=A-B+C]                                        ; 5                   ; 0                              ;
-;     [A] ALMs used in final placement [=a+b+c+d]             ; 7 / 41910 ( < 1 % ) ; 0 / 41910 ( 0 % )              ;
-;         [a] ALMs used for LUT logic and registers           ; 0                   ; 0                              ;
-;         [b] ALMs used for LUT logic                         ; 7                   ; 0                              ;
-;         [c] ALMs used for registers                         ; 0                   ; 0                              ;
-;         [d] ALMs used for memory (up to half of total ALMs) ; 0                   ; 0                              ;
-;     [B] Estimate of ALMs recoverable by dense packing       ; 2 / 41910 ( < 1 % ) ; 0 / 41910 ( 0 % )              ;
-;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 0 / 41910 ( 0 % )   ; 0 / 41910 ( 0 % )              ;
-;         [a] Due to location constrained logic               ; 0                   ; 0                              ;
-;         [b] Due to LAB-wide signal conflicts                ; 0                   ; 0                              ;
-;         [c] Due to LAB input limits                         ; 0                   ; 0                              ;
-;         [d] Due to virtual I/Os                             ; 0                   ; 0                              ;
-;                                                             ;                     ;                                ;
-; Difficulty packing design                                   ; Low                 ; Low                            ;
-;                                                             ;                     ;                                ;
-; Total LABs:  partially or completely used                   ; 2 / 4191 ( < 1 % )  ; 0 / 4191 ( 0 % )               ;
-;     -- Logic LABs                                           ; 2                   ; 0                              ;
-;     -- Memory LABs (up to half of total LABs)               ; 0                   ; 0                              ;
-;                                                             ;                     ;                                ;
-; Combinational ALUT usage for logic                          ; 7                   ; 0                              ;
-;     -- 7 input functions                                    ; 0                   ; 0                              ;
-;     -- 6 input functions                                    ; 4                   ; 0                              ;
-;     -- 5 input functions                                    ; 2                   ; 0                              ;
-;     -- 4 input functions                                    ; 0                   ; 0                              ;
-;     -- <=3 input functions                                  ; 1                   ; 0                              ;
-; Combinational ALUT usage for route-throughs                 ; 0                   ; 0                              ;
-; Memory ALUT usage                                           ; 0                   ; 0                              ;
-;     -- 64-address deep                                      ; 0                   ; 0                              ;
-;     -- 32-address deep                                      ; 0                   ; 0                              ;
-;                                                             ;                     ;                                ;
-; Dedicated logic registers                                   ; 0                   ; 0                              ;
-;     -- By type:                                             ;                     ;                                ;
-;         -- Primary logic registers                          ; 0 / 83820 ( 0 % )   ; 0 / 83820 ( 0 % )              ;
-;         -- Secondary logic registers                        ; 0 / 83820 ( 0 % )   ; 0 / 83820 ( 0 % )              ;
-;     -- By function:                                         ;                     ;                                ;
-;         -- Design implementation registers                  ; 0                   ; 0                              ;
-;         -- Routing optimization registers                   ; 0                   ; 0                              ;
-;                                                             ;                     ;                                ;
-;                                                             ;                     ;                                ;
-; Virtual pins                                                ; 0                   ; 0                              ;
-; I/O pins                                                    ; 64                  ; 0                              ;
-; I/O registers                                               ; 0                   ; 0                              ;
-; Total block memory bits                                     ; 0                   ; 0                              ;
-; Total block memory implementation bits                      ; 0                   ; 0                              ;
-;                                                             ;                     ;                                ;
-; Connections                                                 ;                     ;                                ;
-;     -- Input Connections                                    ; 0                   ; 0                              ;
-;     -- Registered Input Connections                         ; 0                   ; 0                              ;
-;     -- Output Connections                                   ; 0                   ; 0                              ;
-;     -- Registered Output Connections                        ; 0                   ; 0                              ;
-;                                                             ;                     ;                                ;
-; Internal Connections                                        ;                     ;                                ;
-;     -- Total Connections                                    ; 108                 ; 0                              ;
-;     -- Registered Connections                               ; 0                   ; 0                              ;
-;                                                             ;                     ;                                ;
-; External Connections                                        ;                     ;                                ;
-;     -- Top                                                  ; 0                   ; 0                              ;
-;     -- hard_block:auto_generated_inst                       ; 0                   ; 0                              ;
-;                                                             ;                     ;                                ;
-; Partition Interface                                         ;                     ;                                ;
-;     -- Input Ports                                          ; 32                  ; 0                              ;
-;     -- Output Ports                                         ; 32                  ; 0                              ;
-;     -- Bidir Ports                                          ; 0                   ; 0                              ;
-;                                                             ;                     ;                                ;
-; Registered Ports                                            ;                     ;                                ;
-;     -- Registered Input Ports                               ; 0                   ; 0                              ;
-;     -- Registered Output Ports                              ; 0                   ; 0                              ;
-;                                                             ;                     ;                                ;
-; Port Connectivity                                           ;                     ;                                ;
-;     -- Input Ports driven by GND                            ; 0                   ; 0                              ;
-;     -- Output Ports driven by GND                           ; 0                   ; 0                              ;
-;     -- Input Ports driven by VCC                            ; 0                   ; 0                              ;
-;     -- Output Ports driven by VCC                           ; 0                   ; 0                              ;
-;     -- Input Ports with no Source                           ; 0                   ; 0                              ;
-;     -- Output Ports with no Source                          ; 0                   ; 0                              ;
-;     -- Input Ports with no Fanout                           ; 0                   ; 0                              ;
-;     -- Output Ports with no Fanout                          ; 0                   ; 0                              ;
-+-------------------------------------------------------------+---------------------+--------------------------------+
++---------------------------------------------------------------------------------------------------------------------+
+; Fitter Partition Statistics                                                                                         ;
++-------------------------------------------------------------+----------------------+--------------------------------+
+; Statistic                                                   ; Top                  ; hard_block:auto_generated_inst ;
++-------------------------------------------------------------+----------------------+--------------------------------+
+; Logic utilization (ALMs needed / total ALMs on device)      ; 21 / 41910 ( < 1 % ) ; 0 / 41910 ( 0 % )              ;
+; ALMs needed [=A-B+C]                                        ; 21                   ; 0                              ;
+;     [A] ALMs used in final placement [=a+b+c+d]             ; 21 / 41910 ( < 1 % ) ; 0 / 41910 ( 0 % )              ;
+;         [a] ALMs used for LUT logic and registers           ; 0                    ; 0                              ;
+;         [b] ALMs used for LUT logic                         ; 21                   ; 0                              ;
+;         [c] ALMs used for registers                         ; 0                    ; 0                              ;
+;         [d] ALMs used for memory (up to half of total ALMs) ; 0                    ; 0                              ;
+;     [B] Estimate of ALMs recoverable by dense packing       ; 0 / 41910 ( 0 % )    ; 0 / 41910 ( 0 % )              ;
+;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 0 / 41910 ( 0 % )    ; 0 / 41910 ( 0 % )              ;
+;         [a] Due to location constrained logic               ; 0                    ; 0                              ;
+;         [b] Due to LAB-wide signal conflicts                ; 0                    ; 0                              ;
+;         [c] Due to LAB input limits                         ; 0                    ; 0                              ;
+;         [d] Due to virtual I/Os                             ; 0                    ; 0                              ;
+;                                                             ;                      ;                                ;
+; Difficulty packing design                                   ; Low                  ; Low                            ;
+;                                                             ;                      ;                                ;
+; Total LABs:  partially or completely used                   ; 3 / 4191 ( < 1 % )   ; 0 / 4191 ( 0 % )               ;
+;     -- Logic LABs                                           ; 3                    ; 0                              ;
+;     -- Memory LABs (up to half of total LABs)               ; 0                    ; 0                              ;
+;                                                             ;                      ;                                ;
+; Combinational ALUT usage for logic                          ; 22                   ; 0                              ;
+;     -- 7 input functions                                    ; 0                    ; 0                              ;
+;     -- 6 input functions                                    ; 18                   ; 0                              ;
+;     -- 5 input functions                                    ; 2                    ; 0                              ;
+;     -- 4 input functions                                    ; 0                    ; 0                              ;
+;     -- <=3 input functions                                  ; 2                    ; 0                              ;
+; Combinational ALUT usage for route-throughs                 ; 0                    ; 0                              ;
+; Memory ALUT usage                                           ; 0                    ; 0                              ;
+;     -- 64-address deep                                      ; 0                    ; 0                              ;
+;     -- 32-address deep                                      ; 0                    ; 0                              ;
+;                                                             ;                      ;                                ;
+; Dedicated logic registers                                   ; 0                    ; 0                              ;
+;     -- By type:                                             ;                      ;                                ;
+;         -- Primary logic registers                          ; 0 / 83820 ( 0 % )    ; 0 / 83820 ( 0 % )              ;
+;         -- Secondary logic registers                        ; 0 / 83820 ( 0 % )    ; 0 / 83820 ( 0 % )              ;
+;     -- By function:                                         ;                      ;                                ;
+;         -- Design implementation registers                  ; 0                    ; 0                              ;
+;         -- Routing optimization registers                   ; 0                    ; 0                              ;
+;                                                             ;                      ;                                ;
+;                                                             ;                      ;                                ;
+; Virtual pins                                                ; 0                    ; 0                              ;
+; I/O pins                                                    ; 64                   ; 0                              ;
+; I/O registers                                               ; 0                    ; 0                              ;
+; Total block memory bits                                     ; 0                    ; 0                              ;
+; Total block memory implementation bits                      ; 0                    ; 0                              ;
+;                                                             ;                      ;                                ;
+; Connections                                                 ;                      ;                                ;
+;     -- Input Connections                                    ; 0                    ; 0                              ;
+;     -- Registered Input Connections                         ; 0                    ; 0                              ;
+;     -- Output Connections                                   ; 0                    ; 0                              ;
+;     -- Registered Output Connections                        ; 0                    ; 0                              ;
+;                                                             ;                      ;                                ;
+; Internal Connections                                        ;                      ;                                ;
+;     -- Total Connections                                    ; 211                  ; 0                              ;
+;     -- Registered Connections                               ; 0                    ; 0                              ;
+;                                                             ;                      ;                                ;
+; External Connections                                        ;                      ;                                ;
+;     -- Top                                                  ; 0                    ; 0                              ;
+;     -- hard_block:auto_generated_inst                       ; 0                    ; 0                              ;
+;                                                             ;                      ;                                ;
+; Partition Interface                                         ;                      ;                                ;
+;     -- Input Ports                                          ; 32                   ; 0                              ;
+;     -- Output Ports                                         ; 32                   ; 0                              ;
+;     -- Bidir Ports                                          ; 0                    ; 0                              ;
+;                                                             ;                      ;                                ;
+; Registered Ports                                            ;                      ;                                ;
+;     -- Registered Input Ports                               ; 0                    ; 0                              ;
+;     -- Registered Output Ports                              ; 0                    ; 0                              ;
+;                                                             ;                      ;                                ;
+; Port Connectivity                                           ;                      ;                                ;
+;     -- Input Ports driven by GND                            ; 0                    ; 0                              ;
+;     -- Output Ports driven by GND                           ; 0                    ; 0                              ;
+;     -- Input Ports driven by VCC                            ; 0                    ; 0                              ;
+;     -- Output Ports driven by VCC                           ; 0                    ; 0                              ;
+;     -- Input Ports with no Source                           ; 0                    ; 0                              ;
+;     -- Output Ports with no Source                          ; 0                    ; 0                              ;
+;     -- Input Ports with no Fanout                           ; 0                    ; 0                              ;
+;     -- Output Ports with no Fanout                          ; 0                    ; 0                              ;
++-------------------------------------------------------------+----------------------+--------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -400,38 +401,38 @@ The pin-out file can be found in /home/habid/Quartus_ITESO/rom_combinational_sc/
 +---------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
 ; Name          ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination ; Termination Control Block ; Location assigned by ; Slew Rate ;
 +---------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
-; i_pc_addr[0]  ; AD20  ; 4A       ; 82           ; 0            ; 40           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
-; i_pc_addr[10] ; AK21  ; 4A       ; 68           ; 0            ; 34           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
-; i_pc_addr[11] ; AJ17  ; 4A       ; 58           ; 0            ; 40           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
-; i_pc_addr[12] ; AH9   ; 3B       ; 18           ; 0            ; 91           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
-; i_pc_addr[13] ; AA20  ; 4A       ; 84           ; 0            ; 17           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
-; i_pc_addr[14] ; AH7   ; 3B       ; 32           ; 0            ; 34           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
-; i_pc_addr[15] ; AG22  ; 4A       ; 66           ; 0            ; 74           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
-; i_pc_addr[16] ; AC27  ; 5A       ; 89           ; 16           ; 20           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
-; i_pc_addr[17] ; AH22  ; 4A       ; 66           ; 0            ; 91           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
-; i_pc_addr[18] ; B8    ; 8A       ; 30           ; 81           ; 51           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
-; i_pc_addr[19] ; AA12  ; 3A       ; 12           ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
-; i_pc_addr[1]  ; F13   ; 8A       ; 26           ; 81           ; 40           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
-; i_pc_addr[20] ; E6    ; 8A       ; 4            ; 81           ; 51           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
-; i_pc_addr[21] ; AE14  ; 3B       ; 24           ; 0            ; 17           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
-; i_pc_addr[22] ; D5    ; 8A       ; 20           ; 81           ; 34           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
-; i_pc_addr[23] ; A9    ; 8A       ; 34           ; 81           ; 74           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
-; i_pc_addr[24] ; E8    ; 8A       ; 18           ; 81           ; 74           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
-; i_pc_addr[25] ; AB25  ; 5A       ; 89           ; 11           ; 60           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
-; i_pc_addr[26] ; H12   ; 8A       ; 20           ; 81           ; 17           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
-; i_pc_addr[27] ; AG5   ; 3A       ; 14           ; 0            ; 34           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
-; i_pc_addr[28] ; AG17  ; 4A       ; 50           ; 0            ; 91           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
-; i_pc_addr[29] ; H8    ; 8A       ; 24           ; 81           ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
-; i_pc_addr[2]  ; AJ25  ; 4A       ; 74           ; 0            ; 91           ; 5                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
-; i_pc_addr[30] ; E13   ; 8A       ; 26           ; 81           ; 57           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
-; i_pc_addr[31] ; AF25  ; 4A       ; 86           ; 0            ; 34           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
-; i_pc_addr[3]  ; AF20  ; 4A       ; 70           ; 0            ; 0            ; 5                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
-; i_pc_addr[4]  ; AF21  ; 4A       ; 70           ; 0            ; 17           ; 6                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
-; i_pc_addr[5]  ; AK23  ; 4A       ; 72           ; 0            ; 34           ; 6                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
-; i_pc_addr[6]  ; AJ24  ; 4A       ; 74           ; 0            ; 74           ; 6                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
-; i_pc_addr[7]  ; AF24  ; 4A       ; 74           ; 0            ; 57           ; 6                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
-; i_pc_addr[8]  ; AC29  ; 5B       ; 89           ; 20           ; 94           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
-; i_pc_addr[9]  ; AB30  ; 5B       ; 89           ; 21           ; 3            ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
+; i_pc_addr[0]  ; AE17  ; 4A       ; 50           ; 0            ; 40           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
+; i_pc_addr[10] ; J10   ; 8A       ; 4            ; 81           ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
+; i_pc_addr[11] ; AF10  ; 3A       ; 4            ; 0            ; 51           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
+; i_pc_addr[12] ; Y16   ; 3B       ; 40           ; 0            ; 17           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
+; i_pc_addr[13] ; AF21  ; 4A       ; 70           ; 0            ; 17           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
+; i_pc_addr[14] ; AG22  ; 4A       ; 66           ; 0            ; 74           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
+; i_pc_addr[15] ; AA13  ; 3B       ; 20           ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
+; i_pc_addr[16] ; AG25  ; 4A       ; 78           ; 0            ; 34           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
+; i_pc_addr[17] ; C10   ; 8A       ; 28           ; 81           ; 34           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
+; i_pc_addr[18] ; AG1   ; 3A       ; 10           ; 0            ; 40           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
+; i_pc_addr[19] ; AH4   ; 3A       ; 6            ; 0            ; 51           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
+; i_pc_addr[1]  ; Y24   ; 5A       ; 89           ; 13           ; 20           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
+; i_pc_addr[20] ; AE14  ; 3B       ; 24           ; 0            ; 17           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
+; i_pc_addr[21] ; A13   ; 8A       ; 40           ; 81           ; 51           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
+; i_pc_addr[22] ; D9    ; 8A       ; 30           ; 81           ; 17           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
+; i_pc_addr[23] ; E8    ; 8A       ; 18           ; 81           ; 74           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
+; i_pc_addr[24] ; AA12  ; 3A       ; 12           ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
+; i_pc_addr[25] ; H12   ; 8A       ; 20           ; 81           ; 17           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
+; i_pc_addr[26] ; AG5   ; 3A       ; 14           ; 0            ; 34           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
+; i_pc_addr[27] ; E4    ; 8A       ; 10           ; 81           ; 74           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
+; i_pc_addr[28] ; AD30  ; 5B       ; 89           ; 25           ; 37           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
+; i_pc_addr[29] ; AB28  ; 5B       ; 89           ; 21           ; 37           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
+; i_pc_addr[2]  ; AJ29  ; 5A       ; 89           ; 6            ; 37           ; 19                    ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
+; i_pc_addr[30] ; AG13  ; 3B       ; 26           ; 0            ; 57           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
+; i_pc_addr[31] ; W25   ; 5B       ; 89           ; 20           ; 43           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
+; i_pc_addr[3]  ; AH29  ; 5A       ; 89           ; 6            ; 54           ; 20                    ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
+; i_pc_addr[4]  ; AB22  ; 5A       ; 89           ; 9            ; 3            ; 20                    ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
+; i_pc_addr[5]  ; W20   ; 5A       ; 89           ; 6            ; 3            ; 20                    ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
+; i_pc_addr[6]  ; AE27  ; 5A       ; 89           ; 11           ; 77           ; 21                    ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
+; i_pc_addr[7]  ; AC25  ; 5A       ; 89           ; 4            ; 60           ; 21                    ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
+; i_pc_addr[8]  ; AB30  ; 5B       ; 89           ; 21           ; 3            ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
+; i_pc_addr[9]  ; AK21  ; 4A       ; 68           ; 0            ; 34           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
 +---------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
 
 
@@ -441,37 +442,37 @@ The pin-out file can be found in /home/habid/Quartus_ITESO/rom_combinational_sc/
 ; Name              ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Output Register ; Output Enable Register ; Slew Rate ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Termination                       ; Termination Control Block ; Output Buffer Pre-emphasis ; Voltage Output Differential ; Output Buffer Delay ; Output Buffer Delay Control ; Location assigned by ; Output Enable Source ; Output Enable Group ;
 +-------------------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+---------------------+-----------------------------+----------------------+----------------------+---------------------+
 ; o_instruction[0]  ; G7    ; 8A       ; 2            ; 81           ; 74           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; o_instruction[10] ; C3    ; 8A       ; 14           ; 81           ; 34           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; o_instruction[10] ; AD25  ; 5A       ; 89           ; 4            ; 43           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
 ; o_instruction[11] ; AF13  ; 3B       ; 22           ; 0            ; 17           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; o_instruction[12] ; AH4   ; 3A       ; 6            ; 0            ; 51           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; o_instruction[13] ; AE18  ; 4A       ; 66           ; 0            ; 40           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; o_instruction[14] ; AF28  ; 5A       ; 89           ; 13           ; 54           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; o_instruction[15] ; AF23  ; 4A       ; 74           ; 0            ; 40           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; o_instruction[16] ; AJ2   ; 3A       ; 14           ; 0            ; 17           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; o_instruction[17] ; AJ29  ; 5A       ; 89           ; 6            ; 37           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; o_instruction[18] ; AF8   ; 3A       ; 10           ; 0            ; 74           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; o_instruction[19] ; AG12  ; 3B       ; 26           ; 0            ; 40           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; o_instruction[1]  ; C8    ; 8A       ; 30           ; 81           ; 34           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; o_instruction[20] ; AJ26  ; 4A       ; 76           ; 0            ; 34           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; o_instruction[21] ; AK24  ; 4A       ; 72           ; 0            ; 51           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; o_instruction[22] ; AF4   ; 3A       ; 8            ; 0            ; 0            ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; o_instruction[23] ; AH23  ; 4A       ; 70           ; 0            ; 34           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; o_instruction[24] ; AH10  ; 3B       ; 34           ; 0            ; 74           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; o_instruction[25] ; AA19  ; 4A       ; 72           ; 0            ; 17           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; o_instruction[26] ; B6    ; 8A       ; 14           ; 81           ; 0            ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; o_instruction[27] ; AH8   ; 3B       ; 32           ; 0            ; 51           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; o_instruction[28] ; AB22  ; 5A       ; 89           ; 9            ; 3            ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; o_instruction[29] ; AA14  ; 3B       ; 36           ; 0            ; 0            ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; o_instruction[2]  ; W19   ; 4A       ; 80           ; 0            ; 17           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; o_instruction[30] ; D6    ; 8A       ; 22           ; 81           ; 34           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; o_instruction[31] ; B3    ; 8A       ; 14           ; 81           ; 51           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; o_instruction[3]  ; Y19   ; 4A       ; 84           ; 0            ; 0            ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; o_instruction[4]  ; AG26  ; 4A       ; 84           ; 0            ; 34           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; o_instruction[5]  ; AD19  ; 4A       ; 76           ; 0            ; 17           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; o_instruction[6]  ; AK27  ; 4A       ; 80           ; 0            ; 51           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; o_instruction[7]  ; AC20  ; 4A       ; 76           ; 0            ; 0            ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; o_instruction[8]  ; Y18   ; 4A       ; 72           ; 0            ; 0            ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; o_instruction[9]  ; AH5   ; 3A       ; 14           ; 0            ; 51           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; o_instruction[12] ; AD27  ; 5A       ; 89           ; 8            ; 54           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; o_instruction[13] ; AB21  ; 4A       ; 88           ; 0            ; 18           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; o_instruction[14] ; AH28  ; 5A       ; 89           ; 4            ; 94           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; o_instruction[15] ; W22   ; 5A       ; 89           ; 8            ; 20           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; o_instruction[16] ; AG26  ; 4A       ; 84           ; 0            ; 34           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; o_instruction[17] ; AC18  ; 4A       ; 64           ; 0            ; 0            ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; o_instruction[18] ; AF26  ; 4A       ; 86           ; 0            ; 51           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; o_instruction[19] ; AK28  ; 4A       ; 82           ; 0            ; 74           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; o_instruction[1]  ; C2    ; 8A       ; 12           ; 81           ; 51           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; o_instruction[20] ; W21   ; 5A       ; 89           ; 8            ; 3            ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; o_instruction[21] ; AD24  ; 4A       ; 88           ; 0            ; 35           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; o_instruction[22] ; Y21   ; 5A       ; 89           ; 6            ; 20           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; o_instruction[23] ; AE26  ; 5A       ; 89           ; 8            ; 37           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; o_instruction[24] ; AH22  ; 4A       ; 66           ; 0            ; 91           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; o_instruction[25] ; AB25  ; 5A       ; 89           ; 11           ; 60           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; o_instruction[26] ; AB23  ; 5A       ; 89           ; 9            ; 20           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; o_instruction[27] ; AK29  ; 4A       ; 82           ; 0            ; 91           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; o_instruction[28] ; AC22  ; 4A       ; 86           ; 0            ; 0            ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; o_instruction[29] ; AK23  ; 4A       ; 72           ; 0            ; 34           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; o_instruction[2]  ; AA24  ; 5A       ; 89           ; 11           ; 43           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; o_instruction[30] ; Y19   ; 4A       ; 84           ; 0            ; 0            ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; o_instruction[31] ; AH27  ; 4A       ; 84           ; 0            ; 51           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; o_instruction[3]  ; AE24  ; 4A       ; 88           ; 0            ; 52           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; o_instruction[4]  ; AB26  ; 5A       ; 89           ; 9            ; 54           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; o_instruction[5]  ; AG28  ; 5A       ; 89           ; 13           ; 37           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; o_instruction[6]  ; AA21  ; 4A       ; 88           ; 0            ; 1            ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; o_instruction[7]  ; AG27  ; 5A       ; 89           ; 4            ; 77           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; o_instruction[8]  ; AA25  ; 5A       ; 89           ; 9            ; 37           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; o_instruction[9]  ; AD20  ; 4A       ; 82           ; 0            ; 40           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
 +-------------------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+---------------------+-----------------------------+----------------------+----------------------+---------------------+
 
 
@@ -483,18 +484,18 @@ The pin-out file can be found in /home/habid/Quartus_ITESO/rom_combinational_sc/
 ; B2L      ; 0 / 14 ( 0 % )   ; --            ; --           ; --            ;
 ; B1L      ; 0 / 14 ( 0 % )   ; --            ; --           ; --            ;
 ; B0L      ; 0 / 14 ( 0 % )   ; --            ; --           ; --            ;
-; 3A       ; 7 / 32 ( 22 % )  ; 2.5V          ; --           ; 2.5V          ;
-; 3B       ; 8 / 48 ( 17 % )  ; 2.5V          ; --           ; 2.5V          ;
-; 4A       ; 27 / 80 ( 34 % ) ; 2.5V          ; --           ; 2.5V          ;
-; 5A       ; 5 / 32 ( 16 % )  ; 2.5V          ; --           ; 2.5V          ;
-; 5B       ; 2 / 16 ( 13 % )  ; 2.5V          ; --           ; 2.5V          ;
+; 3A       ; 5 / 32 ( 16 % )  ; 2.5V          ; --           ; 2.5V          ;
+; 3B       ; 5 / 48 ( 10 % )  ; 2.5V          ; --           ; 2.5V          ;
+; 4A       ; 20 / 80 ( 25 % ) ; 2.5V          ; --           ; 2.5V          ;
+; 5A       ; 21 / 32 ( 66 % ) ; 2.5V          ; --           ; 2.5V          ;
+; 5B       ; 4 / 16 ( 25 % )  ; 2.5V          ; --           ; 2.5V          ;
 ; 6B       ; 0 / 44 ( 0 % )   ; 2.5V          ; --           ; 2.5V          ;
 ; 6A       ; 0 / 56 ( 0 % )   ; 2.5V          ; --           ; 2.5V          ;
 ; 7A       ; 0 / 19 ( 0 % )   ; 2.5V          ; --           ; 2.5V          ;
 ; 7B       ; 0 / 22 ( 0 % )   ; 2.5V          ; --           ; 2.5V          ;
 ; 7C       ; 0 / 12 ( 0 % )   ; 2.5V          ; --           ; 2.5V          ;
 ; 7D       ; 0 / 14 ( 0 % )   ; 2.5V          ; --           ; 2.5V          ;
-; 8A       ; 15 / 80 ( 19 % ) ; 2.5V          ; --           ; 2.5V          ;
+; 8A       ; 9 / 80 ( 11 % )  ; 2.5V          ; --           ; 2.5V          ;
 +----------+------------------+---------------+--------------+---------------+
 
 
@@ -510,11 +511,11 @@ The pin-out file can be found in /home/habid/Quartus_ITESO/rom_combinational_sc/
 ; A6       ; 487        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; A7       ;            ; 8A             ; VCCIO8A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; A8       ; 473        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; A9       ; 471        ; 8A             ; i_pc_addr[23]                   ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; A9       ; 471        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; A10      ; 465        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; A11      ; 463        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; A12      ;            ;                ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
-; A13      ; 461        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
+; A13      ; 461        ; 8A             ; i_pc_addr[21]                   ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; A14      ; 455        ; 7D             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; A15      ; 447        ; 7D             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; A16      ; 439        ; 7C             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
@@ -542,20 +543,20 @@ The pin-out file can be found in /home/habid/Quartus_ITESO/rom_combinational_sc/
 ; AA9      ;            ;                ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; AA10     ;            ; 3A             ; VCCPD3A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; AA11     ;            ;                ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
-; AA12     ; 74         ; 3A             ; i_pc_addr[19]                   ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
-; AA13     ; 90         ; 3B             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; AA14     ; 122        ; 3B             ; o_instruction[29]               ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; AA12     ; 74         ; 3A             ; i_pc_addr[24]                   ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; AA13     ; 90         ; 3B             ; i_pc_addr[15]                   ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; AA14     ; 122        ; 3B             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AA15     ; 120        ; 3B             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AA16     ; 146        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AA17     ;            ; 4A             ; VCCIO4A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; AA18     ; 168        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; AA19     ; 176        ; 4A             ; o_instruction[25]               ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
-; AA20     ; 200        ; 4A             ; i_pc_addr[13]                   ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
-; AA21     ; 210        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
+; AA19     ; 176        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
+; AA20     ; 200        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
+; AA21     ; 210        ; 4A             ; o_instruction[6]                ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; AA22     ;            ;                ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; AA23     ;            ; --             ; VCCPGM                          ; power  ;              ; 1.8V/2.5V/3.0V/3.3V ; --           ;                 ; --       ; --           ;
-; AA24     ; 228        ; 5A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
-; AA25     ; 224        ; 5A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
+; AA24     ; 228        ; 5A             ; o_instruction[2]                ; output ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
+; AA25     ; 224        ; 5A             ; o_instruction[8]                ; output ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
 ; AA26     ; 252        ; 5B             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
 ; AA27     ;            ; 5B             ; VCCIO5B                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; AA28     ; 251        ; 5B             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
@@ -581,16 +582,16 @@ The pin-out file can be found in /home/habid/Quartus_ITESO/rom_combinational_sc/
 ; AB18     ;            ; 3B, 4A         ; VCCPD3B4A                       ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; AB19     ;            ;                ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; AB20     ;            ; 3B, 4A         ; VCCPD3B4A                       ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
-; AB21     ; 208        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; AB22     ; 225        ; 5A             ; o_instruction[28]               ; output ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
-; AB23     ; 227        ; 5A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
+; AB21     ; 208        ; 4A             ; o_instruction[13]               ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; AB22     ; 225        ; 5A             ; i_pc_addr[4]                    ; input  ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
+; AB23     ; 227        ; 5A             ; o_instruction[26]               ; output ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
 ; AB24     ;            ; 5A             ; VCCIO5A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
-; AB25     ; 230        ; 5A             ; i_pc_addr[25]                   ; input  ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
-; AB26     ; 226        ; 5A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
+; AB25     ; 230        ; 5A             ; o_instruction[25]               ; output ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
+; AB26     ; 226        ; 5A             ; o_instruction[4]                ; output ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
 ; AB27     ; 254        ; 5B             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
-; AB28     ; 249        ; 5B             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
+; AB28     ; 249        ; 5B             ; i_pc_addr[29]                   ; input  ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
 ; AB29     ;            ;                ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
-; AB30     ; 248        ; 5B             ; i_pc_addr[9]                    ; input  ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
+; AB30     ; 248        ; 5B             ; i_pc_addr[8]                    ; input  ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
 ; AC1      ; 35         ; B0L            ; GND                             ;        ;              ;                     ; --           ;                 ; --       ; --           ;
 ; AC2      ; 34         ; B0L            ; GND                             ;        ;              ;                     ; --           ;                 ; --       ; --           ;
 ; AC3      ;            ;                ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
@@ -608,18 +609,18 @@ The pin-out file can be found in /home/habid/Quartus_ITESO/rom_combinational_sc/
 ; AC15     ;            ; 3B, 4A         ; VCCPD3B4A                       ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; AC16     ;            ;                ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; AC17     ;            ; 3B, 4A         ; VCCPD3B4A                       ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
-; AC18     ; 162        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
+; AC18     ; 162        ; 4A             ; o_instruction[17]               ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; AC19     ;            ; 3B, 4A         ; VCCPD3B4A                       ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
-; AC20     ; 186        ; 4A             ; o_instruction[7]                ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; AC20     ; 186        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AC21     ;            ; 4A             ; VCCIO4A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
-; AC22     ; 207        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
+; AC22     ; 207        ; 4A             ; o_instruction[28]               ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; AC23     ; 205        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AC24     ;            ; 5A             ; VREFB5AN0                       ; power  ;              ;                     ; --           ;                 ; --       ; --           ;
-; AC25     ; 215        ; 5A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
+; AC25     ; 215        ; 5A             ; i_pc_addr[7]                    ; input  ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
 ; AC26     ;            ;                ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
-; AC27     ; 242        ; 5A             ; i_pc_addr[16]                   ; input  ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
+; AC27     ; 242        ; 5A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
 ; AC28     ; 245        ; 5B             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
-; AC29     ; 247        ; 5B             ; i_pc_addr[8]                    ; input  ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
+; AC29     ; 247        ; 5B             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
 ; AC30     ; 259        ; 5B             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
 ; AD1      ;            ;                ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; AD2      ;            ;                ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
@@ -639,18 +640,18 @@ The pin-out file can be found in /home/habid/Quartus_ITESO/rom_combinational_sc/
 ; AD16     ;            ; 3B, 4A         ; VCCPD3B4A                       ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; AD17     ; 160        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AD18     ;            ; 4A             ; VCCIO4A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
-; AD19     ; 184        ; 4A             ; o_instruction[5]                ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
-; AD20     ; 199        ; 4A             ; i_pc_addr[0]                    ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; AD19     ; 184        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
+; AD20     ; 199        ; 4A             ; o_instruction[9]                ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; AD21     ; 197        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AD22     ;            ; --             ; VCC_AUX                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; AD23     ;            ;                ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
-; AD24     ; 211        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; AD25     ; 213        ; 5A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
+; AD24     ; 211        ; 4A             ; o_instruction[21]               ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; AD25     ; 213        ; 5A             ; o_instruction[10]               ; output ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
 ; AD26     ; 240        ; 5A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
-; AD27     ; 222        ; 5A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
+; AD27     ; 222        ; 5A             ; o_instruction[12]               ; output ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
 ; AD28     ;            ; 5A             ; VCCIO5A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; AD29     ; 255        ; 5B             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
-; AD30     ; 257        ; 5B             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
+; AD30     ; 257        ; 5B             ; i_pc_addr[28]                   ; input  ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
 ; AE1      ; 39         ; B0L            ; GND                             ;        ;              ;                     ; --           ;                 ; --       ; --           ;
 ; AE2      ; 38         ; B0L            ; GND                             ;        ;              ;                     ; --           ;                 ; --       ; --           ;
 ; AE3      ;            ;                ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
@@ -664,33 +665,33 @@ The pin-out file can be found in /home/habid/Quartus_ITESO/rom_combinational_sc/
 ; AE11     ; 59         ; 3A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AE12     ; 52         ; 3A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AE13     ; 95         ; 3B             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; AE14     ; 96         ; 3B             ; i_pc_addr[21]                   ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; AE14     ; 96         ; 3B             ; i_pc_addr[20]                   ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; AE15     ;            ; 3B             ; VCCIO3B                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; AE16     ; 139        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; AE17     ; 135        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; AE18     ; 167        ; 4A             ; o_instruction[13]               ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; AE17     ; 135        ; 4A             ; i_pc_addr[0]                    ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; AE18     ; 167        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AE19     ; 165        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AE20     ;            ;                ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; AE21     ;            ; 3B, 4A         ; VCCPD3B4A                       ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; AE22     ; 191        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AE23     ; 189        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; AE24     ; 209        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
+; AE24     ; 209        ; 4A             ; o_instruction[3]                ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; AE25     ;            ; 4A             ; VCCIO4A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
-; AE26     ; 220        ; 5A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
-; AE27     ; 229        ; 5A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
+; AE26     ; 220        ; 5A             ; o_instruction[23]               ; output ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
+; AE27     ; 229        ; 5A             ; i_pc_addr[6]                    ; input  ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
 ; AE28     ; 231        ; 5A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
 ; AE29     ; 253        ; 5B             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
 ; AE30     ;            ; 5B             ; VCCIO5B                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; AF1      ;            ;                ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; AF2      ;            ;                ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; AF3      ;            ;                ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
-; AF4      ; 66         ; 3A             ; o_instruction[22]               ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; AF4      ; 66         ; 3A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AF5      ; 64         ; 3A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AF6      ; 75         ; 3A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AF7      ;            ; 3A             ; VCCIO3A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
-; AF8      ; 70         ; 3A             ; o_instruction[18]               ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; AF8      ; 70         ; 3A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AF9      ; 67         ; 3A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; AF10     ; 57         ; 3A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
+; AF10     ; 57         ; 3A             ; i_pc_addr[11]                   ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; AF11     ; 87         ; 3B             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AF12     ;            ;                ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; AF13     ; 93         ; 3B             ; o_instruction[11]               ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
@@ -700,57 +701,57 @@ The pin-out file can be found in /home/habid/Quartus_ITESO/rom_combinational_sc/
 ; AF17     ;            ;                ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; AF18     ; 133        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AF19     ; 159        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; AF20     ; 175        ; 4A             ; i_pc_addr[3]                    ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
-; AF21     ; 173        ; 4A             ; i_pc_addr[4]                    ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; AF20     ; 175        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
+; AF21     ; 173        ; 4A             ; i_pc_addr[13]                   ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; AF22     ;            ; 4A             ; VCCIO4A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
-; AF23     ; 183        ; 4A             ; o_instruction[15]               ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
-; AF24     ; 181        ; 4A             ; i_pc_addr[7]                    ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
-; AF25     ; 206        ; 4A             ; i_pc_addr[31]                   ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
-; AF26     ; 204        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
+; AF23     ; 183        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
+; AF24     ; 181        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
+; AF25     ; 206        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
+; AF26     ; 204        ; 4A             ; o_instruction[18]               ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; AF27     ;            ;                ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
-; AF28     ; 235        ; 5A             ; o_instruction[14]               ; output ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
+; AF28     ; 235        ; 5A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
 ; AF29     ; 237        ; 5A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
 ; AF30     ; 239        ; 5A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
-; AG1      ; 71         ; 3A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
+; AG1      ; 71         ; 3A             ; i_pc_addr[18]                   ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; AG2      ; 83         ; 3A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AG3      ; 63         ; 3A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AG4      ;            ; 3A             ; VCCIO3A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
-; AG5      ; 78         ; 3A             ; i_pc_addr[27]                   ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; AG5      ; 78         ; 3A             ; i_pc_addr[26]                   ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; AG6      ; 73         ; 3A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AG7      ; 68         ; 3A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AG8      ; 65         ; 3A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AG9      ;            ;                ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; AG10     ; 86         ; 3B             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AG11     ; 85         ; 3B             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; AG12     ; 103        ; 3B             ; o_instruction[19]               ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
-; AG13     ; 101        ; 3B             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
+; AG12     ; 103        ; 3B             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
+; AG13     ; 101        ; 3B             ; i_pc_addr[30]                   ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; AG14     ;            ;                ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; AG15     ; 127        ; 3B             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AG16     ; 134        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; AG17     ; 132        ; 4A             ; i_pc_addr[28]                   ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; AG17     ; 132        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AG18     ; 150        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AG19     ;            ; 4A             ; VCCIO4A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; AG20     ; 157        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AG21     ; 143        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; AG22     ; 166        ; 4A             ; i_pc_addr[15]                   ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; AG22     ; 166        ; 4A             ; i_pc_addr[14]                   ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; AG23     ; 163        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AG24     ;            ;                ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
-; AG25     ; 190        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; AG26     ; 203        ; 4A             ; o_instruction[4]                ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
-; AG27     ; 212        ; 5A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
-; AG28     ; 233        ; 5A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
+; AG25     ; 190        ; 4A             ; i_pc_addr[16]                   ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; AG26     ; 203        ; 4A             ; o_instruction[16]               ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; AG27     ; 212        ; 5A             ; o_instruction[7]                ; output ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
+; AG28     ; 233        ; 5A             ; o_instruction[5]                ; output ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
 ; AG29     ;            ; 5A             ; VCCIO5A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; AG30     ; 243        ; 5A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
 ; AH1      ;            ;                ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; AH2      ; 69         ; 3A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AH3      ; 81         ; 3A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; AH4      ; 61         ; 3A             ; o_instruction[12]               ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
-; AH5      ; 76         ; 3A             ; o_instruction[9]                ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; AH4      ; 61         ; 3A             ; i_pc_addr[19]                   ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; AH5      ; 76         ; 3A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AH6      ;            ;                ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
-; AH7      ; 115        ; 3B             ; i_pc_addr[14]                   ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
-; AH8      ; 113        ; 3B             ; o_instruction[27]               ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
-; AH9      ; 84         ; 3B             ; i_pc_addr[12]                   ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
-; AH10     ; 118        ; 3B             ; o_instruction[24]               ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; AH7      ; 115        ; 3B             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
+; AH8      ; 113        ; 3B             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
+; AH9      ; 84         ; 3B             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
+; AH10     ; 118        ; 3B             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AH11     ;            ;                ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; AH12     ; 126        ; 3B             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AH13     ; 111        ; 3B             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
@@ -762,17 +763,17 @@ The pin-out file can be found in /home/habid/Quartus_ITESO/rom_combinational_sc/
 ; AH19     ; 148        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AH20     ; 141        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AH21     ;            ;                ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
-; AH22     ; 164        ; 4A             ; i_pc_addr[17]                   ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
-; AH23     ; 174        ; 4A             ; o_instruction[23]               ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; AH22     ; 164        ; 4A             ; o_instruction[24]               ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; AH23     ; 174        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AH24     ; 161        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AH25     ; 188        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AH26     ;            ; 4A             ; VCCIO4A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
-; AH27     ; 201        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; AH28     ; 214        ; 5A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
-; AH29     ; 218        ; 5A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
+; AH27     ; 201        ; 4A             ; o_instruction[31]               ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; AH28     ; 214        ; 5A             ; o_instruction[14]               ; output ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
+; AH29     ; 218        ; 5A             ; i_pc_addr[3]                    ; input  ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
 ; AH30     ; 241        ; 5A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
 ; AJ1      ; 79         ; 3A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; AJ2      ; 77         ; 3A             ; o_instruction[16]               ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; AJ2      ; 77         ; 3A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AJ3      ;            ;                ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; AJ4      ; 94         ; 3B             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AJ5      ; 99         ; 3B             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
@@ -787,19 +788,19 @@ The pin-out file can be found in /home/habid/Quartus_ITESO/rom_combinational_sc/
 ; AJ14     ; 131        ; 3B             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AJ15     ;            ; 3B             ; VREFB3BN0                       ; power  ;              ;                     ; --           ;                 ; --       ; --           ;
 ; AJ16     ; 142        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; AJ17     ; 151        ; 4A             ; i_pc_addr[11]                   ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; AJ17     ; 151        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AJ18     ;            ;                ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; AJ19     ; 155        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AJ20     ; 158        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AJ21     ; 156        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AJ22     ; 172        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AJ23     ;            ; 4A             ; VCCIO4A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
-; AJ24     ; 182        ; 4A             ; i_pc_addr[6]                    ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
-; AJ25     ; 180        ; 4A             ; i_pc_addr[2]                    ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
-; AJ26     ; 187        ; 4A             ; o_instruction[20]               ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; AJ24     ; 182        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
+; AJ25     ; 180        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
+; AJ26     ; 187        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AJ27     ; 195        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AJ28     ;            ;                ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
-; AJ29     ; 216        ; 5A             ; o_instruction[17]               ; output ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
+; AJ29     ; 216        ; 5A             ; i_pc_addr[2]                    ; input  ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
 ; AJ30     ;            ;                ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; AK2      ; 91         ; 3B             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AK3      ; 89         ; 3B             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
@@ -820,23 +821,23 @@ The pin-out file can be found in /home/habid/Quartus_ITESO/rom_combinational_sc/
 ; AK18     ; 149        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AK19     ; 153        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AK20     ;            ; 4A             ; VCCIO4A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
-; AK21     ; 171        ; 4A             ; i_pc_addr[10]                   ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; AK21     ; 171        ; 4A             ; i_pc_addr[9]                    ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; AK22     ; 169        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; AK23     ; 179        ; 4A             ; i_pc_addr[5]                    ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
-; AK24     ; 177        ; 4A             ; o_instruction[21]               ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; AK23     ; 179        ; 4A             ; o_instruction[29]               ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; AK24     ; 177        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AK25     ;            ;                ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; AK26     ; 185        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; AK27     ; 193        ; 4A             ; o_instruction[6]                ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
-; AK28     ; 198        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; AK29     ; 196        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
+; AK27     ; 193        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
+; AK28     ; 198        ; 4A             ; o_instruction[19]               ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; AK29     ; 196        ; 4A             ; o_instruction[27]               ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; B1       ; 509        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; B2       ; 507        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; B3       ; 513        ; 8A             ; o_instruction[31]               ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; B3       ; 513        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; B4       ;            ; 8A             ; VCCIO8A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; B5       ; 512        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; B6       ; 510        ; 8A             ; o_instruction[26]               ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; B6       ; 510        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; B7       ; 477        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; B8       ; 481        ; 8A             ; i_pc_addr[18]                   ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; B8       ; 481        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; B9       ;            ;                ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; B10      ;            ; 8A             ; VREFB8AN0                       ; power  ;              ;                     ; --           ;                 ; --       ; --           ;
 ; B11      ; 469        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
@@ -860,15 +861,15 @@ The pin-out file can be found in /home/habid/Quartus_ITESO/rom_combinational_sc/
 ; B29      ;            ;                ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; B30      ; 365        ; 6A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
 ; C1       ;            ;                ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
-; C2       ; 517        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; C3       ; 511        ; 8A             ; o_instruction[10]               ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; C2       ; 517        ; 8A             ; o_instruction[1]                ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; C3       ; 511        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; C4       ; 501        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; C5       ; 497        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; C6       ;            ;                ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; C7       ; 475        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; C8       ; 479        ; 8A             ; o_instruction[1]                ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; C8       ; 479        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; C9       ; 485        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; C10      ; 483        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
+; C10      ; 483        ; 8A             ; i_pc_addr[17]                   ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; C11      ;            ; 8A             ; VCCIO8A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; C12      ; 467        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; C13      ; 462        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
@@ -893,11 +894,11 @@ The pin-out file can be found in /home/habid/Quartus_ITESO/rom_combinational_sc/
 ; D2       ; 515        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; D3       ;            ;                ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; D4       ; 521        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; D5       ; 499        ; 8A             ; i_pc_addr[22]                   ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
-; D6       ; 495        ; 8A             ; o_instruction[30]               ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; D5       ; 499        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
+; D6       ; 495        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; D7       ; 505        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; D8       ;            ; 8A             ; VCCIO8A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
-; D9       ; 480        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
+; D9       ; 480        ; 8A             ; i_pc_addr[22]                   ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; D10      ; 472        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; D11      ; 470        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; D12      ; 496        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
@@ -922,16 +923,16 @@ The pin-out file can be found in /home/habid/Quartus_ITESO/rom_combinational_sc/
 ; E1       ; 527        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; E2       ; 525        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; E3       ; 523        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; E4       ; 519        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
+; E4       ; 519        ; 8A             ; i_pc_addr[27]                   ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; E5       ;            ; 8A             ; VCCIO8A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
-; E6       ; 533        ; 8A             ; i_pc_addr[20]                   ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; E6       ; 533        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; E7       ; 531        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; E8       ; 503        ; 8A             ; i_pc_addr[24]                   ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; E8       ; 503        ; 8A             ; i_pc_addr[23]                   ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; E9       ; 478        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; E10      ;            ;                ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; E11      ; 504        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; E12      ; 494        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; E13      ; 488        ; 8A             ; i_pc_addr[30]                   ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; E13      ; 488        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; E14      ; 454        ; 7D             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; E15      ;            ; 7D             ; VCCIO7D_HPS                     ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; E16      ; 443        ; 7D             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
@@ -961,7 +962,7 @@ The pin-out file can be found in /home/habid/Quartus_ITESO/rom_combinational_sc/
 ; F10      ; 528        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; F11      ; 502        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; F12      ;            ; 8A             ; VCCIO8A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
-; F13      ; 486        ; 8A             ; i_pc_addr[1]                    ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; F13      ; 486        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; F14      ; 468        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; F15      ; 466        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; F16      ; 442        ; 7D             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
@@ -1016,11 +1017,11 @@ The pin-out file can be found in /home/habid/Quartus_ITESO/rom_combinational_sc/
 ; H5       ;            ;                ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; H6       ;            ; 8A             ; VCCIO8A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; H7       ; 508        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; H8       ; 490        ; 8A             ; i_pc_addr[29]                   ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; H8       ; 490        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; H9       ;            ; --             ; VCCBAT                          ; power  ;              ; 1.2V                ; --           ;                 ; --       ; --           ;
 ; H10      ;            ; --             ; VCC_AUX                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; H11      ;            ;                ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
-; H12      ; 500        ; 8A             ; i_pc_addr[26]                   ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; H12      ; 500        ; 8A             ; i_pc_addr[25]                   ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; H13      ; 498        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; H14      ; 482        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; H15      ; 458        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
@@ -1048,7 +1049,7 @@ The pin-out file can be found in /home/habid/Quartus_ITESO/rom_combinational_sc/
 ; J7       ; 506        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; J8       ;            ;                ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; J9       ; 532        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; J10      ; 530        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
+; J10      ; 530        ; 8A             ; i_pc_addr[10]                   ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; J11      ;            ; --             ; VCCPGM                          ; power  ;              ; 1.8V/2.5V/3.0V/3.3V ; --           ;                 ; --       ; --           ;
 ; J12      ; 516        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; J13      ;            ; 8A             ; VCCIO8A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
@@ -1357,13 +1358,13 @@ The pin-out file can be found in /home/habid/Quartus_ITESO/rom_combinational_sc/
 ; W16      ; 136        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; W17      ; 152        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; W18      ;            ;                ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
-; W19      ; 192        ; 4A             ; o_instruction[2]                ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
-; W20      ; 217        ; 5A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
-; W21      ; 221        ; 5A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
-; W22      ; 223        ; 5A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
+; W19      ; 192        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
+; W20      ; 217        ; 5A             ; i_pc_addr[5]                    ; input  ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
+; W21      ; 221        ; 5A             ; o_instruction[20]               ; output ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
+; W22      ; 223        ; 5A             ; o_instruction[15]               ; output ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
 ; W23      ;            ; 5A             ; VCCIO5A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; W24      ; 238        ; 5A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
-; W25      ; 244        ; 5B             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
+; W25      ; 244        ; 5B             ; i_pc_addr[31]                   ; input  ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
 ; W26      ; 274        ; 6B             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
 ; W27      ; 261        ; 6B             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
 ; W28      ;            ;                ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
@@ -1384,15 +1385,15 @@ The pin-out file can be found in /home/habid/Quartus_ITESO/rom_combinational_sc/
 ; Y13      ;            ; --             ; VCC                             ; power  ;              ; 1.1V                ; --           ;                 ; --       ; --           ;
 ; Y14      ;            ;                ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; Y15      ;            ;                ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
-; Y16      ; 128        ; 3B             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
+; Y16      ; 128        ; 3B             ; i_pc_addr[12]                   ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; Y17      ; 170        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; Y18      ; 178        ; 4A             ; o_instruction[8]                ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
-; Y19      ; 202        ; 4A             ; o_instruction[3]                ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; Y18      ; 178        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
+; Y19      ; 202        ; 4A             ; o_instruction[30]               ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; Y20      ;            ;                ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
-; Y21      ; 219        ; 5A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
+; Y21      ; 219        ; 5A             ; o_instruction[22]               ; output ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
 ; Y22      ;            ; --             ; VCCA_FPLL                       ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; Y23      ; 232        ; 5A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
-; Y24      ; 234        ; 5A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
+; Y24      ; 234        ; 5A             ; i_pc_addr[1]                    ; input  ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
 ; Y25      ;            ;                ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; Y26      ; 256        ; 5B             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
 ; Y27      ; 258        ; 5B             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
@@ -1466,12 +1467,12 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ; o_instruction[29] ; Incomplete set of assignments ;
 ; o_instruction[30] ; Incomplete set of assignments ;
 ; o_instruction[31] ; Incomplete set of assignments ;
+; i_pc_addr[7]      ; Incomplete set of assignments ;
+; i_pc_addr[5]      ; Incomplete set of assignments ;
+; i_pc_addr[6]      ; Incomplete set of assignments ;
 ; i_pc_addr[2]      ; Incomplete set of assignments ;
 ; i_pc_addr[3]      ; Incomplete set of assignments ;
 ; i_pc_addr[4]      ; Incomplete set of assignments ;
-; i_pc_addr[5]      ; Incomplete set of assignments ;
-; i_pc_addr[6]      ; Incomplete set of assignments ;
-; i_pc_addr[7]      ; Incomplete set of assignments ;
 ; i_pc_addr[0]      ; Missing location assignment   ;
 ; i_pc_addr[1]      ; Missing location assignment   ;
 ; i_pc_addr[8]      ; Missing location assignment   ;
@@ -1530,12 +1531,12 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ; o_instruction[29] ; Missing location assignment   ;
 ; o_instruction[30] ; Missing location assignment   ;
 ; o_instruction[31] ; Missing location assignment   ;
+; i_pc_addr[7]      ; Missing location assignment   ;
+; i_pc_addr[5]      ; Missing location assignment   ;
+; i_pc_addr[6]      ; Missing location assignment   ;
 ; i_pc_addr[2]      ; Missing location assignment   ;
 ; i_pc_addr[3]      ; Missing location assignment   ;
 ; i_pc_addr[4]      ; Missing location assignment   ;
-; i_pc_addr[5]      ; Missing location assignment   ;
-; i_pc_addr[6]      ; Missing location assignment   ;
-; i_pc_addr[7]      ; Missing location assignment   ;
 +-------------------+-------------------------------+
 
 
@@ -1544,7 +1545,7 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +----------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+-----------------------+----------------------+--------------+
 ; Compilation Hierarchy Node ; ALMs needed [=A-B+C] ; [A] ALMs used in final placement ; [B] Estimate of ALMs recoverable by dense packing ; [C] Estimate of ALMs unavailable ; ALMs used for memory ; Combinational ALUTs ; Dedicated Logic Registers ; I/O Registers ; Block Memory Bits ; M10Ks ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name   ; Entity Name          ; Library Name ;
 +----------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+-----------------------+----------------------+--------------+
-; |rom_combinational_sc      ; 4.5 (4.5)            ; 6.5 (6.5)                        ; 2.0 (2.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 7 (7)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 64   ; 0            ; |rom_combinational_sc ; rom_combinational_sc ; work         ;
+; |rom_combinational_sc      ; 20.5 (20.5)          ; 20.5 (20.5)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 22 (22)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 64   ; 0            ; |rom_combinational_sc ; rom_combinational_sc ; work         ;
 +----------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+-----------------------+----------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -1612,87 +1613,174 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; o_instruction[29] ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; o_instruction[30] ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; o_instruction[31] ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
-; i_pc_addr[2]      ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; i_pc_addr[7]      ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; i_pc_addr[5]      ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; i_pc_addr[6]      ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; i_pc_addr[2]      ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; i_pc_addr[3]      ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; i_pc_addr[4]      ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; i_pc_addr[5]      ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; i_pc_addr[6]      ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; i_pc_addr[7]      ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 +-------------------+----------+----+------+------+----+------+-------+--------+------------------------+--------------------------+
 
 
-+---------------------------------------------------+
-; Pad To Core Delay Chain Fanout                    ;
-+---------------------+-------------------+---------+
-; Source Pin / Fanout ; Pad To Core Index ; Setting ;
-+---------------------+-------------------+---------+
-; i_pc_addr[0]        ;                   ;         ;
-; i_pc_addr[1]        ;                   ;         ;
-; i_pc_addr[8]        ;                   ;         ;
-; i_pc_addr[9]        ;                   ;         ;
-; i_pc_addr[10]       ;                   ;         ;
-; i_pc_addr[11]       ;                   ;         ;
-; i_pc_addr[12]       ;                   ;         ;
-; i_pc_addr[13]       ;                   ;         ;
-; i_pc_addr[14]       ;                   ;         ;
-; i_pc_addr[15]       ;                   ;         ;
-; i_pc_addr[16]       ;                   ;         ;
-; i_pc_addr[17]       ;                   ;         ;
-; i_pc_addr[18]       ;                   ;         ;
-; i_pc_addr[19]       ;                   ;         ;
-; i_pc_addr[20]       ;                   ;         ;
-; i_pc_addr[21]       ;                   ;         ;
-; i_pc_addr[22]       ;                   ;         ;
-; i_pc_addr[23]       ;                   ;         ;
-; i_pc_addr[24]       ;                   ;         ;
-; i_pc_addr[25]       ;                   ;         ;
-; i_pc_addr[26]       ;                   ;         ;
-; i_pc_addr[27]       ;                   ;         ;
-; i_pc_addr[28]       ;                   ;         ;
-; i_pc_addr[29]       ;                   ;         ;
-; i_pc_addr[30]       ;                   ;         ;
-; i_pc_addr[31]       ;                   ;         ;
-; i_pc_addr[2]        ;                   ;         ;
-;      - rom_array~0  ; 0                 ; 0       ;
-;      - rom_array~1  ; 0                 ; 0       ;
-;      - rom_array~3  ; 0                 ; 0       ;
-;      - rom_array~4  ; 0                 ; 0       ;
-;      - rom_array~5  ; 0                 ; 0       ;
-; i_pc_addr[3]        ;                   ;         ;
-;      - rom_array~0  ; 1                 ; 0       ;
-;      - rom_array~2  ; 1                 ; 0       ;
-;      - rom_array~3  ; 1                 ; 0       ;
-;      - rom_array~4  ; 1                 ; 0       ;
-;      - rom_array~5  ; 1                 ; 0       ;
-; i_pc_addr[4]        ;                   ;         ;
-;      - rom_array~0  ; 0                 ; 0       ;
-;      - rom_array~1  ; 0                 ; 0       ;
-;      - rom_array~2  ; 0                 ; 0       ;
-;      - rom_array~3  ; 0                 ; 0       ;
-;      - rom_array~4  ; 0                 ; 0       ;
-;      - rom_array~5  ; 0                 ; 0       ;
-; i_pc_addr[5]        ;                   ;         ;
-;      - rom_array~0  ; 0                 ; 0       ;
-;      - rom_array~1  ; 0                 ; 0       ;
-;      - rom_array~2  ; 0                 ; 0       ;
-;      - rom_array~3  ; 0                 ; 0       ;
-;      - rom_array~4  ; 0                 ; 0       ;
-;      - rom_array~5  ; 0                 ; 0       ;
-; i_pc_addr[6]        ;                   ;         ;
-;      - rom_array~0  ; 1                 ; 0       ;
-;      - rom_array~1  ; 1                 ; 0       ;
-;      - rom_array~2  ; 1                 ; 0       ;
-;      - rom_array~3  ; 1                 ; 0       ;
-;      - rom_array~4  ; 1                 ; 0       ;
-;      - rom_array~5  ; 1                 ; 0       ;
-; i_pc_addr[7]        ;                   ;         ;
-;      - rom_array~0  ; 1                 ; 0       ;
-;      - rom_array~1  ; 1                 ; 0       ;
-;      - rom_array~2  ; 1                 ; 0       ;
-;      - rom_array~3  ; 1                 ; 0       ;
-;      - rom_array~4  ; 1                 ; 0       ;
-;      - rom_array~5  ; 1                 ; 0       ;
-+---------------------+-------------------+---------+
++------------------------------------------------------+
+; Pad To Core Delay Chain Fanout                       ;
++------------------------+-------------------+---------+
+; Source Pin / Fanout    ; Pad To Core Index ; Setting ;
++------------------------+-------------------+---------+
+; i_pc_addr[0]           ;                   ;         ;
+; i_pc_addr[1]           ;                   ;         ;
+; i_pc_addr[8]           ;                   ;         ;
+; i_pc_addr[9]           ;                   ;         ;
+; i_pc_addr[10]          ;                   ;         ;
+; i_pc_addr[11]          ;                   ;         ;
+; i_pc_addr[12]          ;                   ;         ;
+; i_pc_addr[13]          ;                   ;         ;
+; i_pc_addr[14]          ;                   ;         ;
+; i_pc_addr[15]          ;                   ;         ;
+; i_pc_addr[16]          ;                   ;         ;
+; i_pc_addr[17]          ;                   ;         ;
+; i_pc_addr[18]          ;                   ;         ;
+; i_pc_addr[19]          ;                   ;         ;
+; i_pc_addr[20]          ;                   ;         ;
+; i_pc_addr[21]          ;                   ;         ;
+; i_pc_addr[22]          ;                   ;         ;
+; i_pc_addr[23]          ;                   ;         ;
+; i_pc_addr[24]          ;                   ;         ;
+; i_pc_addr[25]          ;                   ;         ;
+; i_pc_addr[26]          ;                   ;         ;
+; i_pc_addr[27]          ;                   ;         ;
+; i_pc_addr[28]          ;                   ;         ;
+; i_pc_addr[29]          ;                   ;         ;
+; i_pc_addr[30]          ;                   ;         ;
+; i_pc_addr[31]          ;                   ;         ;
+; i_pc_addr[7]           ;                   ;         ;
+;      - WideOr14~0      ; 0                 ; 0       ;
+;      - WideOr13~0      ; 0                 ; 0       ;
+;      - WideOr12~0      ; 0                 ; 0       ;
+;      - Decoder3~0      ; 0                 ; 0       ;
+;      - Decoder2~0      ; 0                 ; 0       ;
+;      - Decoder0~0      ; 0                 ; 0       ;
+;      - Decoder1~0      ; 0                 ; 0       ;
+;      - WideOr0~0       ; 0                 ; 0       ;
+;      - WideOr1~0       ; 0                 ; 0       ;
+;      - WideOr2~0       ; 0                 ; 0       ;
+;      - o_instruction~0 ; 0                 ; 0       ;
+;      - WideOr3~0       ; 0                 ; 0       ;
+;      - WideOr4~0       ; 0                 ; 0       ;
+;      - WideOr5~0       ; 0                 ; 0       ;
+;      - WideOr6~0       ; 0                 ; 0       ;
+;      - WideOr7~0       ; 0                 ; 0       ;
+;      - WideOr8~0       ; 0                 ; 0       ;
+;      - WideOr9~0       ; 0                 ; 0       ;
+;      - WideOr10~0      ; 0                 ; 0       ;
+;      - WideOr11~0      ; 0                 ; 0       ;
+;      - o_instruction~1 ; 0                 ; 0       ;
+; i_pc_addr[5]           ;                   ;         ;
+;      - WideOr14~0      ; 1                 ; 0       ;
+;      - WideOr13~0      ; 1                 ; 0       ;
+;      - WideOr12~0      ; 1                 ; 0       ;
+;      - Decoder3~0      ; 1                 ; 0       ;
+;      - Decoder2~0      ; 1                 ; 0       ;
+;      - Decoder0~0      ; 1                 ; 0       ;
+;      - WideOr0~0       ; 1                 ; 0       ;
+;      - WideOr1~0       ; 1                 ; 0       ;
+;      - WideOr2~0       ; 1                 ; 0       ;
+;      - o_instruction~0 ; 1                 ; 0       ;
+;      - WideOr3~0       ; 1                 ; 0       ;
+;      - WideOr4~0       ; 1                 ; 0       ;
+;      - WideOr5~0       ; 1                 ; 0       ;
+;      - WideOr6~0       ; 1                 ; 0       ;
+;      - WideOr7~0       ; 1                 ; 0       ;
+;      - WideOr8~0       ; 1                 ; 0       ;
+;      - WideOr9~0       ; 1                 ; 0       ;
+;      - WideOr10~0      ; 1                 ; 0       ;
+;      - WideOr11~0      ; 1                 ; 0       ;
+;      - o_instruction~1 ; 1                 ; 0       ;
+; i_pc_addr[6]           ;                   ;         ;
+;      - WideOr14~0      ; 1                 ; 0       ;
+;      - WideOr13~0      ; 1                 ; 0       ;
+;      - WideOr12~0      ; 1                 ; 0       ;
+;      - Decoder3~0      ; 1                 ; 0       ;
+;      - Decoder2~0      ; 1                 ; 0       ;
+;      - Decoder0~0      ; 1                 ; 0       ;
+;      - Decoder1~0      ; 1                 ; 0       ;
+;      - WideOr0~0       ; 1                 ; 0       ;
+;      - WideOr1~0       ; 1                 ; 0       ;
+;      - WideOr2~0       ; 1                 ; 0       ;
+;      - o_instruction~0 ; 1                 ; 0       ;
+;      - WideOr3~0       ; 1                 ; 0       ;
+;      - WideOr4~0       ; 1                 ; 0       ;
+;      - WideOr5~0       ; 1                 ; 0       ;
+;      - WideOr6~0       ; 1                 ; 0       ;
+;      - WideOr7~0       ; 1                 ; 0       ;
+;      - WideOr8~0       ; 1                 ; 0       ;
+;      - WideOr9~0       ; 1                 ; 0       ;
+;      - WideOr10~0      ; 1                 ; 0       ;
+;      - WideOr11~0      ; 1                 ; 0       ;
+;      - o_instruction~1 ; 1                 ; 0       ;
+; i_pc_addr[2]           ;                   ;         ;
+;      - WideOr14~0      ; 1                 ; 0       ;
+;      - WideOr13~0      ; 1                 ; 0       ;
+;      - WideOr12~0      ; 1                 ; 0       ;
+;      - Decoder0~0      ; 1                 ; 0       ;
+;      - Decoder1~0      ; 1                 ; 0       ;
+;      - WideOr0~0       ; 1                 ; 0       ;
+;      - WideOr1~0       ; 1                 ; 0       ;
+;      - WideOr2~0       ; 1                 ; 0       ;
+;      - o_instruction~0 ; 1                 ; 0       ;
+;      - WideOr3~0       ; 1                 ; 0       ;
+;      - WideOr4~0       ; 1                 ; 0       ;
+;      - WideOr5~0       ; 1                 ; 0       ;
+;      - WideOr6~0       ; 1                 ; 0       ;
+;      - WideOr7~0       ; 1                 ; 0       ;
+;      - WideOr8~0       ; 1                 ; 0       ;
+;      - WideOr9~0       ; 1                 ; 0       ;
+;      - WideOr10~0      ; 1                 ; 0       ;
+;      - WideOr11~0      ; 1                 ; 0       ;
+;      - o_instruction~1 ; 1                 ; 0       ;
+; i_pc_addr[3]           ;                   ;         ;
+;      - WideOr14~0      ; 1                 ; 0       ;
+;      - WideOr13~0      ; 1                 ; 0       ;
+;      - WideOr12~0      ; 1                 ; 0       ;
+;      - Decoder2~0      ; 1                 ; 0       ;
+;      - Decoder0~0      ; 1                 ; 0       ;
+;      - Decoder1~0      ; 1                 ; 0       ;
+;      - WideOr0~0       ; 1                 ; 0       ;
+;      - WideOr1~0       ; 1                 ; 0       ;
+;      - WideOr2~0       ; 1                 ; 0       ;
+;      - o_instruction~0 ; 1                 ; 0       ;
+;      - WideOr3~0       ; 1                 ; 0       ;
+;      - WideOr4~0       ; 1                 ; 0       ;
+;      - WideOr5~0       ; 1                 ; 0       ;
+;      - WideOr6~0       ; 1                 ; 0       ;
+;      - WideOr7~0       ; 1                 ; 0       ;
+;      - WideOr8~0       ; 1                 ; 0       ;
+;      - WideOr9~0       ; 1                 ; 0       ;
+;      - WideOr10~0      ; 1                 ; 0       ;
+;      - WideOr11~0      ; 1                 ; 0       ;
+;      - o_instruction~1 ; 1                 ; 0       ;
+; i_pc_addr[4]           ;                   ;         ;
+;      - WideOr14~0      ; 0                 ; 0       ;
+;      - WideOr13~0      ; 0                 ; 0       ;
+;      - WideOr12~0      ; 0                 ; 0       ;
+;      - Decoder2~0      ; 0                 ; 0       ;
+;      - Decoder0~0      ; 0                 ; 0       ;
+;      - Decoder1~0      ; 0                 ; 0       ;
+;      - WideOr0~0       ; 0                 ; 0       ;
+;      - WideOr1~0       ; 0                 ; 0       ;
+;      - WideOr2~0       ; 0                 ; 0       ;
+;      - o_instruction~0 ; 0                 ; 0       ;
+;      - WideOr3~0       ; 0                 ; 0       ;
+;      - WideOr4~0       ; 0                 ; 0       ;
+;      - WideOr5~0       ; 0                 ; 0       ;
+;      - WideOr6~0       ; 0                 ; 0       ;
+;      - WideOr7~0       ; 0                 ; 0       ;
+;      - WideOr8~0       ; 0                 ; 0       ;
+;      - WideOr9~0       ; 0                 ; 0       ;
+;      - WideOr10~0      ; 0                 ; 0       ;
+;      - WideOr11~0      ; 0                 ; 0       ;
+;      - o_instruction~1 ; 0                 ; 0       ;
++------------------------+-------------------+---------+
 
 
 +----------------------------------------------------------------------+
@@ -1700,14 +1788,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------+------------------------+
 ; Routing Resource Type                       ; Usage                  ;
 +---------------------------------------------+------------------------+
-; Block interconnects                         ; 16 / 289,320 ( < 1 % ) ;
-; C12 interconnects                           ; 0 / 13,420 ( 0 % )     ;
-; C2 interconnects                            ; 10 / 119,108 ( < 1 % ) ;
-; C4 interconnects                            ; 6 / 56,300 ( < 1 % )   ;
+; Block interconnects                         ; 38 / 289,320 ( < 1 % ) ;
+; C12 interconnects                           ; 1 / 13,420 ( < 1 % )   ;
+; C2 interconnects                            ; 27 / 119,108 ( < 1 % ) ;
+; C4 interconnects                            ; 12 / 56,300 ( < 1 % )  ;
 ; DQS bus muxes                               ; 0 / 25 ( 0 % )         ;
 ; DQS-18 I/O buses                            ; 0 / 25 ( 0 % )         ;
 ; DQS-9 I/O buses                             ; 0 / 25 ( 0 % )         ;
-; Direct links                                ; 0 / 289,320 ( 0 % )    ;
+; Direct links                                ; 3 / 289,320 ( < 1 % )  ;
 ; Global clocks                               ; 0 / 16 ( 0 % )         ;
 ; HPS SDRAM PLL inputs                        ; 0 / 1 ( 0 % )          ;
 ; HPS SDRAM PLL outputs                       ; 0 / 1 ( 0 % )          ;
@@ -1765,10 +1853,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Horizontal periphery clocks                 ; 0 / 72 ( 0 % )         ;
 ; Local interconnects                         ; 0 / 84,580 ( 0 % )     ;
 ; Quadrant clocks                             ; 0 / 66 ( 0 % )         ;
-; R14 interconnects                           ; 0 / 12,676 ( 0 % )     ;
-; R14/C12 interconnect drivers                ; 0 / 20,720 ( 0 % )     ;
-; R3 interconnects                            ; 12 / 130,992 ( < 1 % ) ;
-; R6 interconnects                            ; 4 / 266,960 ( < 1 % )  ;
+; R14 interconnects                           ; 2 / 12,676 ( < 1 % )   ;
+; R14/C12 interconnect drivers                ; 1 / 20,720 ( < 1 % )   ;
+; R3 interconnects                            ; 19 / 130,992 ( < 1 % ) ;
+; R6 interconnects                            ; 7 / 266,960 ( < 1 % )  ;
 ; Spine clocks                                ; 0 / 360 ( 0 % )        ;
 ; Wire stub REs                               ; 0 / 15,858 ( 0 % )     ;
 +---------------------------------------------+------------------------+
@@ -1891,12 +1979,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; o_instruction[29]  ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ;
 ; o_instruction[30]  ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ;
 ; o_instruction[31]  ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ;
+; i_pc_addr[7]       ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ;
+; i_pc_addr[5]       ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ;
+; i_pc_addr[6]       ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ;
 ; i_pc_addr[2]       ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ;
 ; i_pc_addr[3]       ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ;
 ; i_pc_addr[4]       ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ;
-; i_pc_addr[5]       ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ;
-; i_pc_addr[6]       ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ;
-; i_pc_addr[7]       ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ;
 +--------------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+-----------+--------------+
 
 
@@ -1959,7 +2047,7 @@ Info (184021): Fitter periphery placement operations ending: elapsed time is 00:
 Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
-Info (11798): Fitter preparation operations ending: elapsed time is 00:00:15
+Info (11798): Fitter preparation operations ending: elapsed time is 00:00:10
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'rom_combinational_sc.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332144): No user constrained base clocks found in the design
 Info (332096): The command derive_clocks did not find any clocks to derive.  No clocks were created or changed.
@@ -1969,34 +2057,34 @@ Info (332154): The derive_clock_uncertainty command did not apply clock uncertai
 Info (332130): Timing requirements not specified -- quality metrics such as performance may be sacrificed to reduce compilation time.
 Info (170189): Fitter placement preparation operations beginning
 Info (14951): The Fitter is using Advanced Physical Optimization.
-Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:01
+Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:02
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:01
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X67_Y0 to location X77_Y10
+    Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X78_Y0 to location X89_Y10
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
-Info (11888): Total time spent on timing analysis during the Fitter is 0.12 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.13 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:04
-Info (144001): Generated suppressed messages file /home/habid/Quartus_ITESO/rom_combinational_sc/quartus_project/output_files/rom_combinational_sc.fit.smsg
+Info (144001): Generated suppressed messages file /home/habid/Quartus_ITESO/ip_modules/rom_combinational_sc/quartus_project/output_files/rom_combinational_sc.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 2678 megabytes
-    Info: Processing ended: Sun Mar 22 04:12:35 2026
-    Info: Elapsed time: 00:00:36
-    Info: Total CPU time (on all processors): 00:01:21
+    Info: Peak virtual memory: 2695 megabytes
+    Info: Processing ended: Sun Mar 29 00:14:41 2026
+    Info: Elapsed time: 00:00:32
+    Info: Total CPU time (on all processors): 00:01:31
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in /home/habid/Quartus_ITESO/rom_combinational_sc/quartus_project/output_files/rom_combinational_sc.fit.smsg.
+The suppressed messages can be found in /home/habid/Quartus_ITESO/ip_modules/rom_combinational_sc/quartus_project/output_files/rom_combinational_sc.fit.smsg.
 
 

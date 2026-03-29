@@ -32,7 +32,39 @@
 					"strict" : false
 				},
 				{
+					"name" : "o_instruction[9]",
+					"strict" : false
+				},
+				{
+					"name" : "o_instruction[10]",
+					"strict" : false
+				},
+				{
+					"name" : "o_instruction[12]",
+					"strict" : false
+				},
+				{
+					"name" : "o_instruction[13]",
+					"strict" : false
+				},
+				{
+					"name" : "o_instruction[14]",
+					"strict" : false
+				},
+				{
 					"name" : "o_instruction[15]",
+					"strict" : false
+				},
+				{
+					"name" : "o_instruction[16]",
+					"strict" : false
+				},
+				{
+					"name" : "o_instruction[18]",
+					"strict" : false
+				},
+				{
+					"name" : "o_instruction[19]",
 					"strict" : false
 				},
 				{
@@ -41,6 +73,50 @@
 				},
 				{
 					"name" : "o_instruction[21]",
+					"strict" : false
+				},
+				{
+					"name" : "o_instruction[22]",
+					"strict" : false
+				},
+				{
+					"name" : "o_instruction[23]",
+					"strict" : false
+				},
+				{
+					"name" : "o_instruction[25]",
+					"strict" : false
+				},
+				{
+					"name" : "o_instruction[26]",
+					"strict" : false
+				},
+				{
+					"name" : "o_instruction[27]",
+					"strict" : false
+				},
+				{
+					"name" : "o_instruction[28]",
+					"strict" : false
+				},
+				{
+					"name" : "o_instruction[30]",
+					"strict" : false
+				},
+				{
+					"name" : "o_instruction[31]",
+					"strict" : false
+				},
+				{
+					"name" : "i_pc_addr[7]",
+					"strict" : false
+				},
+				{
+					"name" : "i_pc_addr[5]",
+					"strict" : false
+				},
+				{
+					"name" : "i_pc_addr[6]",
 					"strict" : false
 				},
 				{
@@ -53,18 +129,6 @@
 				},
 				{
 					"name" : "i_pc_addr[4]",
-					"strict" : false
-				},
-				{
-					"name" : "i_pc_addr[5]",
-					"strict" : false
-				},
-				{
-					"name" : "i_pc_addr[6]",
-					"strict" : false
-				},
-				{
-					"name" : "i_pc_addr[7]",
 					"strict" : false
 				}
 			]

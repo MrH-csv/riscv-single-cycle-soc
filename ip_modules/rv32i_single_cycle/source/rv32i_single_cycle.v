@@ -1,8 +1,10 @@
 // ============================================================================
 // Module:      rv32i_single_cycle
-// Description: Procesador RISC-V RV32I Single-Cycle completo.
-//              Integra todos los modulos IP del datapath y la unidad de
-//              control para ejecutar instrucciones en un solo ciclo de reloj.
+// Description: Core RISC-V RV32I Single-Cycle.
+//              Solo el datapath y la unidad de control.
+//              Las memorias de instrucciones y datos se conectan externamente
+//              a traves de los puertos de bus, permitiendo integrar perifericos
+//              en un nivel de jerarquia superior (SoC).
 //
 // Instrucciones soportadas:
 //   R-type:  ADD, SUB, AND, OR, XOR, SLL, SRL, SRA, SLT, SLTU
@@ -15,20 +17,25 @@
 //   RV32M:   MUL (extension, lower 32 bits)
 //
 // Parametros:
-//   IMEM_DEPTH    — Profundidad de la memoria de instrucciones (palabras)
-//   DMEM_DEPTH    — Profundidad de la memoria de datos (palabras)
 //   RESET_VECTOR  — Direccion inicial del PC tras reset
-//   HEX_FILE      — Archivo .hex para inicializar la ROM de instrucciones
 // ============================================================================
 
 module rv32i_single_cycle #(
-    parameter IMEM_DEPTH    = 64,
-    parameter DMEM_DEPTH    = 256,
-    parameter RESET_VECTOR  = 32'h0000_0000,
-    parameter HEX_FILE      = "program.hex"
+    parameter RESET_VECTOR = 32'h0000_0000
 )(
-    input  wire clk,
-    input  wire rst
+    input  wire        clk,
+    input  wire        rst,
+
+    // --- Bus de instrucciones (Instruction Fetch) ---
+    output wire [31:0] o_imem_addr,       // Direccion hacia la ROM (PC)
+    input  wire [31:0] i_imem_rdata,      // Instruccion leida de la ROM
+
+    // --- Bus de datos (Load/Store) ---
+    output wire [31:0] o_dmem_addr,       // Direccion hacia memoria de datos
+    output wire [31:0] o_dmem_wdata,      // Dato a escribir (Store)
+    output wire        o_dmem_we,         // Write enable
+    output wire        o_dmem_re,         // Read enable
+    input  wire [31:0] i_dmem_rdata       // Dato leido (Load)
 );
 
     // ========================================================================
@@ -36,9 +43,9 @@ module rv32i_single_cycle #(
     // ========================================================================
 
     // --- Instruction Fetch ---
-    wire [31:0] pc_current;        // PC actual
-    wire [31:0] pc_plus_4;         // PC + 4
-    wire [31:0] instruction;       // Instruccion leida de ROM
+    wire [31:0] pc_current;
+    wire [31:0] pc_plus_4;
+    wire [31:0] instruction;
 
     // --- Decode: campos de la instruccion ---
     wire [6:0]  opcode    = instruction[6:0];
@@ -82,19 +89,28 @@ module rv32i_single_cycle #(
     // --- Multiplicador ---
     wire [31:0] mul_result;
 
-    // --- Memoria de datos ---
-    wire [31:0] mem_rdata;
-
     // --- Write-back ---
-    wire [31:0] wb_result_mux;     // Salida del MUX de resultado (4 fuentes)
-    wire [31:0] wb_data;           // Dato final hacia el banco de registros
+    wire [31:0] wb_result_mux;
+    wire [31:0] wb_data;
 
     // --- Branch/Jump ---
-    wire        pc_sel;            // 1: saltar, 0: PC+4
-    wire [31:0] pc_branch_target;  // PC + inmediato (branch/JAL)
-    wire [31:0] pc_jalr_target;    // (rs1 + imm) & ~1 (JALR)
-    wire [31:0] pc_target;         // Target seleccionado
-    wire [31:0] pc_next;           // Siguiente valor del PC
+    wire        pc_sel;
+    wire [31:0] pc_branch_target;
+    wire [31:0] pc_jalr_target;
+    wire [31:0] pc_target;
+    wire [31:0] pc_next;
+
+    // ========================================================================
+    // Conexion de buses externos
+    // ========================================================================
+
+    assign o_imem_addr  = pc_current;
+    assign instruction  = i_imem_rdata;
+
+    assign o_dmem_addr  = alu_result;
+    assign o_dmem_wdata = rs2_data;
+    assign o_dmem_we    = ctrl_mem_write;
+    assign o_dmem_re    = ctrl_mem_read;
 
     // ========================================================================
     // INSTRUCTION FETCH STAGE
@@ -107,7 +123,7 @@ module rv32i_single_cycle #(
     ) u_pc (
         .clk       (clk),
         .rst       (rst),
-        .en        (1'b1),          // Siempre habilitado (single-cycle)
+        .en        (1'b1),
         .i_next_pc (pc_next),
         .o_pc      (pc_current)
     );
@@ -117,15 +133,6 @@ module rv32i_single_cycle #(
         .i_a   (pc_current),
         .i_b   (32'd4),
         .o_sum (pc_plus_4)
-    );
-
-    // --- Instruction Memory (ROM) ---
-    rom_combinational_sc #(
-        .DEPTH    (IMEM_DEPTH),
-        .HEX_FILE (HEX_FILE)
-    ) u_imem (
-        .i_pc_addr    (pc_current),
-        .o_instruction(instruction)
     );
 
     // ========================================================================
@@ -213,22 +220,6 @@ module rv32i_single_cycle #(
     );
 
     // ========================================================================
-    // MEMORY STAGE
-    // ========================================================================
-
-    // --- Data Memory (RAM) ---
-    data_memory #(
-        .DEPTH (DMEM_DEPTH)
-    ) u_dmem (
-        .clk        (clk),
-        .i_mem_write(ctrl_mem_write),
-        .i_mem_read (ctrl_mem_read),
-        .i_addr     (alu_result),
-        .i_wdata    (rs2_data),
-        .o_rdata    (mem_rdata)
-    );
-
-    // ========================================================================
     // WRITE-BACK STAGE
     // ========================================================================
 
@@ -239,7 +230,7 @@ module rv32i_single_cycle #(
     //   11: Inmediato       (LUI)
     mux_4i_1o u_mux_result (
         .i_d0  (alu_result),
-        .i_d1  (mem_rdata),
+        .i_d1  (i_dmem_rdata),
         .i_d2  (pc_plus_4),
         .i_d3  (immediate),
         .i_sel (ctrl_result_src),

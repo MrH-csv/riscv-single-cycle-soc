@@ -1,0 +1,18 @@
+|main_control_rv32i
+i_opcode[0] => Decoder0.IN6
+i_opcode[1] => Decoder0.IN5
+i_opcode[2] => Decoder0.IN4
+i_opcode[3] => Decoder0.IN3
+i_opcode[4] => Decoder0.IN2
+i_opcode[5] => Decoder0.IN1
+i_opcode[6] => Decoder0.IN0
+o_branch <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+o_mem_read <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+o_memto_reg <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+o_alu_op[0] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+o_alu_op[1] <= o_alu_op.DB_MAX_OUTPUT_PORT_TYPE
+o_mem_write <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+o_alu_src <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+o_reg_write <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+

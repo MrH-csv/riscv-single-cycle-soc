@@ -1,11 +1,11 @@
-Fitter Status : Successful - Sun Mar 22 04:12:34 2026
+Fitter Status : Successful - Sun Mar 29 00:14:41 2026
 Quartus Prime Version : 25.1std.0 Build 1129 10/21/2025 SC Standard Edition
 Revision Name : rom_combinational_sc
 Top-level Entity Name : rom_combinational_sc
 Family : Cyclone V
 Device : 5CSXFC6D6F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 5 / 41,910 ( < 1 % )
+Logic utilization (in ALMs) : 21 / 41,910 ( < 1 % )
 Total registers : 0
 Total pins : 64 / 499 ( 13 % )
 Total virtual pins : 0

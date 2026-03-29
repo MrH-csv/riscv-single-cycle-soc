@@ -1,0 +1,93 @@
+# ============================================================================
+# Quartus Prime Project: soc_rv32i_single_cycle
+# Target: DE2-115 (Cyclone IV EP4CE115F29C7)
+# ============================================================================
+
+set_global_assignment -name FAMILY "Cyclone IV E"
+set_global_assignment -name DEVICE EP4CE115F29C7
+set_global_assignment -name TOP_LEVEL_ENTITY soc_rv32i_single_cycle
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 25.1STD.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "00:00:00  MARCH 29, 2026"
+set_global_assignment -name LAST_QUARTUS_VERSION "25.1std.0 Standard Edition"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
+
+# ============================================================================
+# Source Files
+# ============================================================================
+
+# --- SoC top ---
+set_global_assignment -name VERILOG_FILE ../source/soc_rv32i_single_cycle.v
+
+# --- Core ---
+set_global_assignment -name VERILOG_FILE ../../rv32i_single_cycle/source/rv32i_single_cycle.v
+
+# --- Core sub-modules ---
+set_global_assignment -name VERILOG_FILE ../../program_counter/source/program_counter.v
+set_global_assignment -name VERILOG_FILE ../../adder_4_32b/source/adder_4_32b.v
+set_global_assignment -name VERILOG_FILE ../../rom_combinational_sc/source/rom_combinational_sc.v
+set_global_assignment -name VERILOG_FILE ../../main_control_rv32i/source/main_control_rv32i.v
+set_global_assignment -name VERILOG_FILE ../../control_alu_rv32i/source/control_alu_rv32i.v
+set_global_assignment -name VERILOG_FILE ../../imm_generator/source/imm_generator.v
+set_global_assignment -name VERILOG_FILE ../../register_file/source/register_file.v
+set_global_assignment -name VERILOG_FILE ../../mux_2i_1o/source/mux_2i_1o.v
+set_global_assignment -name VERILOG_FILE ../../mux_4i_1o/source/mux_4i_1o.v
+set_global_assignment -name VERILOG_FILE ../../alu_riscv_rv32i/source/alu_riscv_rv32i.v
+set_global_assignment -name VERILOG_FILE ../../mul_module/source/mul_module.v
+set_global_assignment -name VERILOG_FILE ../../data_memory/source/data_memory.v
+set_global_assignment -name VERILOG_FILE ../../branch_unit/source/branch_unit.v
+
+# --- Peripherals ---
+set_global_assignment -name VERILOG_FILE ../../addr_decoder/source/addr_decoder.v
+set_global_assignment -name VERILOG_FILE ../../gpio_peripheral/source/gpio_peripheral.v
+
+# ============================================================================
+# EDA Settings
+# ============================================================================
+set_global_assignment -name EDA_SIMULATION_TOOL "Questa Altera FPGA (Verilog)"
+set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
+set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_timing
+set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_symbol
+set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_signal_integrity
+set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_boundary_scan
+
+# ============================================================================
+# Pin Assignments — DE2-115
+# ============================================================================
+
+# --- Clock (50 MHz) ---
+set_location_assignment PIN_Y2 -to clk
+
+# --- Reset (KEY[0], active low on board — active high in design) ---
+set_location_assignment PIN_M23 -to rst
+
+# --- LEDs LEDR[7:0] → gpio_out[7:0] ---
+set_location_assignment PIN_G19 -to o_gpio_out[0]
+set_location_assignment PIN_F19 -to o_gpio_out[1]
+set_location_assignment PIN_E19 -to o_gpio_out[2]
+set_location_assignment PIN_F21 -to o_gpio_out[3]
+set_location_assignment PIN_F18 -to o_gpio_out[4]
+set_location_assignment PIN_E18 -to o_gpio_out[5]
+set_location_assignment PIN_J19 -to o_gpio_out[6]
+set_location_assignment PIN_H19 -to o_gpio_out[7]
+
+# --- Switches SW[7:0] → gpio_in[7:0] ---
+set_location_assignment PIN_AB28 -to i_gpio_in[0]
+set_location_assignment PIN_AC28 -to i_gpio_in[1]
+set_location_assignment PIN_AC27 -to i_gpio_in[2]
+set_location_assignment PIN_AD27 -to i_gpio_in[3]
+set_location_assignment PIN_AB27 -to i_gpio_in[4]
+set_location_assignment PIN_AC26 -to i_gpio_in[5]
+set_location_assignment PIN_AD26 -to i_gpio_in[6]
+set_location_assignment PIN_AB26 -to i_gpio_in[7]
+
+# ============================================================================
+# Partition
+# ============================================================================
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
