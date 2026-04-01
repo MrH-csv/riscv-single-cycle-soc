@@ -1,29 +1,30 @@
-// ============================================================================
-// Module:      data_memory
-// Description: Memoria de datos (RAM) para procesador RISC-V RV32I
-//              Single-Cycle. Lectura combinacional (asincrona) y escritura
-//              sincrona (flanco de subida). Acceso a nivel de palabra (32 bits).
-//
-// Port Map:
-//   clk          — Reloj del sistema
-//   i_mem_write  — Habilitacion de escritura (1 = escribir)
-//   i_mem_read   — Habilitacion de lectura  (1 = leer)
-//   i_addr[31:0] — Direccion de byte (se usa [31:2] para indexar palabras)
-//   i_wdata[31:0]— Dato a escribir
-//   o_rdata[31:0]— Dato leido
-//
-// Notas:
-//   - Direccionamiento por byte, alineado a palabra (bits [1:0] ignorados).
-//   - Lectura combinacional para compatibilidad single-cycle.
-//   - Profundidad configurable via parametro DEPTH (default 256 palabras).
-// ============================================================================
+/***********************************************************
+ * Descripcion:
+ *   Memoria de datos (RAM) para el procesador RISC-V
+ *   RV32I Single-Cycle. Lectura combinacional (asincrona)
+ *   y escritura sincrona (flanco de subida). Acceso a
+ *   nivel de palabra (32 bits).
+ * Version:
+ *   1.0
+ * Autor:
+ *   Angel Habid Navarro Mendez
+ * Profesor:
+ *   Dr. Jose Luis Pizano Escalante
+ * Programa:
+ *   Maestria en Diseno Electronico
+ * Institucion:
+ *   Instituto Tecnologico y de Estudios Superiores
+ *   de Occidente
+ * Fecha:
+ *   29/03/2026
+ ***********************************************************/
 
 module data_memory #(
     parameter DEPTH = 256        // Numero de palabras de 32 bits
 )(
     input  wire        clk,
-    input  wire        i_mem_write,   // Write Enable
-    input  wire        i_mem_read,    // Read Enable
+    input  wire        i_mem_write,   // Habilitacion de escritura
+    input  wire        i_mem_read,    // Habilitacion de lectura
     input  wire [31:0] i_addr,        // Direccion de byte
     input  wire [31:0] i_wdata,       // Dato a escribir
     output wire [31:0] o_rdata        // Dato leido

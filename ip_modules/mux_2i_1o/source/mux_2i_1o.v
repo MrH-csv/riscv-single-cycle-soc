@@ -1,7 +1,22 @@
-/**
- * mux2_1 - Multiplexor de 2 entradas, 1 salida
- * Módulo combinacional genérico para librería RISC-V
- */
+/***********************************************************
+ * Descripcion:
+ *   Multiplexor de 2 entradas y 1 salida, parametrizable
+ *   en ancho de bits. Bloque combinacional generico para
+ *   el datapath del procesador RISC-V.
+ * Version:
+ *   1.0
+ * Autor:
+ *   Angel Habid Navarro Mendez
+ * Profesor:
+ *   Dr. Jose Luis Pizano Escalante
+ * Programa:
+ *   Maestria en Diseno Electronico
+ * Institucion:
+ *   Instituto Tecnologico y de Estudios Superiores
+ *   de Occidente
+ * Fecha:
+ *   29/03/2026
+ ***********************************************************/
 module mux_2i_1o
 #(
 	parameter WIDTH = 32

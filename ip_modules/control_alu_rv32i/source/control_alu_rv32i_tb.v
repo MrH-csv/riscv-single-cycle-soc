@@ -1,16 +1,22 @@
-// ============================================================
-// Testbench — control_alu_rv32i
-// Verifica decodificacion de ALU control para RV32I/M.
-// Incluye prueba del bug guard de ADDI (i_op5).
-//
-// Senales de verificacion visibles en el Wave viewer:
-//   test_num      - Numero de test actual
-//   test_pass     - 1 si el test paso, 0 si fallo
-//   exp_alu_ctrl  - Valor esperado de o_alu_ctrl
-//   exp_mul_sel   - Valor esperado de o_mul_sel
-//   ctrl_match    - 1 si o_alu_ctrl == exp_alu_ctrl
-//   mul_match     - 1 si o_mul_sel  == exp_mul_sel
-// ============================================================
+/***********************************************************
+ * Descripcion:
+ *   Testbench del control de la ALU. Verifica la
+ *   decodificacion de ALU control para RV32I/M.
+ *   Incluye prueba del bug guard de ADDI (i_op5).
+ * Version:
+ *   1.0
+ * Autor:
+ *   Angel Habid Navarro Mendez
+ * Profesor:
+ *   Dr. Jose Luis Pizano Escalante
+ * Programa:
+ *   Maestria en Diseno Electronico
+ * Institucion:
+ *   Instituto Tecnologico y de Estudios Superiores
+ *   de Occidente
+ * Fecha:
+ *   29/03/2026
+ ***********************************************************/
 
 `timescale 1ns/1ps
 

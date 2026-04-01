@@ -1,25 +1,23 @@
-// ============================================================================
-// Module:      addr_decoder
-// Description: Decodificador de direcciones para el bus de datos del SoC.
-//              Genera senales chip-select segun los bits altos de la direccion
-//              y multiplexa el dato de lectura de vuelta al core.
-//
-// Mapa de memoria:
-//   0x0000_0000 – 0x0FFF_FFFF : Data RAM   (cs_dmem)
-//   0x1001_0000 – 0x1001_FFFF : GPIO       (cs_gpio)
-//     0x1001_0024 : GPIO_OUT (8 bits, R/W)
-//     0x1001_0028 : GPIO_IN  (8 bits, R)
-//
-// Port map:
-//   i_addr       [31:0] — Direccion del bus de datos (desde el core)
-//   i_mem_we             — Write enable global (desde el core)
-//   i_mem_re             — Read enable global (desde el core)
-//   o_cs_dmem            — Chip select para Data RAM
-//   o_cs_gpio            — Chip select para GPIO
-//   i_dmem_rdata [31:0] — Dato leido de la RAM
-//   i_gpio_rdata [31:0] — Dato leido del GPIO
-//   o_rdata      [31:0] — Dato de lectura multiplexado hacia el core
-// ============================================================================
+/***********************************************************
+ * Descripcion:
+ *   Decodificador de direcciones para el bus de datos
+ *   del SoC. Genera senales chip-select segun los bits
+ *   altos de la direccion y multiplexa el dato de lectura
+ *   de vuelta al core.
+ * Version:
+ *   1.0
+ * Autor:
+ *   Angel Habid Navarro Mendez
+ * Profesor:
+ *   Dr. Jose Luis Pizano Escalante
+ * Programa:
+ *   Maestria en Diseno Electronico
+ * Institucion:
+ *   Instituto Tecnologico y de Estudios Superiores
+ *   de Occidente
+ * Fecha:
+ *   29/03/2026
+ ***********************************************************/
 
 `timescale 1ns/1ps
 

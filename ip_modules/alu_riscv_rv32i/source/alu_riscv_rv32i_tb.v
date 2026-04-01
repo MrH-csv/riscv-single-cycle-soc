@@ -1,7 +1,21 @@
-// ============================================================
-// Testbench — alu_riscv_rv32i
-// Verifica las 10 operaciones de la ALU RV32I y la bandera zero.
-// ============================================================
+/***********************************************************
+ * Descripcion:
+ *   Testbench de la ALU RISC-V RV32I. Verifica las
+ *   10 operaciones de la ALU y la bandera de cero.
+ * Version:
+ *   1.0
+ * Autor:
+ *   Angel Habid Navarro Mendez
+ * Profesor:
+ *   Dr. Jose Luis Pizano Escalante
+ * Programa:
+ *   Maestria en Diseno Electronico
+ * Institucion:
+ *   Instituto Tecnologico y de Estudios Superiores
+ *   de Occidente
+ * Fecha:
+ *   29/03/2026
+ ***********************************************************/
 
 `timescale 1ns/1ps
 

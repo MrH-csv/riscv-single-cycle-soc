@@ -1,28 +1,23 @@
-/******************************************************************************
- * Module:  alu_control_rv32im
- *
- * Decodificador de Control de la ALU para procesador RISC-V Single-Cycle.
- * Soporta instrucciones base RV32I y MUL de la extension RV32M.
- *
- * Logica estrictamente combinacional.
- *
- * Nota: Se usa i_op5 (bit 5 del opcode) para diferenciar Tipo R (opcode
- *       0110011, i_op5=1) de Tipo I (opcode 0010011, i_op5=0). Esto evita
- *       el clasico "bug del ADDI", donde el bit 30 de un inmediato se
- *       confundiria con funct7[5] y causaria una resta en vez de suma.
- *
- * Codificacion de o_alu_ctrl:
- *   4'b0000 -> AND
- *   4'b0001 -> OR
- *   4'b0010 -> ADD
- *   4'b0100 -> XOR
- *   4'b0101 -> SRL
- *   4'b0110 -> SUB
- *   4'b0111 -> SLL
- *   4'b1000 -> SRA
- *   4'b1001 -> SLT
- *   4'b1010 -> SLTU
- *****************************************************************************/
+/***********************************************************
+ * Descripcion:
+ *   Decodificador de control de la ALU para el
+ *   procesador RISC-V Single-Cycle. Soporta
+ *   instrucciones base RV32I y MUL de la extension
+ *   RV32M. Logica estrictamente combinacional.
+ * Version:
+ *   1.0
+ * Autor:
+ *   Angel Habid Navarro Mendez
+ * Profesor:
+ *   Dr. Jose Luis Pizano Escalante
+ * Programa:
+ *   Maestria en Diseno Electronico
+ * Institucion:
+ *   Instituto Tecnologico y de Estudios Superiores
+ *   de Occidente
+ * Fecha:
+ *   29/03/2026
+ ***********************************************************/
 
 module control_alu_rv32i (
     input  wire [1:0] i_alu_op,     // Senal de la Unidad de Control Principal

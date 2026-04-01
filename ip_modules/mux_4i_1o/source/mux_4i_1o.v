@@ -1,23 +1,22 @@
-/******************************************************************************
- * Module:      mux_4i_1o
- * Description: 4-to-1 Multiplexer — Generic, parameterized, purely
- *              combinational building block for RISC-V datapath.
- *
- * Parameters:
- *   WIDTH  — Bit-width of data buses (default 32).
- *
- * Ports:
- *   i_d0   [WIDTH-1:0]  — Data input 0 (selected when i_sel == 2'b00)
- *   i_d1   [WIDTH-1:0]  — Data input 1 (selected when i_sel == 2'b01)
- *   i_d2   [WIDTH-1:0]  — Data input 2 (selected when i_sel == 2'b10)
- *   i_d3   [WIDTH-1:0]  — Data input 3 (selected when i_sel == 2'b11)
- *   i_sel  [1:0]        — Select lines
- *   o_out  [WIDTH-1:0]  — Multiplexer output
- *
- * Notes:
- *   - A default case drives o_out to 0 to prevent latch inference.
- *   - Intended for synthesis on Intel Quartus Prime.
- *****************************************************************************/
+/***********************************************************
+ * Descripcion:
+ *   Multiplexor de 4 entradas y 1 salida, parametrizable
+ *   en ancho de bits. Bloque combinacional generico para
+ *   el datapath del procesador RISC-V.
+ * Version:
+ *   1.0
+ * Autor:
+ *   Angel Habid Navarro Mendez
+ * Profesor:
+ *   Dr. Jose Luis Pizano Escalante
+ * Programa:
+ *   Maestria en Diseno Electronico
+ * Institucion:
+ *   Instituto Tecnologico y de Estudios Superiores
+ *   de Occidente
+ * Fecha:
+ *   29/03/2026
+ ***********************************************************/
 
 module mux_4i_1o
 #(
@@ -32,7 +31,7 @@ module mux_4i_1o
     output reg  [WIDTH-1:0] o_out
 );
 
-    // Combinational mux logic — no latches inferred
+    // Logica combinacional del mux — sin inferencia de latches
     always @(*) begin
         case (i_sel)
             2'b00:   o_out = i_d0;

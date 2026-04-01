@@ -1,9 +1,22 @@
-// ============================================================================
-// Module:      program_counter
-// Description: Registro D generico parametrizable utilizado como Program
-//              Counter (PC) para un procesador RISC-V. Puede reutilizarse
-//              como cualquier registro con enable y reset sincrono.
-// ============================================================================
+/***********************************************************
+ * Descripcion:
+ *   Registro D generico parametrizable utilizado como
+ *   Program Counter (PC) para el procesador RISC-V.
+ *   Cuenta con enable y reset sincrono.
+ * Version:
+ *   1.0
+ * Autor:
+ *   Angel Habid Navarro Mendez
+ * Profesor:
+ *   Dr. Jose Luis Pizano Escalante
+ * Programa:
+ *   Maestria en Diseno Electronico
+ * Institucion:
+ *   Instituto Tecnologico y de Estudios Superiores
+ *   de Occidente
+ * Fecha:
+ *   29/03/2026
+ ***********************************************************/
 
 module program_counter #(
     parameter WIDTH        = 32,              // Ancho del bus de datos

@@ -1,8 +1,22 @@
-// ============================================================
-// Testbench — data_memory
-// Verifica lectura/escritura de la memoria de datos RAM
-// para el procesador RISC-V RV32I single-cycle.
-// ============================================================
+/***********************************************************
+ * Descripcion:
+ *   Testbench de la memoria de datos RAM. Verifica
+ *   lectura/escritura para el procesador RISC-V RV32I
+ *   single-cycle.
+ * Version:
+ *   1.0
+ * Autor:
+ *   Angel Habid Navarro Mendez
+ * Profesor:
+ *   Dr. Jose Luis Pizano Escalante
+ * Programa:
+ *   Maestria en Diseno Electronico
+ * Institucion:
+ *   Instituto Tecnologico y de Estudios Superiores
+ *   de Occidente
+ * Fecha:
+ *   29/03/2026
+ ***********************************************************/
 
 `timescale 1ns/1ps
 
@@ -110,31 +124,31 @@ module data_memory_tb;
         #1;
 
         // ---- Test 1: Escribir y leer palabra en dir 0 ----
-        $display("\n--- Test 1: Write/Read addr 0x00 ---");
+        $display("\n--- Test 1: Escritura/Lectura dir 0x00 ---");
         write_mem(32'h0000_0000, 32'hDEAD_BEEF);
         check_read(32'h0000_0000, 32'hDEAD_BEEF);
 
         // ---- Test 2: Escribir y leer en dir 4 ----
-        $display("\n--- Test 2: Write/Read addr 0x04 ---");
+        $display("\n--- Test 2: Escritura/Lectura dir 0x04 ---");
         write_mem(32'h0000_0004, 32'hCAFE_BABE);
         check_read(32'h0000_0004, 32'hCAFE_BABE);
 
         // ---- Test 3: Escribir y leer en dir 8 ----
-        $display("\n--- Test 3: Write/Read addr 0x08 ---");
+        $display("\n--- Test 3: Escritura/Lectura dir 0x08 ---");
         write_mem(32'h0000_0008, 32'h1234_5678);
         check_read(32'h0000_0008, 32'h1234_5678);
 
         // ---- Test 4: Verificar que dir 0 sigue intacta ----
-        $display("\n--- Test 4: Re-read addr 0x00 (persistence) ---");
+        $display("\n--- Test 4: Re-lectura dir 0x00 (persistencia) ---");
         check_read(32'h0000_0000, 32'hDEAD_BEEF);
 
         // ---- Test 5: Sobreescritura ----
-        $display("\n--- Test 5: Overwrite addr 0x00 ---");
+        $display("\n--- Test 5: Sobreescritura dir 0x00 ---");
         write_mem(32'h0000_0000, 32'h0000_0042);
         check_read(32'h0000_0000, 32'h0000_0042);
 
         // ---- Test 6: mem_read=0 retorna 0 ----
-        $display("\n--- Test 6: Read disabled returns 0 ---");
+        $display("\n--- Test 6: Lectura deshabilitada retorna 0 ---");
         i_mem_read  = 1'b0;
         i_mem_write = 1'b0;
         i_addr      = 32'h0000_0004;
@@ -148,7 +162,7 @@ module data_memory_tb;
         end
 
         // ---- Test 7: mem_write=0 NO escribe ----
-        $display("\n--- Test 7: Write disabled does not modify ---");
+        $display("\n--- Test 7: Escritura deshabilitada no modifica ---");
         i_mem_write = 1'b0;
         i_mem_read  = 1'b0;
         i_addr      = 32'h0000_0004;
@@ -158,12 +172,12 @@ module data_memory_tb;
         check_read(32'h0000_0004, 32'hCAFE_BABE);
 
         // ---- Test 8: Escribir en direccion alta ----
-        $display("\n--- Test 8: Write/Read high address ---");
+        $display("\n--- Test 8: Escritura/Lectura dir alta ---");
         write_mem(32'h0000_00FC, 32'hABCD_EF01);
         check_read(32'h0000_00FC, 32'hABCD_EF01);
 
         // ---- Test 9: Alineacion — bits [1:0] ignorados ----
-        $display("\n--- Test 9: Address alignment (bits[1:0] ignored) ---");
+        $display("\n--- Test 9: Alineacion de direccion (bits[1:0] ignorados) ---");
         write_mem(32'h0000_0010, 32'hAAAA_BBBB);
         // Leer con dir 0x12 y 0x13 debe dar el mismo resultado (misma palabra)
         check_read(32'h0000_0012, 32'hAAAA_BBBB);

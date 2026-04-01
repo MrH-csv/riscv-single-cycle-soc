@@ -1,28 +1,23 @@
-// ============================================================================
-// Module: main_control_rv32i
-// Description: Unidad de Control Principal para un procesador RISC-V RV32I
-//              Single-Cycle. Decodifica el opcode de la instruccion y genera
-//              las senales de control para el datapath.
-//
-//              Soporta los 7 tipos de instruccion RV32I:
-//              R, I-ALU, Load, Store, Branch, U (LUI/AUIPC), J (JAL/JALR)
-//
-// Senales de control:
-//   o_reg_write  — Habilita escritura en banco de registros
-//   o_result_src — Fuente del dato de write-back:
-//                  00: Resultado ALU  (R, I-ALU, AUIPC)
-//                  01: Dato de memoria (Load)
-//                  10: PC+4           (JAL, JALR)
-//                  11: Inmediato      (LUI)
-//   o_mem_write  — Habilita escritura en memoria de datos
-//   o_mem_read   — Habilita lectura de memoria de datos
-//   o_branch     — Habilita comparacion de branch condicional
-//   o_jump       — Salto incondicional (JAL o JALR)
-//   o_jalr       — Indica instruccion JALR (target desde ALU, no PC+imm)
-//   o_alu_op     — Codigo de operacion para ALU Control Unit
-//   o_alu_src    — Selecciona inmediato (1) o registro rs2 (0) como op B
-//   o_alu_a_src  — Selecciona PC (1) o registro rs1 (0) como op A
-// ============================================================================
+/***********************************************************
+ * Descripcion:
+ *   Unidad de Control Principal para el procesador
+ *   RISC-V RV32I Single-Cycle. Decodifica el opcode
+ *   de la instruccion y genera las senales de control
+ *   para el datapath.
+ * Version:
+ *   1.0
+ * Autor:
+ *   Angel Habid Navarro Mendez
+ * Profesor:
+ *   Dr. Jose Luis Pizano Escalante
+ * Programa:
+ *   Maestria en Diseno Electronico
+ * Institucion:
+ *   Instituto Tecnologico y de Estudios Superiores
+ *   de Occidente
+ * Fecha:
+ *   29/03/2026
+ ***********************************************************/
 
 module main_control_rv32i (
     // --- Entrada ---

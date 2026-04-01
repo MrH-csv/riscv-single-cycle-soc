@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Failed - Sun Mar 29 22:23:50 2026
+Analysis & Synthesis Status : Successful - Wed Apr  1 03:36:00 2026
 Quartus Prime Version : 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 Revision Name : soc_rv32i_single_cycle
 Top-level Entity Name : soc_rv32i_single_cycle
 Family : Cyclone IV E
-Total logic elements : N/A until Partition Merge
-    Total combinational functions : N/A until Partition Merge
-    Dedicated logic registers : N/A until Partition Merge
-Total registers : N/A until Partition Merge
-Total pins : N/A until Partition Merge
-Total virtual pins : N/A until Partition Merge
-Total memory bits : N/A until Partition Merge
-Embedded Multiplier 9-bit elements : N/A until Partition Merge
-Total PLLs : N/A until Partition Merge
+Total logic elements : 17,388
+    Total combinational functions : 8,236
+    Dedicated logic registers : 9,256
+Total registers : 9256
+Total pins : 18
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 6
+Total PLLs : 0

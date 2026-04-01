@@ -1,19 +1,21 @@
-// ============================================================================
-// Module:      soc_rv32i_single_cycle
-// Description: SoC top-level que integra el core RV32I con memorias y
-//              perifericos memory-mapped para la tarjeta DE2-115.
-//
-// Mapa de memoria:
-//   0x0000_0000 – 0x0000_03FF : Data RAM  (DMEM_DEPTH words)
-//   0x1001_0024              : GPIO_OUT [7:0] (R/W) → LEDs LEDR[7:0]
-//   0x1001_0028              : GPIO_IN  [7:0] (R)   → Switches SW[7:0]
-//
-// Parametros:
-//   IMEM_DEPTH    — Profundidad de la ROM de instrucciones (words)
-//   DMEM_DEPTH    — Profundidad de la RAM de datos (words)
-//   RESET_VECTOR  — Direccion inicial del PC tras reset
-//   HEX_FILE      — Archivo .hex para inicializar la ROM
-// ============================================================================
+/***********************************************************
+ * Descripcion:
+ *   SoC top-level que integra el core RV32I con memorias
+ *   y perifericos memory-mapped para la tarjeta DE2-115.
+ * Version:
+ *   1.0
+ * Autor:
+ *   Angel Habid Navarro Mendez
+ * Profesor:
+ *   Dr. Jose Luis Pizano Escalante
+ * Programa:
+ *   Maestria en Diseno Electronico
+ * Institucion:
+ *   Instituto Tecnologico y de Estudios Superiores
+ *   de Occidente
+ * Fecha:
+ *   29/03/2026
+ ***********************************************************/
 
 module soc_rv32i_single_cycle #(
     parameter IMEM_DEPTH   = 64,

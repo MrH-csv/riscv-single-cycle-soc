@@ -1,8 +1,22 @@
-// ============================================================
-// Testbench — branch_unit
-// Verifica la logica de comparacion para todas las condiciones
-// de branch RV32I y saltos incondicionales (jump).
-// ============================================================
+/***********************************************************
+ * Descripcion:
+ *   Testbench de la unidad de branch. Verifica la
+ *   logica de comparacion para todas las condiciones
+ *   de branch RV32I y saltos incondicionales (jump).
+ * Version:
+ *   1.0
+ * Autor:
+ *   Angel Habid Navarro Mendez
+ * Profesor:
+ *   Dr. Jose Luis Pizano Escalante
+ * Programa:
+ *   Maestria en Diseno Electronico
+ * Institucion:
+ *   Instituto Tecnologico y de Estudios Superiores
+ *   de Occidente
+ * Fecha:
+ *   29/03/2026
+ ***********************************************************/
 
 `timescale 1ns/1ps
 
@@ -110,12 +124,12 @@ module branch_unit_tb;
         check(32'd0,         32'd1,          3'b111, 1, 0, 0);  // 0 < 1 -> not taken
 
         // ---- Jump incondicional (JAL/JALR) ----
-        $display("\n--- Jump (unconditional) ---");
+        $display("\n--- Jump (incondicional) ---");
         check(32'd0, 32'd0, 3'b000, 0, 1, 1);  // jump=1 -> siempre taken
         check(32'd0, 32'd0, 3'b101, 0, 1, 1);  // jump=1, cualquier funct3
 
         // ---- Branch deshabilitado ----
-        $display("\n--- Branch disabled ---");
+        $display("\n--- Branch deshabilitado ---");
         check(32'd5, 32'd5, 3'b000, 0, 0, 0);  // branch=0, jump=0 -> no taken
 
         // ---- Resumen ----

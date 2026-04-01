@@ -1,15 +1,23 @@
-// ============================================================
-// Instruction ROM — RISC-V Single-Cycle Processor
-//
-// Implementacion puramente combinacional usando case statement.
-// Quartus sintetiza esto en LUTs, no en bloques de RAM.
-//
-// Port map
-//   i_pc_addr     [31:0] — byte address from the PC
-//   o_instruction [31:0] — 32-bit instruction word
-//
-// Para cambiar el programa: editar las entradas del case.
-// ============================================================
+/***********************************************************
+ * Descripcion:
+ *   ROM de instrucciones combinacional para el procesador
+ *   RISC-V Single-Cycle. Implementacion puramente
+ *   combinacional usando case statement. Quartus
+ *   sintetiza esto en LUTs.
+ * Version:
+ *   1.0
+ * Autor:
+ *   Angel Habid Navarro Mendez
+ * Profesor:
+ *   Dr. Jose Luis Pizano Escalante
+ * Programa:
+ *   Maestria en Diseno Electronico
+ * Institucion:
+ *   Instituto Tecnologico y de Estudios Superiores
+ *   de Occidente
+ * Fecha:
+ *   29/03/2026
+ ***********************************************************/
 
 `timescale 1ns/1ps
 

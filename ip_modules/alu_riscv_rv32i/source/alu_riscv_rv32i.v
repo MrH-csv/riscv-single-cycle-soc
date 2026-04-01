@@ -1,102 +1,90 @@
-// ============================================================================
-// Module:      alu_riscv_rv32i
-// Description: Arithmetic Logic Unit (ALU) for a RISC-V RV32I Single-Cycle
-//              processor. Implements all integer computational operations
-//              defined in the RV32I Base Integer Instruction Set (Vol. I,
-//              Chapter 2 of the RISC-V ISA Specification).
-//
-// Design:      Purely combinational logic (no clock, no state elements).
-//              All outputs are resolved within the same clock cycle that
-//              the inputs are presented.
-//
-// Parameters:  WIDTH - Data path width in bits (default: 32 for RV32I)
-//
-// Port Map:
-//   i_a        [WIDTH-1:0] - First operand  (rs1 or PC, depending on instr.)
-//   i_b        [WIDTH-1:0] - Second operand (rs2 or immediate, depending on instr.)
-//   i_alu_ctrl [3:0]       - Operation selector from ALU Control unit
-//   o_result   [WIDTH-1:0] - Computation result
-//   o_zero     [0:0]       - Zero flag (1 when o_result == 0)
-//
-// ALU Control Encoding:
-//   4'b0000 -> AND   |  4'b0101 -> SRL   |  4'b1001 -> SLT
-//   4'b0001 -> OR    |  4'b0110 -> SUB   |  4'b1010 -> SLTU
-//   4'b0010 -> ADD   |  4'b0111 -> SLL   |
-//   4'b0100 -> XOR   |  4'b1000 -> SRA   |
-//
-// RV32I Coverage:
-//   - R-type:  ADD, SUB, AND, OR, XOR, SLL, SRL, SRA, SLT, SLTU
-//   - I-type:  ADDI, ANDI, ORI, XORI, SLLI, SRLI, SRAI, SLTI, SLTIU
-//   - Load/Store address calc: base + offset via ADD
-//   - Branches: BEQ/BNE via SUB + o_zero,
-//               BLT/BGE via SLT, BLTU/BGEU via SLTU
-//   - LUI/AUIPC/JAL/JALR: address calc via ADD
-// ============================================================================
+/***********************************************************
+ * Descripcion:
+ *   Unidad Aritmetico-Logica (ALU) para el procesador
+ *   RISC-V RV32I Single-Cycle. Implementa todas las
+ *   operaciones computacionales enteras definidas en
+ *   el set de instrucciones base RV32I.
+ * Version:
+ *   1.0
+ * Autor:
+ *   Angel Habid Navarro Mendez
+ * Profesor:
+ *   Dr. Jose Luis Pizano Escalante
+ * Programa:
+ *   Maestria en Diseno Electronico
+ * Institucion:
+ *   Instituto Tecnologico y de Estudios Superiores
+ *   de Occidente
+ * Fecha:
+ *   29/03/2026
+ ***********************************************************/
 
 module alu_riscv_rv32i #(
-    parameter WIDTH = 32    // Data path width (32 bits for RV32I)
+    parameter WIDTH = 32    // Ancho del camino de datos (32 bits para RV32I)
 )(
-    // --- Data Inputs ---
-    input  wire [WIDTH-1:0]  i_a,           // Operand A (typically rs1 or PC)
-    input  wire [WIDTH-1:0]  i_b,           // Operand B (typically rs2 or immediate)
+    // --- Entradas de datos ---
+    input  wire [WIDTH-1:0]  i_a,           // Operando A (tipicamente rs1 o PC)
+    input  wire [WIDTH-1:0]  i_b,           // Operando B (tipicamente rs2 o inmediato)
 
-    // --- Control Input ---
-    input  wire [3:0]        i_alu_ctrl,    // Operation select from ALU Control unit
+    // --- Entrada de control ---
+    input  wire [3:0]        i_alu_ctrl,    // Selector de operacion desde la unidad de control ALU
 
-    // --- Outputs ---
-    output reg  [WIDTH-1:0]  o_result,      // ALU computation result
-    output wire              o_zero         // Zero flag: 1 if o_result == 0
+    // --- Salidas ---
+    output reg  [WIDTH-1:0]  o_result,      // Resultado de la ALU
+    output wire              o_zero         // Bandera de cero: 1 si o_result == 0
 );
 
     // ========================================================================
-    // Zero Flag Generation
+    // Generacion de la bandera de cero
     // ------------------------------------------------------------------------
-    // Continuous assignment: o_zero is HIGH when the result is exactly zero.
-    // Used by the branch logic for BEQ (o_zero == 1) and BNE (o_zero == 0).
+    // Asignacion continua: o_zero es ALTO cuando el resultado es exactamente
+    // cero. Utilizado por la logica de salto para BEQ (o_zero == 1) y
+    // BNE (o_zero == 0).
     // ========================================================================
     assign o_zero = (o_result == {WIDTH{1'b0}});
 
     // ========================================================================
-    // ALU Operation Multiplexer - Purely Combinational
+    // Multiplexor de operaciones de la ALU - Puramente combinacional
     // ------------------------------------------------------------------------
-    // Selects the operation based on the 4-bit control signal i_alu_ctrl.
-    // The always @(*) block ensures no latches are inferred, as all paths
-    // (including default) assign a value to o_result.
+    // Selecciona la operacion segun la senal de control de 4 bits i_alu_ctrl.
+    // El bloque always @(*) asegura que no se infieran latches, ya que todos
+    // los caminos (incluyendo default) asignan un valor a o_result.
     //
-    // Note on shifts: Only the lower 5 bits of i_b (i_b[4:0]) are used as
-    // the shift amount, per the RV32I specification (shamt is 5 bits wide
-    // for a 32-bit data path).
+    // Nota sobre corrimientos: Solo los 5 bits bajos de i_b (i_b[4:0]) se
+    // usan como cantidad de corrimiento, segun la especificacion RV32I
+    // (shamt es de 5 bits para un camino de datos de 32 bits).
     //
-    // Note on SRA: $signed(i_a) is required so that the >>> operator
-    // performs arithmetic (sign-extending) shift instead of logical shift.
+    // Nota sobre SRA: $signed(i_a) es necesario para que el operador >>>
+    // realice un corrimiento aritmetico (con extension de signo) en lugar
+    // de un corrimiento logico.
     // ========================================================================
     always @(*) begin
         case (i_alu_ctrl)
-            // --- Logic Operations ---
-            4'b0000: o_result = i_a & i_b;             // AND: Bitwise AND (AND, ANDI)
-            4'b0001: o_result = i_a | i_b;             // OR:  Bitwise OR  (OR, ORI)
-            4'b0100: o_result = i_a ^ i_b;             // XOR: Bitwise XOR (XOR, XORI)
+            // --- Operaciones logicas ---
+            4'b0000: o_result = i_a & i_b;             // AND: AND bit a bit (AND, ANDI)
+            4'b0001: o_result = i_a | i_b;             // OR:  OR bit a bit  (OR, ORI)
+            4'b0100: o_result = i_a ^ i_b;             // XOR: XOR bit a bit (XOR, XORI)
 
-            // --- Arithmetic Operations ---
-            4'b0010: o_result = i_a + i_b;             // ADD: Addition (ADD, ADDI, Load/Store addr, AUIPC, JAL/JALR)
-            4'b0110: o_result = i_a - i_b;             // SUB: Subtraction (SUB, BEQ/BNE comparison)
+            // --- Operaciones aritmeticas ---
+            4'b0010: o_result = i_a + i_b;             // ADD: Suma (ADD, ADDI, dir. Load/Store, AUIPC, JAL/JALR)
+            4'b0110: o_result = i_a - i_b;             // SUB: Resta (SUB, comparacion BEQ/BNE)
 
-            // --- Shift Operations (shamt = i_b[4:0], 5 bits per RV32I spec) ---
-            4'b0101: o_result = i_a >> i_b[4:0];       // SRL: Shift Right Logical  (SRL, SRLI)  - fills with 0s
-            4'b0111: o_result = i_a << i_b[4:0];       // SLL: Shift Left Logical   (SLL, SLLI)  - fills with 0s
-            4'b1000: o_result = $signed(i_a) >>> i_b[4:0]; // SRA: Shift Right Arithmetic (SRA, SRAI) - preserves sign bit
+            // --- Operaciones de corrimiento (shamt = i_b[4:0], 5 bits segun spec RV32I) ---
+            4'b0101: o_result = i_a >> i_b[4:0];       // SRL: Corrimiento derecha logico  (SRL, SRLI)  - rellena con 0s
+            4'b0111: o_result = i_a << i_b[4:0];       // SLL: Corrimiento izquierda logico (SLL, SLLI) - rellena con 0s
+            4'b1000: o_result = $signed(i_a) >>> i_b[4:0]; // SRA: Corrimiento derecha aritmetico (SRA, SRAI) - preserva signo
 
-            // --- Comparison Operations (result is 1 or 0) ---
-            4'b1001: o_result = ($signed(i_a) < $signed(i_b))   // SLT:  Set Less Than Signed   (SLT, SLTI)
-                                ? {{WIDTH-1{1'b0}}, 1'b1}       //       Result = 1 if a < b (signed)
-                                : {WIDTH{1'b0}};                //       Result = 0 otherwise
+            // --- Operaciones de comparacion (resultado es 1 o 0) ---
+            4'b1001: o_result = ($signed(i_a) < $signed(i_b))   // SLT:  Menor que con signo   (SLT, SLTI)
+                                ? {{WIDTH-1{1'b0}}, 1'b1}       //       Resultado = 1 si a < b (con signo)
+                                : {WIDTH{1'b0}};                //       Resultado = 0 en caso contrario
 
-            4'b1010: o_result = (i_a < i_b)                     // SLTU: Set Less Than Unsigned  (SLTU, SLTIU)
-                                ? {{WIDTH-1{1'b0}}, 1'b1}       //       Result = 1 if a < b (unsigned)
-                                : {WIDTH{1'b0}};                //       Result = 0 otherwise
+            4'b1010: o_result = (i_a < i_b)                     // SLTU: Menor que sin signo  (SLTU, SLTIU)
+                                ? {{WIDTH-1{1'b0}}, 1'b1}       //       Resultado = 1 si a < b (sin signo)
+                                : {WIDTH{1'b0}};                //       Resultado = 0 en caso contrario
 
-            // --- Default: prevents latch inference ---
-            default: o_result = {WIDTH{1'b0}};          // Undefined control codes output zero
+            // --- Default: evita inferencia de latches ---
+            default: o_result = {WIDTH{1'b0}};          // Codigos de control no definidos retornan cero
         endcase
     end
 

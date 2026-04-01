@@ -1,5 +1,5 @@
 Flow report for soc_rv32i_single_cycle
-Sun Mar 29 22:23:50 2026
+Wed Apr  1 03:36:00 2026
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -41,22 +41,22 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Flow Failed - Sun Mar 29 22:23:50 2026          ;
+; Flow Status                        ; Successful - Wed Apr  1 03:36:00 2026           ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; soc_rv32i_single_cycle                          ;
 ; Top-level Entity Name              ; soc_rv32i_single_cycle                          ;
 ; Family                             ; Cyclone IV E                                    ;
 ; Device                             ; EP4CE115F29C7                                   ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; N/A until Partition Merge                       ;
-;     Total combinational functions  ; N/A until Partition Merge                       ;
-;     Dedicated logic registers      ; N/A until Partition Merge                       ;
-; Total registers                    ; N/A until Partition Merge                       ;
-; Total pins                         ; N/A until Partition Merge                       ;
-; Total virtual pins                 ; N/A until Partition Merge                       ;
-; Total memory bits                  ; N/A until Partition Merge                       ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                       ;
-; Total PLLs                         ; N/A until Partition Merge                       ;
+; Total logic elements               ; 17,388                                          ;
+;     Total combinational functions  ; 8,236                                           ;
+;     Dedicated logic registers      ; 9,256                                           ;
+; Total registers                    ; 9256                                            ;
+; Total pins                         ; 18                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 6                                               ;
+; Total PLLs                         ; 0                                               ;
 +------------------------------------+-------------------------------------------------+
 
 
@@ -65,7 +65,7 @@ on the Quartus Prime software download page.
 +-------------------+------------------------+
 ; Option            ; Setting                ;
 +-------------------+------------------------+
-; Start date & time ; 03/29/2026 22:21:31    ;
+; Start date & time ; 04/01/2026 03:34:57    ;
 ; Main task         ; Compilation            ;
 ; Revision Name     ; soc_rv32i_single_cycle ;
 +-------------------+------------------------+
@@ -76,12 +76,12 @@ on the Quartus Prime software download page.
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 217970079470770.177484449123124        ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 174105631539539.177503609717828        ; --            ; --          ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_signal_integrity ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_symbol           ;
-; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --            ; --          ; eda_simulation                    ;
+; EDA_OUTPUT_DATA_FORMAT              ; None                                   ; --            ; --          ; eda_simulation                    ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --                                ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --                                ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top                               ;
@@ -96,8 +96,8 @@ on the Quartus Prime software download page.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:02:20     ; 1.0                     ; 4973 MB             ; 00:02:57                           ;
-; Total                ; 00:02:20     ; --                      ; --                  ; 00:02:57                           ;
+; Analysis & Synthesis ; 00:01:02     ; 1.0                     ; 4981 MB             ; 00:01:25                           ;
+; Total                ; 00:01:02     ; --                      ; --                  ; 00:01:25                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

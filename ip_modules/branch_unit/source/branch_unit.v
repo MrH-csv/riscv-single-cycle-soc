@@ -1,28 +1,23 @@
-// ============================================================================
-// Module:      branch_unit
-// Description: Unidad de comparacion para instrucciones de branch y jump
-//              del procesador RISC-V RV32I Single-Cycle.
-//
-//              Evalua la condicion de branch segun funct3 y determina si
-//              el salto debe tomarse. Tambien maneja saltos incondicionales
-//              (JAL/JALR).
-//
-// Port Map:
-//   i_rs1_data [31:0] — Dato del registro fuente 1
-//   i_rs2_data [31:0] — Dato del registro fuente 2
-//   i_funct3   [2:0]  — Campo funct3 de la instruccion (tipo de branch)
-//   i_branch          — Senal de branch desde Main Control
-//   i_jump            — Senal de jump desde Main Control (JAL/JALR)
-//   o_pc_sel          — 1: tomar salto (branch/jump), 0: PC+4
-//
-// Codificacion funct3 para branches (RV32I):
-//   3'b000 -> BEQ  (Branch if Equal)
-//   3'b001 -> BNE  (Branch if Not Equal)
-//   3'b100 -> BLT  (Branch if Less Than, signed)
-//   3'b101 -> BGE  (Branch if Greater or Equal, signed)
-//   3'b110 -> BLTU (Branch if Less Than, unsigned)
-//   3'b111 -> BGEU (Branch if Greater or Equal, unsigned)
-// ============================================================================
+/***********************************************************
+ * Descripcion:
+ *   Unidad de comparacion para instrucciones de branch
+ *   y jump del procesador RISC-V RV32I Single-Cycle.
+ *   Evalua la condicion de salto segun funct3 y determina
+ *   si el salto debe tomarse.
+ * Version:
+ *   1.0
+ * Autor:
+ *   Angel Habid Navarro Mendez
+ * Profesor:
+ *   Dr. Jose Luis Pizano Escalante
+ * Programa:
+ *   Maestria en Diseno Electronico
+ * Institucion:
+ *   Instituto Tecnologico y de Estudios Superiores
+ *   de Occidente
+ * Fecha:
+ *   29/03/2026
+ ***********************************************************/
 
 module branch_unit (
     input  wire [31:0] i_rs1_data,

@@ -1,3 +1,23 @@
+/***********************************************************
+ * Descripcion:
+ *   Generador de inmediatos para el procesador RISC-V
+ *   RV32I. Extrae y extiende en signo el campo inmediato
+ *   segun el tipo de instruccion (I, S, B, U, J).
+ * Version:
+ *   1.0
+ * Autor:
+ *   Angel Habid Navarro Mendez
+ * Profesor:
+ *   Dr. Jose Luis Pizano Escalante
+ * Programa:
+ *   Maestria en Diseno Electronico
+ * Institucion:
+ *   Instituto Tecnologico y de Estudios Superiores
+ *   de Occidente
+ * Fecha:
+ *   29/03/2026
+ ***********************************************************/
+
 module imm_generator (
     input  wire [31:0] i_instr,
     output reg  [31:0] o_imm

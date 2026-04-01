@@ -1,8 +1,22 @@
-// ============================================================
-// Testbench — imm_generator
-// Verifica generacion de inmediatos para todos los tipos
-// de instruccion RV32I: I, S, B, U, J y default.
-// ============================================================
+/***********************************************************
+ * Descripcion:
+ *   Testbench del generador de inmediatos. Verifica la
+ *   generacion de inmediatos para todos los tipos de
+ *   instruccion RV32I: I, S, B, U, J y default.
+ * Version:
+ *   1.0
+ * Autor:
+ *   Angel Habid Navarro Mendez
+ * Profesor:
+ *   Dr. Jose Luis Pizano Escalante
+ * Programa:
+ *   Maestria en Diseno Electronico
+ * Institucion:
+ *   Instituto Tecnologico y de Estudios Superiores
+ *   de Occidente
+ * Fecha:
+ *   29/03/2026
+ ***********************************************************/
 
 `timescale 1ns/1ps
 

@@ -1,12 +1,21 @@
-// ============================================================
-// Testbench — soc_rv32i_single_cycle
-// Verifica el programa LED chaser con GPIO memory-mapped.
-//
-// El programa lee los switches (GPIO_IN = 0x10010028) para
-// determinar cuantas veces recorrer los 8 LEDs.
-// En cada iteracion interna, enciende un LED a la vez
-// (bit walking: 1, 2, 4, 8, 16, 32, 64, 128).
-// ============================================================
+/***********************************************************
+ * Descripcion:
+ *   Testbench del SoC RV32I single-cycle. Verifica el
+ *   programa LED chaser con GPIO memory-mapped.
+ * Version:
+ *   1.0
+ * Autor:
+ *   Angel Habid Navarro Mendez
+ * Profesor:
+ *   Dr. Jose Luis Pizano Escalante
+ * Programa:
+ *   Maestria en Diseno Electronico
+ * Institucion:
+ *   Instituto Tecnologico y de Estudios Superiores
+ *   de Occidente
+ * Fecha:
+ *   29/03/2026
+ ***********************************************************/
 
 `timescale 1ns/1ps
 

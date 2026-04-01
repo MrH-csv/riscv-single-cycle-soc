@@ -1,11 +1,23 @@
-//=============================================================================
-// Module:      register_file
-// Description: Banco de Registros (x0-x31) para procesador RISC-V Single-Cycle.
-//              - 32 registros de WIDTH bits.
-//              - 2 puertos de lectura combinacional (asíncrona).
-//              - 1 puerto de escritura síncrona (posedge clk).
-//              - x0 (zero) está hardwired a 0 según la especificación RISC-V ISA.
-//=============================================================================
+/***********************************************************
+ * Descripcion:
+ *   Banco de registros (x0-x31) para el procesador
+ *   RISC-V Single-Cycle. 32 registros de WIDTH bits,
+ *   2 puertos de lectura combinacional y 1 puerto de
+ *   escritura sincrona. x0 hardwired a cero.
+ * Version:
+ *   1.0
+ * Autor:
+ *   Angel Habid Navarro Mendez
+ * Profesor:
+ *   Dr. Jose Luis Pizano Escalante
+ * Programa:
+ *   Maestria en Diseno Electronico
+ * Institucion:
+ *   Instituto Tecnologico y de Estudios Superiores
+ *   de Occidente
+ * Fecha:
+ *   29/03/2026
+ ***********************************************************/
 
 module register_file #(
     parameter WIDTH = 32

@@ -1,8 +1,22 @@
-// ============================================================
-// Testbench — register_file
-// Verifica banco de registros RV32I: x0 hardwired, escritura
-// sincrona, lectura combinacional, write enable.
-// ============================================================
+/***********************************************************
+ * Descripcion:
+ *   Testbench del banco de registros RV32I. Verifica
+ *   x0 hardwired, escritura sincrona, lectura
+ *   combinacional y write enable.
+ * Version:
+ *   1.0
+ * Autor:
+ *   Angel Habid Navarro Mendez
+ * Profesor:
+ *   Dr. Jose Luis Pizano Escalante
+ * Programa:
+ *   Maestria en Diseno Electronico
+ * Institucion:
+ *   Instituto Tecnologico y de Estudios Superiores
+ *   de Occidente
+ * Fecha:
+ *   29/03/2026
+ ***********************************************************/
 
 `timescale 1ns/1ps
 

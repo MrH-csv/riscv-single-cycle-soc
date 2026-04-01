@@ -1,24 +1,23 @@
-// ============================================================================
-// Module:      rv32i_single_cycle
-// Description: Core RISC-V RV32I Single-Cycle.
-//              Solo el datapath y la unidad de control.
-//              Las memorias de instrucciones y datos se conectan externamente
-//              a traves de los puertos de bus, permitiendo integrar perifericos
-//              en un nivel de jerarquia superior (SoC).
-//
-// Instrucciones soportadas:
-//   R-type:  ADD, SUB, AND, OR, XOR, SLL, SRL, SRA, SLT, SLTU
-//   I-type:  ADDI, ANDI, ORI, XORI, SLLI, SRLI, SRAI, SLTI, SLTIU
-//   Load:    LW (word)
-//   Store:   SW (word)
-//   Branch:  BEQ, BNE, BLT, BGE, BLTU, BGEU
-//   U-type:  LUI, AUIPC
-//   J-type:  JAL, JALR
-//   RV32M:   MUL (extension, lower 32 bits)
-//
-// Parametros:
-//   RESET_VECTOR  — Direccion inicial del PC tras reset
-// ============================================================================
+/***********************************************************
+ * Descripcion:
+ *   Core RISC-V RV32I Single-Cycle. Contiene el datapath
+ *   y la unidad de control. Las memorias se conectan
+ *   externamente a traves de los puertos de bus,
+ *   permitiendo integrar perifericos en el SoC.
+ * Version:
+ *   1.0
+ * Autor:
+ *   Angel Habid Navarro Mendez
+ * Profesor:
+ *   Dr. Jose Luis Pizano Escalante
+ * Programa:
+ *   Maestria en Diseno Electronico
+ * Institucion:
+ *   Instituto Tecnologico y de Estudios Superiores
+ *   de Occidente
+ * Fecha:
+ *   29/03/2026
+ ***********************************************************/
 
 module rv32i_single_cycle #(
     parameter RESET_VECTOR = 32'h0000_0000
@@ -42,7 +41,7 @@ module rv32i_single_cycle #(
     // Senales internas
     // ========================================================================
 
-    // --- Instruction Fetch ---
+    // --- Busqueda de instruccion ---
     wire [31:0] pc_current;
     wire [31:0] pc_plus_4;
     wire [31:0] instruction;
@@ -113,7 +112,7 @@ module rv32i_single_cycle #(
     assign o_dmem_re    = ctrl_mem_read;
 
     // ========================================================================
-    // INSTRUCTION FETCH STAGE
+    // ETAPA DE BUSQUEDA DE INSTRUCCION
     // ========================================================================
 
     // --- Program Counter ---
@@ -136,7 +135,7 @@ module rv32i_single_cycle #(
     );
 
     // ========================================================================
-    // INSTRUCTION DECODE STAGE
+    // ETAPA DE DECODIFICACION
     // ========================================================================
 
     // --- Main Control Unit ---
@@ -184,7 +183,7 @@ module rv32i_single_cycle #(
     );
 
     // ========================================================================
-    // EXECUTE STAGE
+    // ETAPA DE EJECUCION
     // ========================================================================
 
     // --- MUX ALU Operando A: rs1 (0) o PC (1) ---
@@ -212,7 +211,7 @@ module rv32i_single_cycle #(
         .o_zero     (alu_zero)
     );
 
-    // --- Multiplicador (RV32M extension: MUL) ---
+    // --- Multiplicador (extension RV32M: MUL) ---
     mul_module u_mul (
         .i_a      (rs1_data),
         .i_b      (rs2_data),
@@ -220,7 +219,7 @@ module rv32i_single_cycle #(
     );
 
     // ========================================================================
-    // WRITE-BACK STAGE
+    // ETAPA DE WRITE-BACK
     // ========================================================================
 
     // --- MUX de resultado (4 fuentes) ---
@@ -246,7 +245,7 @@ module rv32i_single_cycle #(
     );
 
     // ========================================================================
-    // BRANCH / JUMP — NEXT PC LOGIC
+    // BRANCH / JUMP — LOGICA DEL SIGUIENTE PC
     // ========================================================================
 
     // --- Branch Unit: evalua condicion de branch y jump ---

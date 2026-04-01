@@ -1,9 +1,23 @@
-// ============================================================
-// Testbench — rom_combinational_sc
-// Verifica lectura combinacional de la ROM de instrucciones.
-// No hay reloj: se aplican direcciones y se espera un
-// retardo de propagación antes de verificar la salida.
-// ============================================================
+/***********************************************************
+ * Descripcion:
+ *   Testbench de la ROM de instrucciones combinacional.
+ *   Verifica lectura combinacional de la ROM. Se aplican
+ *   direcciones y se verifica la salida tras un retardo
+ *   de propagacion.
+ * Version:
+ *   1.0
+ * Autor:
+ *   Angel Habid Navarro Mendez
+ * Profesor:
+ *   Dr. Jose Luis Pizano Escalante
+ * Programa:
+ *   Maestria en Diseno Electronico
+ * Institucion:
+ *   Instituto Tecnologico y de Estudios Superiores
+ *   de Occidente
+ * Fecha:
+ *   29/03/2026
+ ***********************************************************/
 
 `timescale 1ns/1ps
 

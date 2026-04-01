@@ -1,7 +1,21 @@
-// ============================================================
-// Testbench — mux_2i_1o
-// Verifica seleccion correcta del multiplexor 2:1.
-// ============================================================
+/***********************************************************
+ * Descripcion:
+ *   Testbench del multiplexor 2:1. Verifica la seleccion
+ *   correcta de entradas.
+ * Version:
+ *   1.0
+ * Autor:
+ *   Angel Habid Navarro Mendez
+ * Profesor:
+ *   Dr. Jose Luis Pizano Escalante
+ * Programa:
+ *   Maestria en Diseno Electronico
+ * Institucion:
+ *   Instituto Tecnologico y de Estudios Superiores
+ *   de Occidente
+ * Fecha:
+ *   29/03/2026
+ ***********************************************************/
 
 `timescale 1ns/1ps
 

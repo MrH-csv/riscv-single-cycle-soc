@@ -1,8 +1,22 @@
-// ============================================================
-// Testbench — rv32i_single_cycle (core standalone)
-// Conecta ROM y RAM directamente al core para verificar
-// el datapath de forma aislada, sin el SoC.
-// ============================================================
+/***********************************************************
+ * Descripcion:
+ *   Testbench del core RV32I single-cycle. Conecta ROM
+ *   y RAM directamente al core para verificar el
+ *   datapath de forma aislada, sin el SoC.
+ * Version:
+ *   1.0
+ * Autor:
+ *   Angel Habid Navarro Mendez
+ * Profesor:
+ *   Dr. Jose Luis Pizano Escalante
+ * Programa:
+ *   Maestria en Diseno Electronico
+ * Institucion:
+ *   Instituto Tecnologico y de Estudios Superiores
+ *   de Occidente
+ * Fecha:
+ *   29/03/2026
+ ***********************************************************/
 
 `timescale 1ns/1ps
 

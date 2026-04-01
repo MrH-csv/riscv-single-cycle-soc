@@ -1,10 +1,22 @@
-// ============================================================
-// Testbench — main_control_rv32i
-// Verifica decodificacion del opcode para todas las senales
-// de control del datapath RV32I single-cycle.
-// Cubre los 7 tipos de instruccion: R, I, Load, Store,
-// Branch, LUI, AUIPC, JAL, JALR.
-// ============================================================
+/***********************************************************
+ * Descripcion:
+ *   Testbench de la unidad de control principal.
+ *   Verifica la decodificacion del opcode para todas
+ *   las senales de control del datapath RV32I single-cycle.
+ * Version:
+ *   1.0
+ * Autor:
+ *   Angel Habid Navarro Mendez
+ * Profesor:
+ *   Dr. Jose Luis Pizano Escalante
+ * Programa:
+ *   Maestria en Diseno Electronico
+ * Institucion:
+ *   Instituto Tecnologico y de Estudios Superiores
+ *   de Occidente
+ * Fecha:
+ *   29/03/2026
+ ***********************************************************/
 
 `timescale 1ns/1ps
 

@@ -1,23 +1,23 @@
-// ============================================================================
-// Module:      gpio_peripheral
-// Description: Periferico GPIO memory-mapped para el SoC RV32I.
-//              Provee un registro de salida de 8 bits (LEDs) y un registro
-//              de entrada de 8 bits (switches) de la tarjeta DE2-115.
-//
-// Mapa de registros (direcciones absolutas):
-//   0x1001_0024 : GPIO_OUT [7:0] — Registro de salida (R/W) → LEDs LEDR[7:0]
-//   0x1001_0028 : GPIO_IN  [7:0] — Entrada directa   (R)   → Switches SW[7:0]
-//
-// Port map:
-//   clk, rst              — Reloj y reset sincrono
-//   i_cs                  — Chip select (desde addr_decoder)
-//   i_we                  — Write enable (desde el core)
-//   i_addr        [7:0]   — Offset local (bits bajos de la direccion)
-//   i_wdata      [31:0]   — Dato a escribir (desde el core)
-//   o_rdata      [31:0]   — Dato leido (hacia el addr_decoder)
-//   o_gpio_out    [7:0]   — Pines de salida → LEDs LEDR[7:0]
-//   i_gpio_in     [7:0]   — Pines de entrada → Switches SW[7:0]
-// ============================================================================
+/***********************************************************
+ * Descripcion:
+ *   Periferico GPIO memory-mapped para el SoC RV32I.
+ *   Provee un registro de salida de 8 bits (LEDs) y un
+ *   registro de entrada de 8 bits (switches) de la
+ *   tarjeta DE2-115.
+ * Version:
+ *   1.0
+ * Autor:
+ *   Angel Habid Navarro Mendez
+ * Profesor:
+ *   Dr. Jose Luis Pizano Escalante
+ * Programa:
+ *   Maestria en Diseno Electronico
+ * Institucion:
+ *   Instituto Tecnologico y de Estudios Superiores
+ *   de Occidente
+ * Fecha:
+ *   29/03/2026
+ ***********************************************************/
 
 `timescale 1ns/1ps
 

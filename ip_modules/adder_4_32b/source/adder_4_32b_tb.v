@@ -1,8 +1,22 @@
-// ============================================================
-// Testbench — adder_4_32b
-// Verifica suma de 32 bits: casos basicos, conmutatividad,
-// overflow (wrap-around) y valores limite.
-// ============================================================
+/***********************************************************
+ * Descripcion:
+ *   Testbench del sumador adder_4_32b. Verifica suma
+ *   de 32 bits: casos basicos, conmutatividad, overflow
+ *   (wrap-around) y valores limite.
+ * Version:
+ *   1.0
+ * Autor:
+ *   Angel Habid Navarro Mendez
+ * Profesor:
+ *   Dr. Jose Luis Pizano Escalante
+ * Programa:
+ *   Maestria en Diseno Electronico
+ * Institucion:
+ *   Instituto Tecnologico y de Estudios Superiores
+ *   de Occidente
+ * Fecha:
+ *   29/03/2026
+ ***********************************************************/
 
 `timescale 1ns/1ps
 
