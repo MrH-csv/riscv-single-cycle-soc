@@ -1,0 +1,313 @@
+<mxfile host="app.diagrams.net" modified="2026-04-02T00:00:00.000Z" agent="Claude" version="21.0.0" type="device">
+  <diagram id="soc-arch" name="SoC Architecture">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- ============================================================ -->
+        <!-- Title -->
+        <!-- ============================================================ -->
+        <mxCell id="title" value="&lt;b&gt;SoC RISC-V RV32I Single-Cycle&lt;/b&gt;&lt;br&gt;Arquitectura General" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="560" y="20" width="360" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- SoC Boundary -->
+        <!-- ============================================================ -->
+        <mxCell id="soc_boundary" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;dashed=1;dashPattern=5 5;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="80" y="80" width="1440" height="740" as="geometry" />
+        </mxCell>
+        <mxCell id="soc_label" value="&lt;b&gt;soc_rv32i_single_cycle&lt;/b&gt;&lt;br&gt;(Top-Level)" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="90" y="85" width="180" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- RV32I Core Boundary -->
+        <!-- ============================================================ -->
+        <mxCell id="core_boundary" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="120" y="140" width="900" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="core_label" value="&lt;b&gt;rv32i_single_cycle&lt;/b&gt; (Core)" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="130" y="145" width="200" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- Program Counter -->
+        <!-- ============================================================ -->
+        <mxCell id="pc" value="&lt;b&gt;PC&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;program_counter&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="150" y="200" width="120" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Adder PC+4 -->
+        <mxCell id="adder_pc4" value="&lt;b&gt;Adder&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;PC + 4&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="150" y="290" width="120" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Adder PC+imm -->
+        <mxCell id="adder_branch" value="&lt;b&gt;Adder&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;PC + Imm&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="150" y="360" width="120" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- Main Control -->
+        <!-- ============================================================ -->
+        <mxCell id="main_ctrl" value="&lt;b&gt;Main Control&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;main_control_rv32i&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="380" y="180" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ALU Control -->
+        <mxCell id="alu_ctrl" value="&lt;b&gt;ALU Control&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;control_alu_rv32i&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="560" y="180" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- Imm Generator -->
+        <!-- ============================================================ -->
+        <mxCell id="imm_gen" value="&lt;b&gt;Imm Gen&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;imm_generator&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="380" y="270" width="140" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- Register File -->
+        <!-- ============================================================ -->
+        <mxCell id="reg_file" value="&lt;b&gt;Register File&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;register_file&lt;br&gt;32 x 32-bit&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="380" y="340" width="140" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- Branch Unit -->
+        <!-- ============================================================ -->
+        <mxCell id="branch_unit" value="&lt;b&gt;Branch&lt;br&gt;Unit&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="380" y="430" width="100" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- ALU -->
+        <!-- ============================================================ -->
+        <mxCell id="alu" value="&lt;b&gt;ALU&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;alu_riscv_rv32i&lt;br&gt;10 operaciones&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="620" y="290" width="140" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Multiplier -->
+        <mxCell id="mul" value="&lt;b&gt;MUL&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;mul_module&lt;br&gt;(RV32M)&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="620" y="380" width="140" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- MUXes -->
+        <!-- ============================================================ -->
+        <mxCell id="mux_alu_src" value="&lt;b&gt;MUX&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot;&gt;ALU Src&lt;/font&gt;" style="shape=trapezoid;perimeter=trapezoidPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;size=10;" vertex="1" parent="1">
+          <mxGeometry x="550" y="340" width="60" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="mux_result" value="&lt;b&gt;MUX&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot;&gt;Result&lt;/font&gt;" style="shape=trapezoid;perimeter=trapezoidPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;size=10;" vertex="1" parent="1">
+          <mxGeometry x="820" y="310" width="60" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="mux_pc" value="&lt;b&gt;MUX&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot;&gt;Next PC&lt;/font&gt;" style="shape=trapezoid;perimeter=trapezoidPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;size=10;" vertex="1" parent="1">
+          <mxGeometry x="900" y="200" width="60" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- Instruction Memory (ROM) -->
+        <!-- ============================================================ -->
+        <mxCell id="imem" value="&lt;b&gt;ROM&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;rom_combinational_sc&lt;br&gt;64 x 32-bit&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="120" y="530" width="160" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- Address Decoder -->
+        <!-- ============================================================ -->
+        <mxCell id="addr_dec" value="&lt;b&gt;Address Decoder&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;addr_decoder&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="440" y="540" width="200" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- Data Memory (RAM) -->
+        <!-- ============================================================ -->
+        <mxCell id="dmem" value="&lt;b&gt;RAM&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;data_memory&lt;br&gt;256 x 32-bit&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px;color:#666&quot;&gt;0x10010000&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="340" y="660" width="140" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- GPIO Peripheral -->
+        <!-- ============================================================ -->
+        <mxCell id="gpio" value="&lt;b&gt;GPIO&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;gpio_peripheral&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px;color:#666&quot;&gt;0x10010020&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="520" y="660" width="140" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- UART Peripheral -->
+        <!-- ============================================================ -->
+        <mxCell id="uart" value="&lt;b&gt;UART&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;uart_peripheral&lt;br&gt;9600 baud, 8N1&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px;color:#666&quot;&gt;0x10010030&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="700" y="660" width="150" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- External Interfaces -->
+        <!-- ============================================================ -->
+        <mxCell id="clk_rst" value="&lt;b&gt;CLK&lt;/b&gt; (50 MHz)&lt;br&gt;&lt;b&gt;RST&lt;/b&gt; (SW9)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f0f0f0;strokeColor=#999999;strokeWidth=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="140" width="120" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="leds" value="&lt;b&gt;LEDR[7:0]&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;8 LEDs rojos&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f0f0f0;strokeColor=#999999;strokeWidth=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="620" width="120" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="switches" value="&lt;b&gt;SW[7:0]&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;8 Switches&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f0f0f0;strokeColor=#999999;strokeWidth=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="690" width="120" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uart_tx_pin" value="&lt;b&gt;UART TX&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;PIN_W15&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f0f0f0;strokeColor=#999999;strokeWidth=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1280" y="640" width="120" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uart_rx_pin" value="&lt;b&gt;UART RX&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;PIN_AK2&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f0f0f0;strokeColor=#999999;strokeWidth=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1280" y="710" width="120" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- Connections: Instruction Bus -->
+        <!-- ============================================================ -->
+        <mxCell id="conn_pc_imem" value="imem_addr [31:0]" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#0000CC;fontColor=#0000CC;fontSize=9;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="pc" target="imem">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn_imem_ctrl" value="instruction [31:0]" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#0000CC;fontColor=#0000CC;fontSize=9;" edge="1" parent="1" source="imem" target="main_ctrl">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="200" y="510" />
+              <mxPoint x="320" y="510" />
+              <mxPoint x="320" y="210" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Connections: Core to Data Bus -->
+        <mxCell id="conn_core_addrdec" value="dmem_addr [31:0]&lt;br&gt;dmem_wdata [31:0]&lt;br&gt;dmem_we / dmem_re" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#CC0000;fontColor=#CC0000;fontSize=9;" edge="1" parent="1" source="alu" target="addr_dec">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="690" y="500" />
+              <mxPoint x="540" y="500" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="conn_addrdec_rdata" value="dmem_rdata [31:0]" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#009900;fontColor=#009900;fontSize=9;" edge="1" parent="1" source="addr_dec" target="mux_result">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="640" y="580" />
+              <mxPoint x="880" y="580" />
+              <mxPoint x="880" y="350" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Connections: Address Decoder to Peripherals -->
+        <mxCell id="conn_dec_dmem" value="cs_dmem" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#666666;fontColor=#666666;fontSize=9;" edge="1" parent="1" source="addr_dec" target="dmem">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn_dec_gpio" value="cs_gpio" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#666666;fontColor=#666666;fontSize=9;" edge="1" parent="1" source="addr_dec" target="gpio">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn_dec_uart" value="cs_uart" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#666666;fontColor=#666666;fontSize=9;" edge="1" parent="1" source="addr_dec" target="uart">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Connections: GPIO to external -->
+        <mxCell id="conn_gpio_leds" value="o_gpio_out [7:0]" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#009900;fontSize=9;fontColor=#009900;" edge="1" parent="1" source="gpio" target="leds">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn_gpio_sw" value="i_gpio_in [7:0]" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#009900;fontSize=9;fontColor=#009900;" edge="1" parent="1" source="switches" target="gpio">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Connections: UART to external -->
+        <mxCell id="conn_uart_tx" value="o_uart_tx" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#CC6600;fontSize=9;fontColor=#CC6600;" edge="1" parent="1" source="uart" target="uart_tx_pin">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn_uart_rx" value="i_uart_rx" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#CC6600;fontSize=9;fontColor=#CC6600;" edge="1" parent="1" source="uart_rx_pin" target="uart">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- Legend -->
+        <!-- ============================================================ -->
+        <mxCell id="legend_box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAFAFA;strokeColor=#CCCCCC;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="220" width="380" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_title" value="&lt;b&gt;Leyenda&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1110" y="225" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_green" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="260" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_green_t" value="Almacenamiento / Datapath" style="text;html=1;align=left;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="257" width="180" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_yellow" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="290" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_yellow_t" value="Control / Decodificacion" style="text;html=1;align=left;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="287" width="180" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_red" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="320" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_red_t" value="Unidades Aritmeticas" style="text;html=1;align=left;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="317" width="180" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_purple" value="" style="shape=trapezoid;perimeter=trapezoidPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;size=5;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="350" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_purple_t" value="Multiplexores / Inmediatos" style="text;html=1;align=left;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="347" width="180" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_gray" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f0f0f0;strokeColor=#999999;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="380" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_gray_t" value="Interfaces Externas (Pines FPGA)" style="text;html=1;align=left;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="377" width="200" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- Bus Legend -->
+        <!-- ============================================================ -->
+        <mxCell id="bus_legend" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAFAFA;strokeColor=#CCCCCC;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="420" width="380" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="bus_title" value="&lt;b&gt;Buses&lt;/b&gt;" style="text;html=1;align=left;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1110" y="425" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="bus_blue" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#0000CC;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1120" y="470" as="sourcePoint" />
+            <mxPoint x="1160" y="470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bus_blue_t" value="Bus de Instrucciones" style="text;html=1;align=left;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="458" width="150" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="bus_red" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#CC0000;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1120" y="498" as="sourcePoint" />
+            <mxPoint x="1160" y="498" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bus_red_t" value="Bus de Datos (escritura)" style="text;html=1;align=left;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="486" width="170" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="bus_green" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#009900;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1120" y="526" as="sourcePoint" />
+            <mxPoint x="1160" y="526" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bus_green_t" value="Bus de Datos (lectura)" style="text;html=1;align=left;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="514" width="170" height="25" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

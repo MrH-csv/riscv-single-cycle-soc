@@ -1,0 +1,252 @@
+<mxfile host="app.diagrams.net" modified="2026-04-02T00:00:00.000Z" agent="Claude" version="21.0.0" type="device">
+  <diagram id="uart-system" name="UART System">
+    <mxGraphModel dx="1600" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- ============================================================ -->
+        <!-- Title -->
+        <!-- ============================================================ -->
+        <mxCell id="title" value="&lt;b&gt;Sistema UART — Arquitectura Interna&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;9600 baud, 8N1 (8 data bits, no parity, 1 stop bit)&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="470" y="15" width="420" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- uart_peripheral boundary -->
+        <!-- ============================================================ -->
+        <mxCell id="periph_boundary" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;dashed=1;dashPattern=5 5;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="100" y="80" width="1400" height="580" as="geometry" />
+        </mxCell>
+        <mxCell id="periph_label" value="&lt;b&gt;uart_peripheral&lt;/b&gt; (Memory-Mapped Wrapper)&lt;br&gt;&lt;font style=&quot;font-size:10px;color:#666&quot;&gt;Base: 0x10010030&lt;/font&gt;" style="text;html=1;align=left;fontSize=13;fontColor=#333;" vertex="1" parent="1">
+          <mxGeometry x="115" y="85" width="350" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- Bus Interface (left side) -->
+        <!-- ============================================================ -->
+        <mxCell id="bus_if" value="&lt;b&gt;Bus Interface&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;(desde Address Decoder)&lt;/font&gt;" style="text;html=1;align=center;fontSize=12;fontColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="120" y="135" width="200" height="35" as="geometry" />
+        </mxCell>
+
+        <mxCell id="bus_cs" value="i_cs" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="180" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="bus_we" value="i_we" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="220" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="bus_addr" value="i_addr[7:0]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="260" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="bus_wdata" value="i_wdata[31:0]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="300" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="bus_rdata" value="o_rdata[31:0]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="350" width="100" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- Register Map -->
+        <!-- ============================================================ -->
+        <mxCell id="regmap_box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF8E1;strokeColor=#FFA000;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="290" y="135" width="280" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="regmap_title" value="&lt;b&gt;Mapa de Registros&lt;/b&gt;" style="text;html=1;align=center;fontSize=12;fontColor=#E65100;" vertex="1" parent="1">
+          <mxGeometry x="350" y="140" width="160" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- TX_DATA register -->
+        <mxCell id="reg_tx" value="&lt;b&gt;UART_TX_DATA&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot;&gt;Offset: 0x30 (W)&lt;br&gt;data[7:0] → uart_tx&lt;br&gt;&lt;br&gt;Escritura genera&lt;br&gt;pulso tx_start (1 ciclo)&lt;br&gt;Protegido: solo si !tx_busy&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="310" y="170" width="170" height="105" as="geometry" />
+        </mxCell>
+
+        <!-- RX_DATA register -->
+        <mxCell id="reg_rx" value="&lt;b&gt;UART_RX_DATA&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot;&gt;Offset: 0x34 (R)&lt;br&gt;data[7:0] ← uart_rx&lt;br&gt;&lt;br&gt;Lectura limpia&lt;br&gt;rx_ready (clear-on-read)&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="310" y="285" width="170" height="95" as="geometry" />
+        </mxCell>
+
+        <!-- STATUS register -->
+        <mxCell id="reg_status" value="&lt;b&gt;UART_STATUS&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot;&gt;Offset: 0x38 (R)&lt;br&gt;&lt;br&gt;bit 0: tx_busy&lt;br&gt;bit 1: rx_ready&lt;br&gt;bits [31:2]: 0&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="310" y="435" width="170" height="95" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- UART TX Module -->
+        <!-- ============================================================ -->
+        <mxCell id="tx_boundary" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE4EC;strokeColor=#E91E63;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="640" y="130" width="420" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="tx_label" value="&lt;b&gt;uart_tx&lt;/b&gt; (Transmisor)" style="text;html=1;align=left;fontSize=12;fontColor=#C62828;" vertex="1" parent="1">
+          <mxGeometry x="655" y="135" width="180" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- TX FSM -->
+        <mxCell id="tx_fsm_title" value="&lt;b&gt;FSM (4 estados)&lt;/b&gt;" style="text;html=1;align=center;fontSize=10;fontColor=#C62828;" vertex="1" parent="1">
+          <mxGeometry x="700" y="160" width="130" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="tx_idle" value="&lt;b&gt;S_IDLE&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:8px&quot;&gt;tx_out = 1&lt;br&gt;busy = 0&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFCDD2;strokeColor=#E91E63;strokeWidth=1;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="660" y="185" width="95" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="tx_start" value="&lt;b&gt;S_START&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:8px&quot;&gt;tx_out = 0&lt;br&gt;5208 clks&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFCDD2;strokeColor=#E91E63;strokeWidth=1;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="790" y="185" width="95" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="tx_data_st" value="&lt;b&gt;S_DATA&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:8px&quot;&gt;tx_out = data[idx]&lt;br&gt;8 bits × 5208 clks&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFCDD2;strokeColor=#E91E63;strokeWidth=1;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="920" y="185" width="115" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="tx_stop" value="&lt;b&gt;S_STOP&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:8px&quot;&gt;tx_out = 1&lt;br&gt;5208 clks&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFCDD2;strokeColor=#E91E63;strokeWidth=1;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="920" y="280" width="115" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- TX FSM arrows -->
+        <mxCell id="tx_e1" value="&lt;font style=&quot;font-size:8px&quot;&gt;tx_start&lt;/font&gt;" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#E91E63;curved=1;" edge="1" parent="1" source="tx_idle" target="tx_start">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tx_e2" value="&lt;font style=&quot;font-size:8px&quot;&gt;cnt done&lt;/font&gt;" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#E91E63;curved=1;" edge="1" parent="1" source="tx_start" target="tx_data_st">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tx_e3" value="&lt;font style=&quot;font-size:8px&quot;&gt;bit_idx=7&lt;/font&gt;" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#E91E63;curved=1;" edge="1" parent="1" source="tx_data_st" target="tx_stop">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tx_e4" value="&lt;font style=&quot;font-size:8px&quot;&gt;cnt done&lt;/font&gt;" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#E91E63;curved=1;" edge="1" parent="1" source="tx_stop" target="tx_idle">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="820" y="340" />
+              <mxPoint x="670" y="290" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- TX internal regs -->
+        <mxCell id="tx_regs" value="&lt;font style=&quot;font-size:9px&quot;&gt;&lt;b&gt;Registros internos:&lt;/b&gt;&lt;br&gt;clk_cnt [15:0] — contador baud rate&lt;br&gt;bit_idx [2:0]  — indice de bit (0..7)&lt;br&gt;data_reg [7:0] — dato latched&lt;br&gt;&lt;br&gt;CLKS_PER_BIT = 50MHz / 9600 = 5208&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="660" y="340" width="270" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- UART RX Module -->
+        <!-- ============================================================ -->
+        <mxCell id="rx_boundary" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#4CAF50;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="640" y="440" width="420" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="rx_label" value="&lt;b&gt;uart_rx&lt;/b&gt; (Receptor)" style="text;html=1;align=left;fontSize=12;fontColor=#2E7D32;" vertex="1" parent="1">
+          <mxGeometry x="655" y="445" width="160" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Double FF Synchronizer -->
+        <mxCell id="sync_ff" value="&lt;b&gt;Sincronizador&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot;&gt;Double Flip-Flop&lt;br&gt;(anti-metaestabilidad)&lt;br&gt;&lt;br&gt;rx_sync1 → rx_sync2&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#4CAF50;strokeWidth=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="660" y="475" width="150" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- RX FSM -->
+        <mxCell id="rx_fsm_title" value="&lt;b&gt;FSM (4 estados)&lt;/b&gt;" style="text;html=1;align=center;fontSize=10;fontColor=#2E7D32;" vertex="1" parent="1">
+          <mxGeometry x="850" y="468" width="130" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="rx_idle" value="&lt;font style=&quot;font-size:8px&quot;&gt;&lt;b&gt;IDLE&lt;/b&gt;&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#4CAF50;strokeWidth=1;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="840" y="490" width="60" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="rx_start_st" value="&lt;font style=&quot;font-size:8px&quot;&gt;&lt;b&gt;START&lt;/b&gt;&lt;br&gt;½ bit&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#4CAF50;strokeWidth=1;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="910" y="490" width="60" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="rx_data_st" value="&lt;font style=&quot;font-size:8px&quot;&gt;&lt;b&gt;DATA&lt;/b&gt;&lt;br&gt;8 bits&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#4CAF50;strokeWidth=1;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="980" y="490" width="60" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="rx_stop_st" value="&lt;font style=&quot;font-size:8px&quot;&gt;&lt;b&gt;STOP&lt;/b&gt;&lt;br&gt;valid!&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#4CAF50;strokeWidth=1;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="980" y="550" width="60" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- RX FSM arrows -->
+        <mxCell id="rx_e1" value="" style="endArrow=classic;html=1;strokeWidth=1;strokeColor=#4CAF50;curved=1;" edge="1" parent="1" source="rx_idle" target="rx_start_st">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rx_e2" value="" style="endArrow=classic;html=1;strokeWidth=1;strokeColor=#4CAF50;curved=1;" edge="1" parent="1" source="rx_start_st" target="rx_data_st">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rx_e3" value="" style="endArrow=classic;html=1;strokeWidth=1;strokeColor=#4CAF50;curved=1;" edge="1" parent="1" source="rx_data_st" target="rx_stop_st">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rx_e4" value="" style="endArrow=classic;html=1;strokeWidth=1;strokeColor=#4CAF50;curved=1;" edge="1" parent="1" source="rx_stop_st" target="rx_idle">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="920" y="590" />
+              <mxPoint x="850" y="560" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- RX center sampling note -->
+        <mxCell id="rx_note" value="&lt;font style=&quot;font-size:9px&quot;&gt;&lt;b&gt;Center-Bit Sampling:&lt;/b&gt;&lt;br&gt;START: espera ½ bit (2604 clks)&lt;br&gt;  → verifica RX aun bajo&lt;br&gt;DATA: muestrea al centro&lt;br&gt;  de cada bit (5208 clks)&lt;br&gt;o_valid: pulso 1 ciclo&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="840" y="590" width="210" height="95" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- Connections: Reg Map to TX/RX -->
+        <!-- ============================================================ -->
+        <mxCell id="e_regtx_tx" value="&lt;font style=&quot;font-size:9px&quot;&gt;tx_data[7:0]&lt;br&gt;tx_start&lt;/font&gt;" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#E91E63;" edge="1" parent="1" source="reg_tx" target="tx_boundary">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_tx_busy" value="&lt;font style=&quot;font-size:9px&quot;&gt;tx_busy&lt;/font&gt;" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#E91E63;dashed=1;" edge="1" parent="1" source="tx_boundary" target="reg_status">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="620" y="350" />
+              <mxPoint x="620" y="480" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_rx_data" value="&lt;font style=&quot;font-size:9px&quot;&gt;rx_data[7:0]&lt;br&gt;rx_valid&lt;/font&gt;" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#4CAF50;" edge="1" parent="1" source="rx_boundary" target="reg_rx">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="600" y="540" />
+              <mxPoint x="600" y="330" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_rx_ready" value="&lt;font style=&quot;font-size:9px&quot;&gt;rx_ready&lt;/font&gt;" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#4CAF50;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="500" y="485" as="sourcePoint" />
+            <mxPoint x="500" y="435" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- External Pins (right side) -->
+        <!-- ============================================================ -->
+        <mxCell id="pin_tx" value="&lt;b&gt;o_uart_tx&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;PIN_W15 (GPIO[0])&lt;br&gt;→ Terminal Serial&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f0f0f0;strokeColor=#999999;strokeWidth=2;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="135" width="170" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pin_rx" value="&lt;b&gt;i_uart_rx&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;PIN_AK2 (GPIO[1])&lt;br&gt;← Terminal Serial&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f0f0f0;strokeColor=#999999;strokeWidth=2;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="440" width="170" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- TX -> PIN -->
+        <mxCell id="e_tx_pin" value="&lt;font style=&quot;font-size:9px;color:#E91E63&quot;&gt;serial out&lt;/font&gt;" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#E91E63;" edge="1" parent="1" source="tx_boundary" target="pin_tx">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- PIN -> RX -->
+        <mxCell id="e_pin_rx" value="&lt;font style=&quot;font-size:9px;color:#4CAF50&quot;&gt;serial in&lt;/font&gt;" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#4CAF50;" edge="1" parent="1" source="pin_rx" target="rx_boundary">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- Timing Parameters Box -->
+        <!-- ============================================================ -->
+        <mxCell id="timing_box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF8E1;strokeColor=#FFA000;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="550" width="370" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="timing_title" value="&lt;b&gt;Parametros de Timing&lt;/b&gt;" style="text;html=1;align=left;fontSize=11;fontColor=#E65100;" vertex="1" parent="1">
+          <mxGeometry x="1110" y="555" width="200" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="timing_text" value="&lt;font style=&quot;font-size:10px;font-family:monospace&quot;&gt;CLK_FREQ     = 50,000,000 Hz&lt;br&gt;BAUD_RATE    = 9,600 bps&lt;br&gt;CLKS_PER_BIT = 5,208 ciclos&lt;br&gt;Bit period   = 104.17 μs&lt;br&gt;Frame (10b)  = 1.042 ms&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1110" y="580" width="240" height="85" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- PC connection note -->
+        <!-- ============================================================ -->
+        <mxCell id="pc_note" value="&lt;font style=&quot;font-size:9px&quot;&gt;&lt;b&gt;Terminal Serial (Docklight/PuTTY):&lt;/b&gt;&lt;br&gt;Envia byte n → SoC calcula n! → Responde 4 bytes (MSB first)&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;strokeWidth=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="230" width="370" height="50" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

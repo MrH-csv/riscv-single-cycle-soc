@@ -1,0 +1,321 @@
+<mxfile host="app.diagrams.net" modified="2026-04-02T00:00:00.000Z" agent="Claude" version="21.0.0" type="device">
+  <diagram id="rv32i-datapath" name="RV32I Datapath">
+    <mxGraphModel dx="1800" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1080" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- ============================================================ -->
+        <!-- Title -->
+        <!-- ============================================================ -->
+        <mxCell id="title" value="&lt;b&gt;Core RV32I Single-Cycle — Datapath Detallado&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="620" y="15" width="460" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- STAGE 1: FETCH -->
+        <!-- ============================================================ -->
+        <mxCell id="stage_fetch" value="&lt;b&gt;FETCH&lt;/b&gt;" style="text;html=1;align=center;fontSize=14;fontColor=#0000AA;fontStyle=5;" vertex="1" parent="1">
+          <mxGeometry x="90" y="65" width="120" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- MUX Next PC (4:1) -->
+        <mxCell id="mux_next_pc" value="&lt;b&gt;MUX 4:1&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot;&gt;mux_4i_1o&lt;br&gt;sel: next_pc_sel[1:0]&lt;/font&gt;" style="shape=trapezoid;perimeter=trapezoidPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;size=15;" vertex="1" parent="1">
+          <mxGeometry x="60" y="100" width="140" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Program Counter -->
+        <mxCell id="pc" value="&lt;b&gt;PC&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot;&gt;program_counter&lt;br&gt;RESET = 0x00400000&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="70" y="200" width="140" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Adder PC+4 -->
+        <mxCell id="add_pc4" value="&lt;b&gt;+&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot;&gt;PC + 4&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="60" y="310" width="70" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- Adder PC+Imm -->
+        <mxCell id="add_pc_imm" value="&lt;b&gt;+&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot;&gt;PC + Imm&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="155" y="310" width="70" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- Instruction Memory -->
+        <mxCell id="imem" value="&lt;b&gt;Instruction Memory&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot;&gt;rom_combinational_sc&lt;br&gt;64 x 32-bit&lt;br&gt;(combinacional)&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="60" y="410" width="160" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- PC -> Adder PC+4 -->
+        <mxCell id="e_pc_add4" value="" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#333;" edge="1" parent="1" source="pc" target="add_pc4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- PC -> Adder PC+Imm -->
+        <mxCell id="e_pc_addimm" value="" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#333;" edge="1" parent="1" source="pc" target="add_pc_imm">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- PC -> IMEM -->
+        <mxCell id="e_pc_imem" value="&lt;font style=&quot;font-size:9px&quot;&gt;pc_addr[31:0]&lt;/font&gt;" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#0000CC;fontColor=#0000CC;" edge="1" parent="1" source="pc" target="imem">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="30" y="280" />
+              <mxPoint x="30" y="450" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <!-- MUX -> PC -->
+        <mxCell id="e_mux_pc" value="" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#333;" edge="1" parent="1" source="mux_next_pc" target="pc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- PC+4 -> MUX input 0 -->
+        <mxCell id="e_add4_mux" value="&lt;font style=&quot;font-size:8px;color:#666&quot;&gt;00: PC+4&lt;/font&gt;" style="endArrow=classic;html=1;strokeWidth=1;strokeColor=#999;dashed=1;" edge="1" parent="1" source="add_pc4" target="mux_next_pc">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="40" y="370" />
+              <mxPoint x="40" y="90" />
+              <mxPoint x="90" y="90" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <!-- PC+Imm -> MUX input 1 -->
+        <mxCell id="e_addimm_mux" value="&lt;font style=&quot;font-size:8px;color:#666&quot;&gt;01: PC+Imm&lt;/font&gt;" style="endArrow=classic;html=1;strokeWidth=1;strokeColor=#999;dashed=1;" edge="1" parent="1" source="add_pc_imm" target="mux_next_pc">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="240" y="370" />
+              <mxPoint x="240" y="90" />
+              <mxPoint x="160" y="90" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- STAGE 2: DECODE -->
+        <!-- ============================================================ -->
+        <mxCell id="stage_decode" value="&lt;b&gt;DECODE&lt;/b&gt;" style="text;html=1;align=center;fontSize=14;fontColor=#0000AA;fontStyle=5;" vertex="1" parent="1">
+          <mxGeometry x="370" y="65" width="120" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Instruction word breakdown -->
+        <mxCell id="instr_split" value="&lt;b&gt;Instruction [31:0]&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot;&gt;opcode [6:0]&lt;br&gt;rd [11:7]&lt;br&gt;funct3 [14:12]&lt;br&gt;rs1 [19:15]&lt;br&gt;rs2 [24:20]&lt;br&gt;funct7 [31:25]&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF8E1;strokeColor=#FFA000;strokeWidth=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="300" y="100" width="130" height="110" as="geometry" />
+        </mxCell>
+
+        <!-- Main Control -->
+        <mxCell id="main_ctrl" value="&lt;b&gt;Main Control&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot;&gt;main_control_rv32i&lt;br&gt;&lt;br&gt;Salidas:&lt;br&gt;reg_write, mem_write&lt;br&gt;mem_read, alu_src&lt;br&gt;mem_to_reg, branch&lt;br&gt;jal, jalr, lui&lt;br&gt;auipc, alu_op[1:0]&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="460" y="95" width="160" height="150" as="geometry" />
+        </mxCell>
+
+        <!-- ALU Control -->
+        <mxCell id="alu_ctrl" value="&lt;b&gt;ALU Control&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot;&gt;control_alu_rv32i&lt;br&gt;&lt;br&gt;Entrada: alu_op[1:0]&lt;br&gt;         funct3, funct7&lt;br&gt;         opcode[5]&lt;br&gt;&lt;br&gt;Salida: alu_ctrl[3:0]&lt;br&gt;         mul_sel&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="650" y="95" width="160" height="150" as="geometry" />
+        </mxCell>
+
+        <!-- Imm Generator -->
+        <mxCell id="imm_gen" value="&lt;b&gt;Imm Generator&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot;&gt;imm_generator&lt;br&gt;&lt;br&gt;Tipos:&lt;br&gt;I / S / B / U / J&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="300" y="280" width="140" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- Register File -->
+        <mxCell id="reg_file" value="&lt;b&gt;Register File&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot;&gt;register_file&lt;br&gt;32 x 32-bit&lt;br&gt;&lt;br&gt;Read: rs1, rs2&lt;br&gt;Write: rd (flanco ↑)&lt;br&gt;x0 = 0 (hardwired)&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="300" y="420" width="160" height="120" as="geometry" />
+        </mxCell>
+
+        <!-- Branch Unit -->
+        <mxCell id="branch_unit" value="&lt;b&gt;Branch Unit&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot;&gt;branch_unit&lt;br&gt;&lt;br&gt;BEQ, BNE,&lt;br&gt;BLT, BGE,&lt;br&gt;BLTU, BGEU&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="300" y="590" width="130" height="100" as="geometry" />
+        </mxCell>
+
+        <!-- Instruction -> Control -->
+        <mxCell id="e_instr_ctrl" value="&lt;font style=&quot;font-size:8px&quot;&gt;opcode&lt;/font&gt;" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#D6B656;" edge="1" parent="1" source="instr_split" target="main_ctrl">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- Main Control -> ALU Control -->
+        <mxCell id="e_ctrl_aluctrl" value="&lt;font style=&quot;font-size:8px&quot;&gt;alu_op[1:0]&lt;/font&gt;" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#D6B656;" edge="1" parent="1" source="main_ctrl" target="alu_ctrl">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- Instruction -> ALU Control -->
+        <mxCell id="e_instr_aluctrl" value="&lt;font style=&quot;font-size:8px&quot;&gt;funct3, funct7&lt;/font&gt;" style="endArrow=classic;html=1;strokeWidth=1;strokeColor=#999;dashed=1;" edge="1" parent="1" source="instr_split" target="alu_ctrl">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="365" y="80" />
+              <mxPoint x="730" y="80" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <!-- Instruction -> Imm Gen -->
+        <mxCell id="e_instr_imm" value="&lt;font style=&quot;font-size:8px&quot;&gt;instr[31:7]&lt;/font&gt;" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#9673A6;" edge="1" parent="1" source="instr_split" target="imm_gen">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- Instruction -> Reg File (rs1, rs2, rd) -->
+        <mxCell id="e_instr_reg" value="&lt;font style=&quot;font-size:8px&quot;&gt;rs1, rs2, rd&lt;/font&gt;" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#82B366;" edge="1" parent="1" source="instr_split" target="reg_file">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="280" y="250" />
+              <mxPoint x="280" y="460" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <!-- IMEM -> Instruction -->
+        <mxCell id="e_imem_instr" value="&lt;font style=&quot;font-size:9px;color:#0000CC&quot;&gt;instruction[31:0]&lt;/font&gt;" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#0000CC;" edge="1" parent="1" source="imem" target="instr_split">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="260" y="450" />
+              <mxPoint x="260" y="155" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- STAGE 3: EXECUTE -->
+        <!-- ============================================================ -->
+        <mxCell id="stage_exec" value="&lt;b&gt;EXECUTE&lt;/b&gt;" style="text;html=1;align=center;fontSize=14;fontColor=#0000AA;fontStyle=5;" vertex="1" parent="1">
+          <mxGeometry x="690" y="270" width="120" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- MUX ALU Src B -->
+        <mxCell id="mux_alu_b" value="&lt;b&gt;MUX&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:8px&quot;&gt;alu_src&lt;/font&gt;" style="shape=trapezoid;perimeter=trapezoidPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;size=10;" vertex="1" parent="1">
+          <mxGeometry x="590" y="350" width="80" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ALU -->
+        <mxCell id="alu" value="&lt;b&gt;ALU&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot;&gt;alu_riscv_rv32i&lt;br&gt;&lt;br&gt;ADD, SUB, AND,&lt;br&gt;OR, XOR, SLL,&lt;br&gt;SRL, SRA, SLT,&lt;br&gt;SLTU&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="700" y="310" width="150" height="130" as="geometry" />
+        </mxCell>
+
+        <!-- Multiplier -->
+        <mxCell id="mul_mod" value="&lt;b&gt;MUL&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot;&gt;mul_module&lt;br&gt;rs1 * rs2&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="700" y="470" width="150" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- MUX ALU/MUL result -->
+        <mxCell id="mux_alu_mul" value="&lt;b&gt;MUX&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:8px&quot;&gt;mul_sel&lt;/font&gt;" style="shape=trapezoid;perimeter=trapezoidPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;size=10;" vertex="1" parent="1">
+          <mxGeometry x="880" y="400" width="80" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Reg File -> ALU (rs1) -->
+        <mxCell id="e_reg_alu_a" value="&lt;font style=&quot;font-size:8px&quot;&gt;rs1_data&lt;/font&gt;" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#333;" edge="1" parent="1" source="reg_file" target="alu">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="550" y="450" />
+              <mxPoint x="550" y="350" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <!-- Reg File -> MUX ALU B (rs2) -->
+        <mxCell id="e_reg_mux_b" value="&lt;font style=&quot;font-size:8px&quot;&gt;rs2_data&lt;/font&gt;" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#333;" edge="1" parent="1" source="reg_file" target="mux_alu_b">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="520" y="470" />
+              <mxPoint x="520" y="370" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <!-- Imm Gen -> MUX ALU B -->
+        <mxCell id="e_imm_mux_b" value="&lt;font style=&quot;font-size:8px&quot;&gt;imm_ext&lt;/font&gt;" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#9673A6;" edge="1" parent="1" source="imm_gen" target="mux_alu_b">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="490" y="330" />
+              <mxPoint x="490" y="370" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <!-- MUX -> ALU B input -->
+        <mxCell id="e_mux_alu_b" value="" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#333;" edge="1" parent="1" source="mux_alu_b" target="alu">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- ALU -> MUX ALU/MUL -->
+        <mxCell id="e_alu_mux" value="&lt;font style=&quot;font-size:8px&quot;&gt;alu_result&lt;/font&gt;" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#b85450;" edge="1" parent="1" source="alu" target="mux_alu_mul">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- MUL -> MUX ALU/MUL -->
+        <mxCell id="e_mul_mux" value="&lt;font style=&quot;font-size:8px&quot;&gt;mul_result&lt;/font&gt;" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#b85450;" edge="1" parent="1" source="mul_mod" target="mux_alu_mul">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- Reg File -> Branch Unit -->
+        <mxCell id="e_reg_branch" value="&lt;font style=&quot;font-size:8px&quot;&gt;rs1, rs2&lt;/font&gt;" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#333;" edge="1" parent="1" source="reg_file" target="branch_unit">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- STAGE 4: MEMORY -->
+        <!-- ============================================================ -->
+        <mxCell id="stage_mem" value="&lt;b&gt;MEMORY&lt;/b&gt;" style="text;html=1;align=center;fontSize=14;fontColor=#0000AA;fontStyle=5;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="270" width="120" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Data Memory Bus -->
+        <mxCell id="dmem_bus" value="&lt;b&gt;Data Memory Bus&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot;&gt;Hacia Address Decoder&lt;br&gt;&lt;br&gt;dmem_addr[31:0]&lt;br&gt;dmem_wdata[31:0]&lt;br&gt;dmem_we&lt;br&gt;dmem_re&lt;br&gt;dmem_rdata[31:0]&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="340" width="170" height="130" as="geometry" />
+        </mxCell>
+
+        <!-- MUX/ALU -> Data Memory -->
+        <mxCell id="e_exec_mem" value="&lt;font style=&quot;font-size:8px;color:#CC0000&quot;&gt;addr / wdata&lt;/font&gt;" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#CC0000;" edge="1" parent="1" source="mux_alu_mul" target="dmem_bus">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- STAGE 5: WRITE-BACK -->
+        <!-- ============================================================ -->
+        <mxCell id="stage_wb" value="&lt;b&gt;WRITE-BACK&lt;/b&gt;" style="text;html=1;align=center;fontSize=14;fontColor=#0000AA;fontStyle=5;" vertex="1" parent="1">
+          <mxGeometry x="1300" y="270" width="140" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- MUX Write-Back (4:1) -->
+        <mxCell id="mux_wb" value="&lt;b&gt;MUX 4:1&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot;&gt;mux_4i_1o&lt;br&gt;&lt;br&gt;00: ALU result&lt;br&gt;01: Mem rdata&lt;br&gt;10: PC + 4&lt;br&gt;11: Imm (LUI)&lt;/font&gt;" style="shape=trapezoid;perimeter=trapezoidPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;size=15;" vertex="1" parent="1">
+          <mxGeometry x="1280" y="350" width="160" height="110" as="geometry" />
+        </mxCell>
+
+        <!-- Data Memory -> MUX WB -->
+        <mxCell id="e_mem_wb" value="&lt;font style=&quot;font-size:8px;color:#009900&quot;&gt;rdata&lt;/font&gt;" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#009900;" edge="1" parent="1" source="dmem_bus" target="mux_wb">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- ALU result -> MUX WB -->
+        <mxCell id="e_alu_wb" value="" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#b85450;dashed=1;" edge="1" parent="1" source="mux_alu_mul" target="mux_wb">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="920" y="310" />
+              <mxPoint x="1250" y="310" />
+              <mxPoint x="1250" y="380" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- MUX WB -> Register File (write-back) -->
+        <mxCell id="e_wb_reg" value="&lt;font style=&quot;font-size:9px;color:#CC0000&quot;&gt;write_data[31:0]&lt;br&gt;(reg_write enable)&lt;/font&gt;" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#CC0000;" edge="1" parent="1" source="mux_wb" target="reg_file">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1360" y="560" />
+              <mxPoint x="1360" y="750" />
+              <mxPoint x="380" y="750" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- Branch/Jump Logic Detail -->
+        <!-- ============================================================ -->
+        <mxCell id="branch_logic_box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF8E1;strokeColor=#FFA000;strokeWidth=1;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="570" width="350" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="branch_logic_title" value="&lt;b&gt;Logica de Next PC&lt;/b&gt;" style="text;html=1;align=left;fontSize=11;fontColor=#E65100;" vertex="1" parent="1">
+          <mxGeometry x="510" y="575" width="180" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="branch_logic_text" value="&lt;font style=&quot;font-size:10px&quot;&gt;next_pc_sel[1:0] =&lt;br&gt;&amp;nbsp;&amp;nbsp;00 → PC + 4&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;(secuencial)&lt;br&gt;&amp;nbsp;&amp;nbsp;01 → PC + Imm&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;(branch tomado / JAL)&lt;br&gt;&amp;nbsp;&amp;nbsp;10 → rs1 + Imm&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;(JALR)&lt;br&gt;&lt;br&gt;branch_taken = branch &amp;amp; branch_cond&lt;br&gt;jal_taken = jal&lt;br&gt;jalr_taken = jalr&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="510" y="598" width="330" height="110" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- Control Signals Summary -->
+        <!-- ============================================================ -->
+        <mxCell id="ctrl_box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF8E1;strokeColor=#FFA000;strokeWidth=1;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="530" width="460" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="ctrl_title" value="&lt;b&gt;Senales de Control por Tipo de Instruccion&lt;/b&gt;" style="text;html=1;align=left;fontSize=11;fontColor=#E65100;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="535" width="300" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="ctrl_table" value="&lt;font style=&quot;font-size:9px;font-family:monospace&quot;&gt;Tipo      reg_wr  alu_src  mem_wr  mem_rd  wb_sel&lt;br&gt;────────  ──────  ───────  ──────  ──────  ──────&lt;br&gt;R-type    1       0       0       0       00 (ALU)&lt;br&gt;I-type    1       1       0       0       00 (ALU)&lt;br&gt;LW        1       1       0       1       01 (Mem)&lt;br&gt;SW        0       1       1       0       xx&lt;br&gt;Branch    0       0       0       0       xx&lt;br&gt;JAL       1       x       0       0       10 (PC+4)&lt;br&gt;JALR      1       1       0       0       10 (PC+4)&lt;br&gt;LUI       1       x       0       0       11 (Imm)&lt;br&gt;AUIPC     1       1       0       0       00 (ALU)&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="560" width="430" height="160" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
