@@ -1,4 +1,4 @@
-# Procesador RISC-V RV32I Single-Cycle — SoC con UART
+# Procesador RISC-V RV32I Single-Cycle  SoC con UART
 
 Implementación completa de un procesador RISC-V de ciclo único (single-cycle) con periféricos memory-mapped (GPIO y UART) para la tarjeta DE10-Standard (FPGA Cyclone V 5CSXFC6D6F31C6N). El procesador ejecuta un programa que recibe un número `n` por UART desde una terminal serial, calcula el factorial `n!`, y transmite el resultado de 32 bits de vuelta por UART en 4 paquetes de 8 bits (MSB primero).
 
