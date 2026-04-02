@@ -1,0 +1,5 @@
+v1
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,rv32i_single_cycle:u_core|mul_module:u_mul|lpm_mult:Mult0|mult_7dt:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,rv32i_single_cycle:u_core|mul_module:u_mul|lpm_mult:Mult0|mult_7dt:auto_generated|mac_out4,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,rv32i_single_cycle:u_core|mul_module:u_mul|lpm_mult:Mult0|mult_7dt:auto_generated|mac_out6,
+PORT_SWAPPING,PORT_SWAP_TYPE_DSPMULT,rv32i_single_cycle:u_core|mul_module:u_mul|lpm_mult:Mult0|mult_7dt:auto_generated|mac_mult5,

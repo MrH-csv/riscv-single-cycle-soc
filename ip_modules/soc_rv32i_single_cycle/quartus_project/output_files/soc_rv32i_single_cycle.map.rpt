@@ -1,5 +1,5 @@
 Analysis & Synthesis report for soc_rv32i_single_cycle
-Wed Apr  1 03:36:00 2026
+Wed Apr  1 04:05:58 2026
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -67,7 +67,7 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Apr  1 03:36:00 2026           ;
+; Analysis & Synthesis Status        ; Successful - Wed Apr  1 04:05:57 2026           ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; soc_rv32i_single_cycle                          ;
 ; Top-level Entity Name              ; soc_rv32i_single_cycle                          ;
@@ -188,8 +188,8 @@ on the Quartus Prime software download page.
 ;     Processor 4            ;   0.2%      ;
 ;     Processor 5            ;   0.2%      ;
 ;     Processor 6            ;   0.2%      ;
-;     Processor 7            ;   0.1%      ;
-;     Processor 8            ;   0.1%      ;
+;     Processor 7            ;   0.2%      ;
+;     Processor 8            ;   0.2%      ;
 ;     Processors 9-16        ;   0.1%      ;
 +----------------------------+-------------+
 
@@ -635,7 +635,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:49     ;
+; Top            ; 00:00:38     ;
 +----------------+--------------+
 
 
@@ -645,69 +645,69 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Wed Apr  1 03:34:56 2026
+    Info: Processing started: Wed Apr  1 04:05:03 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off soc_rv32i_single_cycle -c soc_rv32i_single_cycle
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file /github_iteso/quartus_iteso/ip_modules/soc_rv32i_single_cycle/source/soc_rv32i_single_cycle.v
-    Info (12023): Found entity 1: soc_rv32i_single_cycle File: C:/Github_ITESO/Quartus_ITESO/ip_modules/soc_rv32i_single_cycle/source/soc_rv32i_single_cycle.v Line: 18
+    Info (12023): Found entity 1: soc_rv32i_single_cycle File: C:/Github_ITESO/Quartus_ITESO/ip_modules/soc_rv32i_single_cycle/source/soc_rv32i_single_cycle.v Line: 20
 Info (12021): Found 1 design units, including 1 entities, in source file /github_iteso/quartus_iteso/ip_modules/rv32i_single_cycle/source/rv32i_single_cycle.v
-    Info (12023): Found entity 1: rv32i_single_cycle File: C:/Github_ITESO/Quartus_ITESO/ip_modules/rv32i_single_cycle/source/rv32i_single_cycle.v Line: 23
+    Info (12023): Found entity 1: rv32i_single_cycle File: C:/Github_ITESO/Quartus_ITESO/ip_modules/rv32i_single_cycle/source/rv32i_single_cycle.v Line: 22
 Info (12021): Found 1 design units, including 1 entities, in source file /github_iteso/quartus_iteso/ip_modules/program_counter/source/program_counter.v
-    Info (12023): Found entity 1: program_counter File: C:/Github_ITESO/Quartus_ITESO/ip_modules/program_counter/source/program_counter.v Line: 8
+    Info (12023): Found entity 1: program_counter File: C:/Github_ITESO/Quartus_ITESO/ip_modules/program_counter/source/program_counter.v Line: 21
 Info (12021): Found 1 design units, including 1 entities, in source file /github_iteso/quartus_iteso/ip_modules/adder_4_32b/source/adder_4_32b.v
-    Info (12023): Found entity 1: adder_4_32b File: C:/Github_ITESO/Quartus_ITESO/ip_modules/adder_4_32b/source/adder_4_32b.v Line: 1
+    Info (12023): Found entity 1: adder_4_32b File: C:/Github_ITESO/Quartus_ITESO/ip_modules/adder_4_32b/source/adder_4_32b.v Line: 21
 Info (12021): Found 1 design units, including 1 entities, in source file /github_iteso/quartus_iteso/ip_modules/rom_combinational_sc/source/rom_combinational_sc.v
-    Info (12023): Found entity 1: rom_combinational_sc File: C:/Github_ITESO/Quartus_ITESO/ip_modules/rom_combinational_sc/source/rom_combinational_sc.v Line: 16
+    Info (12023): Found entity 1: rom_combinational_sc File: C:/Github_ITESO/Quartus_ITESO/ip_modules/rom_combinational_sc/source/rom_combinational_sc.v Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file /github_iteso/quartus_iteso/ip_modules/main_control_rv32i/source/main_control_rv32i.v
-    Info (12023): Found entity 1: main_control_rv32i File: C:/Github_ITESO/Quartus_ITESO/ip_modules/main_control_rv32i/source/main_control_rv32i.v Line: 27
+    Info (12023): Found entity 1: main_control_rv32i File: C:/Github_ITESO/Quartus_ITESO/ip_modules/main_control_rv32i/source/main_control_rv32i.v Line: 22
 Info (12021): Found 1 design units, including 1 entities, in source file /github_iteso/quartus_iteso/ip_modules/control_alu_rv32i/source/control_alu_rv32i.v
-    Info (12023): Found entity 1: control_alu_rv32i File: C:/Github_ITESO/Quartus_ITESO/ip_modules/control_alu_rv32i/source/control_alu_rv32i.v Line: 27
+    Info (12023): Found entity 1: control_alu_rv32i File: C:/Github_ITESO/Quartus_ITESO/ip_modules/control_alu_rv32i/source/control_alu_rv32i.v Line: 22
 Info (12021): Found 1 design units, including 1 entities, in source file /github_iteso/quartus_iteso/ip_modules/imm_generator/source/imm_generator.v
-    Info (12023): Found entity 1: imm_generator File: C:/Github_ITESO/Quartus_ITESO/ip_modules/imm_generator/source/imm_generator.v Line: 1
+    Info (12023): Found entity 1: imm_generator File: C:/Github_ITESO/Quartus_ITESO/ip_modules/imm_generator/source/imm_generator.v Line: 21
 Info (12021): Found 1 design units, including 1 entities, in source file /github_iteso/quartus_iteso/ip_modules/register_file/source/register_file.v
-    Info (12023): Found entity 1: register_file File: C:/Github_ITESO/Quartus_ITESO/ip_modules/register_file/source/register_file.v Line: 10
+    Info (12023): Found entity 1: register_file File: C:/Github_ITESO/Quartus_ITESO/ip_modules/register_file/source/register_file.v Line: 22
 Info (12021): Found 1 design units, including 1 entities, in source file /github_iteso/quartus_iteso/ip_modules/mux_2i_1o/source/mux_2i_1o.v
-    Info (12023): Found entity 1: mux_2i_1o File: C:/Github_ITESO/Quartus_ITESO/ip_modules/mux_2i_1o/source/mux_2i_1o.v Line: 5
+    Info (12023): Found entity 1: mux_2i_1o File: C:/Github_ITESO/Quartus_ITESO/ip_modules/mux_2i_1o/source/mux_2i_1o.v Line: 20
 Info (12021): Found 1 design units, including 1 entities, in source file /github_iteso/quartus_iteso/ip_modules/mux_4i_1o/source/mux_4i_1o.v
-    Info (12023): Found entity 1: mux_4i_1o File: C:/Github_ITESO/Quartus_ITESO/ip_modules/mux_4i_1o/source/mux_4i_1o.v Line: 22
+    Info (12023): Found entity 1: mux_4i_1o File: C:/Github_ITESO/Quartus_ITESO/ip_modules/mux_4i_1o/source/mux_4i_1o.v Line: 21
 Info (12021): Found 1 design units, including 1 entities, in source file /github_iteso/quartus_iteso/ip_modules/alu_riscv_rv32i/source/alu_riscv_rv32i.v
-    Info (12023): Found entity 1: alu_riscv_rv32i File: C:/Github_ITESO/Quartus_ITESO/ip_modules/alu_riscv_rv32i/source/alu_riscv_rv32i.v Line: 36
+    Info (12023): Found entity 1: alu_riscv_rv32i File: C:/Github_ITESO/Quartus_ITESO/ip_modules/alu_riscv_rv32i/source/alu_riscv_rv32i.v Line: 22
 Info (12021): Found 1 design units, including 1 entities, in source file /github_iteso/quartus_iteso/ip_modules/mul_module/source/mul_module.v
-    Info (12023): Found entity 1: mul_module File: C:/Github_ITESO/Quartus_ITESO/ip_modules/mul_module/source/mul_module.v Line: 10
+    Info (12023): Found entity 1: mul_module File: C:/Github_ITESO/Quartus_ITESO/ip_modules/mul_module/source/mul_module.v Line: 22
 Info (12021): Found 1 design units, including 1 entities, in source file /github_iteso/quartus_iteso/ip_modules/data_memory/source/data_memory.v
-    Info (12023): Found entity 1: data_memory File: C:/Github_ITESO/Quartus_ITESO/ip_modules/data_memory/source/data_memory.v Line: 21
+    Info (12023): Found entity 1: data_memory File: C:/Github_ITESO/Quartus_ITESO/ip_modules/data_memory/source/data_memory.v Line: 22
 Info (12021): Found 1 design units, including 1 entities, in source file /github_iteso/quartus_iteso/ip_modules/branch_unit/source/branch_unit.v
-    Info (12023): Found entity 1: branch_unit File: C:/Github_ITESO/Quartus_ITESO/ip_modules/branch_unit/source/branch_unit.v Line: 27
+    Info (12023): Found entity 1: branch_unit File: C:/Github_ITESO/Quartus_ITESO/ip_modules/branch_unit/source/branch_unit.v Line: 22
 Info (12021): Found 1 design units, including 1 entities, in source file /github_iteso/quartus_iteso/ip_modules/addr_decoder/source/addr_decoder.v
-    Info (12023): Found entity 1: addr_decoder File: C:/Github_ITESO/Quartus_ITESO/ip_modules/addr_decoder/source/addr_decoder.v Line: 26
+    Info (12023): Found entity 1: addr_decoder File: C:/Github_ITESO/Quartus_ITESO/ip_modules/addr_decoder/source/addr_decoder.v Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file /github_iteso/quartus_iteso/ip_modules/gpio_peripheral/source/gpio_peripheral.v
     Info (12023): Found entity 1: gpio_peripheral File: C:/Github_ITESO/Quartus_ITESO/ip_modules/gpio_peripheral/source/gpio_peripheral.v Line: 24
 Info (12127): Elaborating entity "soc_rv32i_single_cycle" for the top level hierarchy
-Info (12128): Elaborating entity "rv32i_single_cycle" for hierarchy "rv32i_single_cycle:u_core" File: C:/Github_ITESO/Quartus_ITESO/ip_modules/soc_rv32i_single_cycle/source/soc_rv32i_single_cycle.v Line: 73
-Info (12128): Elaborating entity "program_counter" for hierarchy "rv32i_single_cycle:u_core|program_counter:u_pc" File: C:/Github_ITESO/Quartus_ITESO/ip_modules/rv32i_single_cycle/source/rv32i_single_cycle.v Line: 129
-Info (12128): Elaborating entity "adder_4_32b" for hierarchy "rv32i_single_cycle:u_core|adder_4_32b:u_pc_add4" File: C:/Github_ITESO/Quartus_ITESO/ip_modules/rv32i_single_cycle/source/rv32i_single_cycle.v Line: 136
-Info (12128): Elaborating entity "main_control_rv32i" for hierarchy "rv32i_single_cycle:u_core|main_control_rv32i:u_main_ctrl" File: C:/Github_ITESO/Quartus_ITESO/ip_modules/rv32i_single_cycle/source/rv32i_single_cycle.v Line: 155
-Info (12128): Elaborating entity "control_alu_rv32i" for hierarchy "rv32i_single_cycle:u_core|control_alu_rv32i:u_alu_ctrl" File: C:/Github_ITESO/Quartus_ITESO/ip_modules/rv32i_single_cycle/source/rv32i_single_cycle.v Line: 166
-Warning (10270): Verilog HDL Case Statement warning at control_alu_rv32i.v(43): incomplete case statement has no default case item File: C:/Github_ITESO/Quartus_ITESO/ip_modules/control_alu_rv32i/source/control_alu_rv32i.v Line: 43
-Info (12128): Elaborating entity "imm_generator" for hierarchy "rv32i_single_cycle:u_core|imm_generator:u_imm_gen" File: C:/Github_ITESO/Quartus_ITESO/ip_modules/rv32i_single_cycle/source/rv32i_single_cycle.v Line: 172
-Info (12128): Elaborating entity "register_file" for hierarchy "rv32i_single_cycle:u_core|register_file:u_reg_file" File: C:/Github_ITESO/Quartus_ITESO/ip_modules/rv32i_single_cycle/source/rv32i_single_cycle.v Line: 184
-Info (12128): Elaborating entity "mux_2i_1o" for hierarchy "rv32i_single_cycle:u_core|mux_2i_1o:u_mux_alu_a" File: C:/Github_ITESO/Quartus_ITESO/ip_modules/rv32i_single_cycle/source/rv32i_single_cycle.v Line: 196
-Info (12128): Elaborating entity "alu_riscv_rv32i" for hierarchy "rv32i_single_cycle:u_core|alu_riscv_rv32i:u_alu" File: C:/Github_ITESO/Quartus_ITESO/ip_modules/rv32i_single_cycle/source/rv32i_single_cycle.v Line: 213
-Info (12128): Elaborating entity "mul_module" for hierarchy "rv32i_single_cycle:u_core|mul_module:u_mul" File: C:/Github_ITESO/Quartus_ITESO/ip_modules/rv32i_single_cycle/source/rv32i_single_cycle.v Line: 220
-Info (12128): Elaborating entity "mux_4i_1o" for hierarchy "rv32i_single_cycle:u_core|mux_4i_1o:u_mux_result" File: C:/Github_ITESO/Quartus_ITESO/ip_modules/rv32i_single_cycle/source/rv32i_single_cycle.v Line: 238
-Info (12128): Elaborating entity "branch_unit" for hierarchy "rv32i_single_cycle:u_core|branch_unit:u_branch" File: C:/Github_ITESO/Quartus_ITESO/ip_modules/rv32i_single_cycle/source/rv32i_single_cycle.v Line: 260
-Info (12128): Elaborating entity "rom_combinational_sc" for hierarchy "rom_combinational_sc:u_imem" File: C:/Github_ITESO/Quartus_ITESO/ip_modules/soc_rv32i_single_cycle/source/soc_rv32i_single_cycle.v Line: 85
-Info (12128): Elaborating entity "addr_decoder" for hierarchy "addr_decoder:u_addr_dec" File: C:/Github_ITESO/Quartus_ITESO/ip_modules/soc_rv32i_single_cycle/source/soc_rv32i_single_cycle.v Line: 104
-Info (12128): Elaborating entity "data_memory" for hierarchy "data_memory:u_dmem" File: C:/Github_ITESO/Quartus_ITESO/ip_modules/soc_rv32i_single_cycle/source/soc_rv32i_single_cycle.v Line: 119
-Info (12128): Elaborating entity "gpio_peripheral" for hierarchy "gpio_peripheral:u_gpio" File: C:/Github_ITESO/Quartus_ITESO/ip_modules/soc_rv32i_single_cycle/source/soc_rv32i_single_cycle.v Line: 137
+Info (12128): Elaborating entity "rv32i_single_cycle" for hierarchy "rv32i_single_cycle:u_core" File: C:/Github_ITESO/Quartus_ITESO/ip_modules/soc_rv32i_single_cycle/source/soc_rv32i_single_cycle.v Line: 75
+Info (12128): Elaborating entity "program_counter" for hierarchy "rv32i_single_cycle:u_core|program_counter:u_pc" File: C:/Github_ITESO/Quartus_ITESO/ip_modules/rv32i_single_cycle/source/rv32i_single_cycle.v Line: 128
+Info (12128): Elaborating entity "adder_4_32b" for hierarchy "rv32i_single_cycle:u_core|adder_4_32b:u_pc_add4" File: C:/Github_ITESO/Quartus_ITESO/ip_modules/rv32i_single_cycle/source/rv32i_single_cycle.v Line: 135
+Info (12128): Elaborating entity "main_control_rv32i" for hierarchy "rv32i_single_cycle:u_core|main_control_rv32i:u_main_ctrl" File: C:/Github_ITESO/Quartus_ITESO/ip_modules/rv32i_single_cycle/source/rv32i_single_cycle.v Line: 154
+Info (12128): Elaborating entity "control_alu_rv32i" for hierarchy "rv32i_single_cycle:u_core|control_alu_rv32i:u_alu_ctrl" File: C:/Github_ITESO/Quartus_ITESO/ip_modules/rv32i_single_cycle/source/rv32i_single_cycle.v Line: 165
+Warning (10270): Verilog HDL Case Statement warning at control_alu_rv32i.v(38): incomplete case statement has no default case item File: C:/Github_ITESO/Quartus_ITESO/ip_modules/control_alu_rv32i/source/control_alu_rv32i.v Line: 38
+Info (12128): Elaborating entity "imm_generator" for hierarchy "rv32i_single_cycle:u_core|imm_generator:u_imm_gen" File: C:/Github_ITESO/Quartus_ITESO/ip_modules/rv32i_single_cycle/source/rv32i_single_cycle.v Line: 171
+Info (12128): Elaborating entity "register_file" for hierarchy "rv32i_single_cycle:u_core|register_file:u_reg_file" File: C:/Github_ITESO/Quartus_ITESO/ip_modules/rv32i_single_cycle/source/rv32i_single_cycle.v Line: 183
+Info (12128): Elaborating entity "mux_2i_1o" for hierarchy "rv32i_single_cycle:u_core|mux_2i_1o:u_mux_alu_a" File: C:/Github_ITESO/Quartus_ITESO/ip_modules/rv32i_single_cycle/source/rv32i_single_cycle.v Line: 195
+Info (12128): Elaborating entity "alu_riscv_rv32i" for hierarchy "rv32i_single_cycle:u_core|alu_riscv_rv32i:u_alu" File: C:/Github_ITESO/Quartus_ITESO/ip_modules/rv32i_single_cycle/source/rv32i_single_cycle.v Line: 212
+Info (12128): Elaborating entity "mul_module" for hierarchy "rv32i_single_cycle:u_core|mul_module:u_mul" File: C:/Github_ITESO/Quartus_ITESO/ip_modules/rv32i_single_cycle/source/rv32i_single_cycle.v Line: 219
+Info (12128): Elaborating entity "mux_4i_1o" for hierarchy "rv32i_single_cycle:u_core|mux_4i_1o:u_mux_result" File: C:/Github_ITESO/Quartus_ITESO/ip_modules/rv32i_single_cycle/source/rv32i_single_cycle.v Line: 237
+Info (12128): Elaborating entity "branch_unit" for hierarchy "rv32i_single_cycle:u_core|branch_unit:u_branch" File: C:/Github_ITESO/Quartus_ITESO/ip_modules/rv32i_single_cycle/source/rv32i_single_cycle.v Line: 259
+Info (12128): Elaborating entity "rom_combinational_sc" for hierarchy "rom_combinational_sc:u_imem" File: C:/Github_ITESO/Quartus_ITESO/ip_modules/soc_rv32i_single_cycle/source/soc_rv32i_single_cycle.v Line: 87
+Info (12128): Elaborating entity "addr_decoder" for hierarchy "addr_decoder:u_addr_dec" File: C:/Github_ITESO/Quartus_ITESO/ip_modules/soc_rv32i_single_cycle/source/soc_rv32i_single_cycle.v Line: 106
+Info (12128): Elaborating entity "data_memory" for hierarchy "data_memory:u_dmem" File: C:/Github_ITESO/Quartus_ITESO/ip_modules/soc_rv32i_single_cycle/source/soc_rv32i_single_cycle.v Line: 121
+Info (12128): Elaborating entity "gpio_peripheral" for hierarchy "gpio_peripheral:u_gpio" File: C:/Github_ITESO/Quartus_ITESO/ip_modules/soc_rv32i_single_cycle/source/soc_rv32i_single_cycle.v Line: 139
 Info (276014): Found 2 instances of uninferred RAM logic
-    Info (276007): RAM logic "rv32i_single_cycle:u_core|register_file:u_reg_file|registers" is uninferred due to asynchronous read logic File: C:/Github_ITESO/Quartus_ITESO/ip_modules/register_file/source/register_file.v Line: 66
-    Info (276007): RAM logic "data_memory:u_dmem|mem_array" is uninferred due to asynchronous read logic File: C:/Github_ITESO/Quartus_ITESO/ip_modules/data_memory/source/data_memory.v Line: 35
+    Info (276007): RAM logic "rv32i_single_cycle:u_core|register_file:u_reg_file|registers" is uninferred due to asynchronous read logic File: C:/Github_ITESO/Quartus_ITESO/ip_modules/register_file/source/register_file.v Line: 78
+    Info (276007): RAM logic "data_memory:u_dmem|mem_array" is uninferred due to asynchronous read logic File: C:/Github_ITESO/Quartus_ITESO/ip_modules/data_memory/source/data_memory.v Line: 36
 Info (278001): Inferred 1 megafunctions from design logic
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "rv32i_single_cycle:u_core|mul_module:u_mul|Mult0" File: C:/Github_ITESO/Quartus_ITESO/ip_modules/mul_module/source/mul_module.v Line: 23
-Info (12130): Elaborated megafunction instantiation "rv32i_single_cycle:u_core|mul_module:u_mul|lpm_mult:Mult0" File: C:/Github_ITESO/Quartus_ITESO/ip_modules/mul_module/source/mul_module.v Line: 23
-Info (12133): Instantiated megafunction "rv32i_single_cycle:u_core|mul_module:u_mul|lpm_mult:Mult0" with the following parameter: File: C:/Github_ITESO/Quartus_ITESO/ip_modules/mul_module/source/mul_module.v Line: 23
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "rv32i_single_cycle:u_core|mul_module:u_mul|Mult0" File: C:/Github_ITESO/Quartus_ITESO/ip_modules/mul_module/source/mul_module.v Line: 36
+Info (12130): Elaborated megafunction instantiation "rv32i_single_cycle:u_core|mul_module:u_mul|lpm_mult:Mult0" File: C:/Github_ITESO/Quartus_ITESO/ip_modules/mul_module/source/mul_module.v Line: 36
+Info (12133): Instantiated megafunction "rv32i_single_cycle:u_core|mul_module:u_mul|lpm_mult:Mult0" with the following parameter: File: C:/Github_ITESO/Quartus_ITESO/ip_modules/mul_module/source/mul_module.v Line: 36
     Info (12134): Parameter "LPM_WIDTHA" = "32"
     Info (12134): Parameter "LPM_WIDTHB" = "32"
     Info (12134): Parameter "LPM_WIDTHP" = "64"
@@ -734,9 +734,9 @@ Info (21057): Implemented 17476 device resources after synthesis - the final res
     Info (21061): Implemented 17452 logic cells
     Info (21062): Implemented 6 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 4981 megabytes
-    Info: Processing ended: Wed Apr  1 03:36:00 2026
-    Info: Elapsed time: 00:01:04
-    Info: Total CPU time (on all processors): 00:01:27
+    Info: Peak virtual memory: 5002 megabytes
+    Info: Processing ended: Wed Apr  1 04:05:58 2026
+    Info: Elapsed time: 00:00:55
+    Info: Total CPU time (on all processors): 00:01:25
 
 

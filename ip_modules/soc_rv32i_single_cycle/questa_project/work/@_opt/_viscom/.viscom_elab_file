@@ -1,0 +1,1 @@
+C:/QestaSIM/questa_fse/win64/VisualizerRls/bin/viscom.exe -nolock -quiet -jmem_size 393216 work.soc_rv32i_single_cycle_tb -quiet -auto_acc_if_foreign -work work +acc -allow_unnamed -o _opt -id 1-843e1d2894b2-69cdf8e9-3aa-57ac +__betafsm

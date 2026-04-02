@@ -1,0 +1,9 @@
+BEGIN 1:rv32i_single_cycle:fast:work
+    o_imem_addr :  1:soc_rv32i_single_cycle_tb:fast:work
+END 
+BEGIN 1:register_file:fast:work
+    registers :  1:soc_rv32i_single_cycle_tb:fast:work
+END 
+BEGIN 1:soc_rv32i_single_cycle:fast:work
+    imem_rdata :  1:soc_rv32i_single_cycle_tb:fast:work
+END 

@@ -1,0 +1,441 @@
+m255
+K4
+z2
+!s12c _opt
+Z0 !s99 nomlopt
+!s11f vlog 2024.3 2024.09, Sep 10 2024
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dc:/Github_ITESO/Quartus_ITESO/ip_modules/soc_rv32i_single_cycle/questa_project
+T_opt
+!s110 1775106282
+VQGZMFN<PjgB]>n^jJHXjP2
+04 25 4 work soc_rv32i_single_cycle_tb fast 0
+=1-843e1d2894b2-69cdf8e9-3aa-57ac
+R0
+!s12f OEM100
+!s12b OEM100
+!s124 OEM10U23 
+!s135 nogc
+o-quiet -auto_acc_if_foreign -work work +acc
+Z2 tCvgOpt 0
+n@_opt
+OL;O;2024.3;79
+vadder_4_32b
+2../../adder_4_32b/source/adder_4_32b.v
+!s110 1775106275
+!i10b 1
+!s100 9GDW_^U9HnocOUcAjFX3F2
+ISnkjhn^<1HFkMhkRAho8X0
+R1
+Z3 w1775037422
+8../../adder_4_32b/source/adder_4_32b.v
+F../../adder_4_32b/source/adder_4_32b.v
+!i122 0
+L0 21 11
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+Z5 OL;L;2024.3;79
+r1
+!s85 0
+31
+Z6 !s108 1775106275.000000
+!s107 ../../adder_4_32b/source/adder_4_32b.v|
+!s90 -reportprogress|300|-work|work|../../adder_4_32b/source/adder_4_32b.v|
+!i113 0
+Z7 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+vaddr_decoder
+2../../addr_decoder/source/addr_decoder.v
+Z8 !s110 1775106279
+!i10b 1
+!s100 <7caFLPkSOK@eR]e:dY>[3
+INQF;OnOE:RBX9OG`@15KZ0
+R1
+R3
+8../../addr_decoder/source/addr_decoder.v
+F../../addr_decoder/source/addr_decoder.v
+!i122 13
+L0 24 40
+R4
+R5
+r1
+!s85 0
+31
+Z9 !s108 1775106279.000000
+!s107 ../../addr_decoder/source/addr_decoder.v|
+!s90 -reportprogress|300|-work|work|../../addr_decoder/source/addr_decoder.v|
+!i113 0
+R7
+R2
+valu_riscv_rv32i
+2../../alu_riscv_rv32i/source/alu_riscv_rv32i.v
+Z10 !s110 1775106276
+!i10b 1
+!s100 QY5AC05HMB8fJS_E0dKS?2
+I>KS?Rk0GCUV;6UW9KK3jM2
+R1
+R3
+8../../alu_riscv_rv32i/source/alu_riscv_rv32i.v
+F../../alu_riscv_rv32i/source/alu_riscv_rv32i.v
+!i122 1
+L0 22 70
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 ../../alu_riscv_rv32i/source/alu_riscv_rv32i.v|
+!s90 -reportprogress|300|-work|work|../../alu_riscv_rv32i/source/alu_riscv_rv32i.v|
+!i113 0
+R7
+R2
+vbranch_unit
+2../../branch_unit/source/branch_unit.v
+R8
+!i10b 1
+!s100 SMZYln3M9cJH3:_<WQBPC2
+IAn`dMoz]SS<>SAU<eYOO>1
+R1
+R3
+8../../branch_unit/source/branch_unit.v
+F../../branch_unit/source/branch_unit.v
+!i122 12
+L0 22 33
+R4
+R5
+r1
+!s85 0
+31
+R9
+!s107 ../../branch_unit/source/branch_unit.v|
+!s90 -reportprogress|300|-work|work|../../branch_unit/source/branch_unit.v|
+!i113 0
+R7
+R2
+vcontrol_alu_rv32i
+2../../control_alu_rv32i/source/control_alu_rv32i.v
+R10
+!i10b 1
+!s100 hLkQUYoJ7zoJ3H0EH0i?;2
+I0zSQ>f<@mBAX[@l72WCiS3
+R1
+R3
+8../../control_alu_rv32i/source/control_alu_rv32i.v
+F../../control_alu_rv32i/source/control_alu_rv32i.v
+!i122 2
+L0 22 75
+R4
+R5
+r1
+!s85 0
+31
+Z11 !s108 1775106276.000000
+!s107 ../../control_alu_rv32i/source/control_alu_rv32i.v|
+!s90 -reportprogress|300|-work|work|../../control_alu_rv32i/source/control_alu_rv32i.v|
+!i113 0
+R7
+R2
+vdata_memory
+2../../data_memory/source/data_memory.v
+Z12 !s110 1775106278
+!i10b 1
+!s100 ]fd9ZVBT=cCOCVf_oI1V82
+I23IQ764l3:`a?VNL=7WG:3
+R1
+R3
+8../../data_memory/source/data_memory.v
+F../../data_memory/source/data_memory.v
+!i122 11
+L0 22 37
+R4
+R5
+r1
+!s85 0
+31
+Z13 !s108 1775106278.000000
+!s107 ../../data_memory/source/data_memory.v|
+!s90 -reportprogress|300|-work|work|../../data_memory/source/data_memory.v|
+!i113 0
+R7
+R2
+vgpio_peripheral
+2../../gpio_peripheral/source/gpio_peripheral.v
+R8
+!i10b 1
+!s100 gYVUlKjPY6S8aFPD5QEO93
+IfkK^c5;SSOI2O[A9V7Z4l3
+R1
+R3
+8../../gpio_peripheral/source/gpio_peripheral.v
+F../../gpio_peripheral/source/gpio_peripheral.v
+!i122 14
+L0 24 55
+R4
+R5
+r1
+!s85 0
+31
+R9
+!s107 ../../gpio_peripheral/source/gpio_peripheral.v|
+!s90 -reportprogress|300|-work|work|../../gpio_peripheral/source/gpio_peripheral.v|
+!i113 0
+R7
+R2
+vimm_generator
+2../../imm_generator/source/imm_generator.v
+R10
+!i10b 1
+!s100 n=Zzg_a9gIgbe_lMUPH0O2
+I0D6f2Q8LVUU1DccU4WZeK3
+R1
+R3
+8../../imm_generator/source/imm_generator.v
+F../../imm_generator/source/imm_generator.v
+!i122 3
+L0 21 32
+R4
+R5
+r1
+!s85 0
+31
+R11
+!s107 ../../imm_generator/source/imm_generator.v|
+!s90 -reportprogress|300|-work|work|../../imm_generator/source/imm_generator.v|
+!i113 0
+R7
+R2
+vmain_control_rv32i
+2../../main_control_rv32i/source/main_control_rv32i.v
+R10
+!i10b 1
+!s100 :;M8gO29lS?ROiNS4@B?43
+Ihj1?ZYNd1TAVo58PTJ[BX3
+R1
+R3
+8../../main_control_rv32i/source/main_control_rv32i.v
+F../../main_control_rv32i/source/main_control_rv32i.v
+!i122 4
+L0 22 153
+R4
+R5
+r1
+!s85 0
+31
+R11
+!s107 ../../main_control_rv32i/source/main_control_rv32i.v|
+!s90 -reportprogress|300|-work|work|../../main_control_rv32i/source/main_control_rv32i.v|
+!i113 0
+R7
+R2
+vmul_module
+2../../mul_module/source/mul_module.v
+Z14 !s110 1775106277
+!i10b 1
+!s100 _@S;DfiH1m?AmMg[8^E:N2
+IOR6o@9m?o[0lI>VJT33`:2
+R1
+R3
+8../../mul_module/source/mul_module.v
+F../../mul_module/source/mul_module.v
+!i122 5
+L0 22 18
+R4
+R5
+r1
+!s85 0
+31
+Z15 !s108 1775106277.000000
+!s107 ../../mul_module/source/mul_module.v|
+!s90 -reportprogress|300|-work|work|../../mul_module/source/mul_module.v|
+!i113 0
+R7
+R2
+vmux_2i_1o
+2../../mux_2i_1o/source/mux_2i_1o.v
+R14
+!i10b 1
+!s100 OXNFLMh[dLImZm3dFh_;g2
+In=O4nkTG9aGgk?5?YI7h61
+R1
+R3
+8../../mux_2i_1o/source/mux_2i_1o.v
+F../../mux_2i_1o/source/mux_2i_1o.v
+!i122 6
+L0 20 15
+R4
+R5
+r1
+!s85 0
+31
+R15
+!s107 ../../mux_2i_1o/source/mux_2i_1o.v|
+!s90 -reportprogress|300|-work|work|../../mux_2i_1o/source/mux_2i_1o.v|
+!i113 0
+R7
+R2
+vmux_4i_1o
+2../../mux_4i_1o/source/mux_4i_1o.v
+R14
+!i10b 1
+!s100 @W:VgOncln;2il[Q8K^?i1
+I=R^;TP]ekn<8_D:bZMn_d3
+R1
+R3
+8../../mux_4i_1o/source/mux_4i_1o.v
+F../../mux_4i_1o/source/mux_4i_1o.v
+!i122 7
+L0 21 25
+R4
+R5
+r1
+!s85 0
+31
+R15
+!s107 ../../mux_4i_1o/source/mux_4i_1o.v|
+!s90 -reportprogress|300|-work|work|../../mux_4i_1o/source/mux_4i_1o.v|
+!i113 0
+R7
+R2
+vprogram_counter
+2../../program_counter/source/program_counter.v
+R12
+!i10b 1
+!s100 oGhYQd`dhKG6VW7]neG>Q0
+IQI`ZcLJbzjfDfTG@oN>dS2
+R1
+R3
+8../../program_counter/source/program_counter.v
+F../../program_counter/source/program_counter.v
+!i122 8
+L0 21 20
+R4
+R5
+r1
+!s85 0
+31
+R15
+!s107 ../../program_counter/source/program_counter.v|
+!s90 -reportprogress|300|-work|work|../../program_counter/source/program_counter.v|
+!i113 0
+R7
+R2
+vregister_file
+2../../register_file/source/register_file.v
+R12
+!i10b 1
+!s100 Y3gVzIXIMDWonaajC7XU[3
+IOHf>IP]JDTkKQ[[_=ZATM2
+R1
+R3
+8../../register_file/source/register_file.v
+F../../register_file/source/register_file.v
+!i122 9
+L0 22 76
+R4
+R5
+r1
+!s85 0
+31
+R13
+!s107 ../../register_file/source/register_file.v|
+!s90 -reportprogress|300|-work|work|../../register_file/source/register_file.v|
+!i113 0
+R7
+R2
+vrom_combinational_sc
+2../../rom_combinational_sc/source/rom_combinational_sc.v
+R12
+!i10b 1
+!s100 lM0YTJWNM@VzmUnDWMY_R3
+IYoe9JB6G;Mzkb;W@212z@0
+R1
+R3
+8../../rom_combinational_sc/source/rom_combinational_sc.v
+F../../rom_combinational_sc/source/rom_combinational_sc.v
+!i122 10
+L0 24 53
+R4
+R5
+r1
+!s85 0
+31
+R13
+!s107 ../../rom_combinational_sc/source/rom_combinational_sc.v|
+!s90 -reportprogress|300|-work|work|../../rom_combinational_sc/source/rom_combinational_sc.v|
+!i113 0
+R7
+R2
+vrv32i_single_cycle
+2../../rv32i_single_cycle/source/rv32i_single_cycle.v
+Z16 !s110 1775106280
+!i10b 1
+!s100 :9><OIoL=BC;5^mkGT1IR1
+Ig8jee713G[A2[NC?Gg<ih3
+R1
+R3
+8../../rv32i_single_cycle/source/rv32i_single_cycle.v
+F../../rv32i_single_cycle/source/rv32i_single_cycle.v
+!i122 15
+L0 22 266
+R4
+R5
+r1
+!s85 0
+31
+R9
+!s107 ../../rv32i_single_cycle/source/rv32i_single_cycle.v|
+!s90 -reportprogress|300|-work|work|../../rv32i_single_cycle/source/rv32i_single_cycle.v|
+!i113 0
+R7
+R2
+vsoc_rv32i_single_cycle
+2../source/soc_rv32i_single_cycle.v
+R16
+!i10b 1
+!s100 G32Q`><>c1Ui5^[hHhH5b2
+IaA0IX39Ph]ZhGn=`NM6]61
+R1
+Z17 w1775037423
+8../source/soc_rv32i_single_cycle.v
+F../source/soc_rv32i_single_cycle.v
+!i122 16
+L0 20 122
+R4
+R5
+r1
+!s85 0
+31
+Z18 !s108 1775106280.000000
+!s107 ../source/soc_rv32i_single_cycle.v|
+!s90 -reportprogress|300|-work|work|../source/soc_rv32i_single_cycle.v|
+!i113 0
+R7
+R2
+vsoc_rv32i_single_cycle_tb
+2../source/soc_rv32i_single_cycle_tb.v
+R16
+!i10b 1
+!s100 76[MhjG]_:S?Y3zKNE0J`2
+I:z;>M@2EO0YQ@gjjF^K[00
+R1
+R17
+8../source/soc_rv32i_single_cycle_tb.v
+F../source/soc_rv32i_single_cycle_tb.v
+!i122 17
+L0 22 240
+R4
+R5
+r1
+!s85 0
+31
+R18
+!s107 ../source/soc_rv32i_single_cycle_tb.v|
+!s90 -reportprogress|300|-work|work|../source/soc_rv32i_single_cycle_tb.v|
+!i113 0
+R7
+R2

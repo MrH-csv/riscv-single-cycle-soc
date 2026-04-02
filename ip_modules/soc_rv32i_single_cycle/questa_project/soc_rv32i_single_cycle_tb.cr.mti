@@ -1,0 +1,127 @@
+C:/Github_ITESO/Quartus_ITESO/ip_modules/control_alu_rv32i/source/control_alu_rv32i.v {1 {vlog -work work -vopt -stats=none C:/Github_ITESO/Quartus_ITESO/ip_modules/control_alu_rv32i/source/control_alu_rv32i.v
+Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+-- Compiling module control_alu_rv32i
+
+Top level modules:
+	control_alu_rv32i
+
+} {} {}} C:/Github_ITESO/Quartus_ITESO/ip_modules/program_counter/source/program_counter.v {1 {vlog -work work -vopt -stats=none C:/Github_ITESO/Quartus_ITESO/ip_modules/program_counter/source/program_counter.v
+Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+-- Compiling module program_counter
+
+Top level modules:
+	program_counter
+
+} {} {}} C:/Github_ITESO/Quartus_ITESO/ip_modules/addr_decoder/source/addr_decoder.v {1 {vlog -work work -vopt -stats=none C:/Github_ITESO/Quartus_ITESO/ip_modules/addr_decoder/source/addr_decoder.v
+Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+-- Compiling module addr_decoder
+
+Top level modules:
+	addr_decoder
+
+} {} {}} C:/Github_ITESO/Quartus_ITESO/ip_modules/register_file/source/register_file.v {1 {vlog -work work -vopt -stats=none C:/Github_ITESO/Quartus_ITESO/ip_modules/register_file/source/register_file.v
+Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+-- Compiling module register_file
+
+Top level modules:
+	register_file
+
+} {} {}} C:/Github_ITESO/Quartus_ITESO/ip_modules/soc_rv32i_single_cycle/source/soc_rv32i_single_cycle_tb.v {1 {vlog -work work -vopt -stats=none C:/Github_ITESO/Quartus_ITESO/ip_modules/soc_rv32i_single_cycle/source/soc_rv32i_single_cycle_tb.v
+Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+-- Compiling module soc_rv32i_single_cycle_tb
+
+Top level modules:
+	soc_rv32i_single_cycle_tb
+
+} {} {}} C:/Github_ITESO/Quartus_ITESO/ip_modules/adder_4_32b/source/adder_4_32b.v {1 {vlog -work work -vopt -stats=none C:/Github_ITESO/Quartus_ITESO/ip_modules/adder_4_32b/source/adder_4_32b.v
+Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+-- Compiling module adder_4_32b
+
+Top level modules:
+	adder_4_32b
+
+} {} {}} C:/Github_ITESO/Quartus_ITESO/ip_modules/imm_generator/source/imm_generator.v {1 {vlog -work work -vopt -stats=none C:/Github_ITESO/Quartus_ITESO/ip_modules/imm_generator/source/imm_generator.v
+Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+-- Compiling module imm_generator
+
+Top level modules:
+	imm_generator
+
+} {} {}} C:/Github_ITESO/Quartus_ITESO/ip_modules/soc_rv32i_single_cycle/source/soc_rv32i_single_cycle.v {1 {vlog -work work -vopt -stats=none C:/Github_ITESO/Quartus_ITESO/ip_modules/soc_rv32i_single_cycle/source/soc_rv32i_single_cycle.v
+Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+-- Compiling module soc_rv32i_single_cycle
+
+Top level modules:
+	soc_rv32i_single_cycle
+
+} {} {}} C:/Github_ITESO/Quartus_ITESO/ip_modules/rom_combinational_sc/source/rom_combinational_sc.v {1 {vlog -work work -vopt -stats=none C:/Github_ITESO/Quartus_ITESO/ip_modules/rom_combinational_sc/source/rom_combinational_sc.v
+Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+-- Compiling module rom_combinational_sc
+
+Top level modules:
+	rom_combinational_sc
+
+} {} {}} C:/Github_ITESO/Quartus_ITESO/ip_modules/main_control_rv32i/source/main_control_rv32i.v {1 {vlog -work work -vopt -stats=none C:/Github_ITESO/Quartus_ITESO/ip_modules/main_control_rv32i/source/main_control_rv32i.v
+Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+-- Compiling module main_control_rv32i
+
+Top level modules:
+	main_control_rv32i
+
+} {} {}} C:/Github_ITESO/Quartus_ITESO/ip_modules/mux_2i_1o/source/mux_2i_1o.v {1 {vlog -work work -vopt -stats=none C:/Github_ITESO/Quartus_ITESO/ip_modules/mux_2i_1o/source/mux_2i_1o.v
+Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+-- Compiling module mux_2i_1o
+
+Top level modules:
+	mux_2i_1o
+
+} {} {}} C:/Github_ITESO/Quartus_ITESO/ip_modules/mul_module/source/mul_module.v {1 {vlog -work work -vopt -stats=none C:/Github_ITESO/Quartus_ITESO/ip_modules/mul_module/source/mul_module.v
+Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+-- Compiling module mul_module
+
+Top level modules:
+	mul_module
+
+} {} {}} C:/Github_ITESO/Quartus_ITESO/ip_modules/mux_4i_1o/source/mux_4i_1o.v {1 {vlog -work work -vopt -stats=none C:/Github_ITESO/Quartus_ITESO/ip_modules/mux_4i_1o/source/mux_4i_1o.v
+Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+-- Compiling module mux_4i_1o
+
+Top level modules:
+	mux_4i_1o
+
+} {} {}} C:/Github_ITESO/Quartus_ITESO/ip_modules/branch_unit/source/branch_unit.v {1 {vlog -work work -vopt -stats=none C:/Github_ITESO/Quartus_ITESO/ip_modules/branch_unit/source/branch_unit.v
+Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+-- Compiling module branch_unit
+
+Top level modules:
+	branch_unit
+
+} {} {}} C:/Github_ITESO/Quartus_ITESO/ip_modules/alu_riscv_rv32i/source/alu_riscv_rv32i.v {1 {vlog -work work -vopt -stats=none C:/Github_ITESO/Quartus_ITESO/ip_modules/alu_riscv_rv32i/source/alu_riscv_rv32i.v
+Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+-- Compiling module alu_riscv_rv32i
+
+Top level modules:
+	alu_riscv_rv32i
+
+} {} {}} C:/Github_ITESO/Quartus_ITESO/ip_modules/gpio_peripheral/source/gpio_peripheral.v {1 {vlog -work work -vopt -stats=none C:/Github_ITESO/Quartus_ITESO/ip_modules/gpio_peripheral/source/gpio_peripheral.v
+Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+-- Compiling module gpio_peripheral
+
+Top level modules:
+	gpio_peripheral
+
+} {} {}} C:/Github_ITESO/Quartus_ITESO/ip_modules/rv32i_single_cycle/source/rv32i_single_cycle.v {1 {vlog -work work -vopt -stats=none C:/Github_ITESO/Quartus_ITESO/ip_modules/rv32i_single_cycle/source/rv32i_single_cycle.v
+Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+-- Compiling module rv32i_single_cycle
+
+Top level modules:
+	rv32i_single_cycle
+
+} {} {}} C:/Github_ITESO/Quartus_ITESO/ip_modules/data_memory/source/data_memory.v {1 {vlog -work work -vopt -stats=none C:/Github_ITESO/Quartus_ITESO/ip_modules/data_memory/source/data_memory.v
+Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+-- Compiling module data_memory
+
+Top level modules:
+	data_memory
+
+} {} {}}
